@@ -168,39 +168,64 @@
 // console.log(add(5, 10, 15));
 
 //! =============================================
-// Task 10 ---
+// Task 10
 //! =============================================
 
 // 1. Оголошення параметрів name, price
-// let name;
-// let price;
+
 // function makeMessage(name, price) {
-//   // Change code below this line
 
 //   const message = `You picked ${name}, price per item is ${price} credits`;
-//   // Change code above this line
+
 //   return message;
-
-//   // 2. Передача аргументів
-//   // console.log(makeMessage(name, price));
-//   // makeMessage(name, price);
-
-//   // makeMessage('Radar', 6150);
-//   // makeMessage("Scanner", 3500);
-//   // makeMessage("Reactor", 8000);
-//   // makeMessage("Engine", 4070);
 // }
 
-// makeMessage("Radar", 6150);
-// console.log(message);
+//   // 2. Передача аргументів
+// console.log(makeMessage("Radar", 6150));
+// console.log(makeMessage("Scanner", 3500));
+// console.log(makeMessage("Reactor", 8000));
+// console.log(makeMessage("Engine", 4070);
 
 //! =============================================
 // Task 11
 //! =============================================
 
+// 1. Оголошення параметрів orderedQuantity, pricePerItem
+
+// function calculateTotalPrice(orderedQuantity, pricePerItem) {
+//   // Change code below this line
+//   const totalPrice = orderedQuantity * pricePerItem;
+
+//   // Change code above this line
+//   return totalPrice;
+// }
+
+// // 2. Передача аргументів
+// console.log(calculateTotalPrice(5, 100));
+// console.log(calculateTotalPrice(8, 60));
+// console.log(calculateTotalPrice(3, 400));
+// console.log(calculateTotalPrice(1, 3500));
+// console.log(calculateTotalPrice(12, 70));
+
 //! =============================================
 // Task 12
 //! =============================================
+
+// 1. Оголошення параметрів
+function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+  // Change code below this line
+  const totalPrice = orderedQuantity * pricePerDroid + deliveryFee;
+
+  const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`;
+
+  // Change code above this line
+  return message;
+}
+
+// 2. Передача аргументів
+console.log(makeOrderMessage(2, 100, 50));
+console.log(makeOrderMessage(4, 300, 100));
+console.log(makeOrderMessage(10, 70, 200));
 
 //! =============================================
 // Task 13
