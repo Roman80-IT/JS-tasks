@@ -211,25 +211,42 @@
 // Task 12
 //! =============================================
 
-// 1. Оголошення параметрів
-function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
-  // Change code below this line
-  const totalPrice = orderedQuantity * pricePerDroid + deliveryFee;
+// // 1. Оголошення параметрів
+// function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+//   // Change code below this line
+//   const totalPrice = orderedQuantity * pricePerDroid + deliveryFee;
 
-  const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`;
+//   const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`;
 
-  // Change code above this line
-  return message;
-}
+//   // Change code above this line
+//   return message;
+// }
 
-// 2. Передача аргументів
-console.log(makeOrderMessage(2, 100, 50));
-console.log(makeOrderMessage(4, 300, 100));
-console.log(makeOrderMessage(10, 70, 200));
+// // 2. Передача аргументів
+// console.log(makeOrderMessage(2, 100, 50));
+// console.log(makeOrderMessage(4, 300, 100));
+// console.log(makeOrderMessage(10, 70, 200));
 
 //! =============================================
 // Task 13
+// > - більше, < - менше
+// >= - більше або дорівнює, <= - менше або дорівнює
 //! =============================================
+
+// function isAdult(age) {
+//   // Change code below this line
+//   const passed = age >= 18;
+
+//   // Change code above this line
+//   return passed;
+// }
+
+// isAdult(20);
+// isAdult(14);
+// isAdult(8);
+// isAdult(37);
+
+// без виводу в консоль, тому не відображається
 
 //! =============================================
 // Task 14
