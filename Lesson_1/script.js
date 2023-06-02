@@ -249,20 +249,89 @@
 // без виводу в консоль, тому не відображається
 
 //! =============================================
-// Task 14
+// Task 14   оператори === (строга рівність) і !== (строга нерівність)
 //! =============================================
 
+// function isValidPassword(password) {
+//   const SAVED_PASSWORD = "jqueryismyjam";
+//   // Change code below this line
+//   const isMatch = password === SAVED_PASSWORD;
+//   // console.log(isMatch === SAVED_PASSWORD); - якщо потрібно було б виводити на консоль
+//   // Change code above this line
+//   return isMatch;
+// }
+
+// // 2. Виклик
+// // console.log(isValidPassword("mangodab3st")); - для себе на консоль
+// isValidPassword("mangodab3st");
+// isValidPassword("kiwirul3z");
+// isValidPassword("jqueryismyjam");
+
 //! =============================================
-// Task 15
+//                   if () {
+//   Task 15         } else {
+//                   }
 //! =============================================
+
+// function checkAge(age) {
+//   let message;
+
+//   if (age >= 18) {
+//     // Change this line
+//     message = "You are an adult";
+//   } else {
+//     message = "You are a minor";
+//   }
+//   console.log(message); // - якщо потрібно було б виводити на консоль
+//   return message;
+// }
+
+// // 2. Виклик
+// // console.log(checkAge(20));
+// checkAge(20);
+// checkAge(8);
+// checkAge(14);
+// checkAge(38);
 
 //! =============================================
 // Task 16
 //! =============================================
 
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+//   if (ordered > available) {
+//     message = "Not enough goods in stock!";
+//   } else {
+//     message = "Order is processed, our manager will contact you.";
+//   }
+//   console.log(message); // - якщо потрібно було б виводити на консоль
+//   // Change code above this line
+//   return message;
+// }
+
+// // 2. Виклик
+// checkStorage(100, 50);
+// checkStorage(100, 130);
+// checkStorage(200, 20);
+// checkStorage(200, 150);
+// checkStorage(150, 180);
+
 //! =============================================
-// Task 17
+// Task 17  Комбіновані оператори     age = age + 1;
+//                                    age += 1;
 //! =============================================
+
+let a = 5;
+let b = 10;
+let c = 15;
+let d = 20;
+
+// Change code below this line
+a = a + 2;
+b = b - 4;
+c = c * 3;
+d = d / 10;
 
 //! =============================================
 // Task 18
