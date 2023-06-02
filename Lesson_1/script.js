@@ -368,16 +368,72 @@
 // makeTransaction(500, 10, 5000);
 
 //! =============================================
-// Task 19
+//                   if () {         ===
+//                   } else if {     null - особливе значення, яке по суті означає ніщо
+//   Task 19         } else if {
+//                   } else {
+//                   }               «шукаю перше виконання умови, ігнорую все інше»
 //! =============================================
+
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   let message;
+
+//   if (password === null) {
+//     // Change this line
+//     message = "Canceled by user!";
+//   } else if (password === ADMIN_PASSWORD) {
+//     // Change this line
+//     message = "Welcome!";
+//   } else {
+//     message = "Access denied, wrong password!";
+//   }
+//   console.log(message); // - якщо потрібно було б виводити на консоль
+//   return message;
+// }
+
+// // 2. Виклик
+// checkPassword("mangohackzor");
+// checkPassword(null);
+// checkPassword("polyhax");
+// checkPassword("jqueryismyjam");
 
 //! =============================================
 // Task 20
 //! =============================================
 
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+//   if (ordered === 0) {
+//     message = "There are no products in the order!";
+//   } else if (ordered > available) {
+//     message = "Your order is too large, there are not enough items in stock!";
+//   } else {
+//     message = "The order is accepted, our manager will contact you";
+//   }
+//   console.log(message); // - якщо потрібно було б виводити на консоль
+//   // Change code above this line
+//   return message;
+// }
+
+// // 2. Виклик
+// checkStorage(100, 50);
+// checkStorage(100, 130);
+// checkStorage(70, 0);
+// checkStorage(200, 20);
+// checkStorage(200, 250);
+// checkStorage(150, 0);
+
 //! =============================================
 // Task 21
 //! =============================================
+
+function isNumberInRange(start, end, number) {
+  const isInRange = ; // Change this line
+
+  return isInRange;
+}
 
 //! =============================================
 // Task 22
