@@ -322,20 +322,50 @@
 //                                    age += 1;
 //! =============================================
 
-let a = 5;
-let b = 10;
-let c = 15;
-let d = 20;
+// let a = 5;
+// let b = 10;
+// let c = 15;
+// let d = 20;
 
-// Change code below this line
-a = a + 2;
-b = b - 4;
-c = c * 3;
-d = d / 10;
+// // Change code below this line
+// a += 2; // a = a + 2;
+// b -= 4; // b = b - 4;
+// c *= 3; // c = c * 3;
+// d /= 10; // d = d / 10;
+
+// console.log("a=", a);
+// console.log("b=", b);
+// console.log("c=", c);
+// console.log("d=", d);
 
 //! =============================================
-// Task 18
+//                   if () {         `You ${name} are best`;
+//   Task 18         } else {
+//                   }
 //! =============================================
+
+// function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+//   let message;
+//   // Change code below this line
+//   let totalPrice = pricePerDroid * orderedQuantity;
+//   if (totalPrice > customerCredits) {
+//     message = "Insufficient funds!";
+//   } else {
+//     message = `You ordered ${orderedQuantity} droids, you have ${
+//       customerCredits - totalPrice
+//     } credits left`;
+//   }
+//   console.log(message); // - якщо потрібно було б виводити на консоль
+//   // Change code above this line
+//   return message;
+// }
+
+// // 2. Виклик
+// makeTransaction(3000, 5, 23000);
+// makeTransaction(1000, 3, 15000);
+// makeTransaction(5000, 10, 8000);
+// makeTransaction(2000, 8, 10000);
+// makeTransaction(500, 10, 5000);
 
 //! =============================================
 // Task 19
