@@ -431,10 +431,17 @@
 //! =============================================
 
 function isNumberInRange(start, end, number) {
-  const isInRange = number; // Change this line
+  const isInRange = number >= start && number <= end; // Change this line
 
+  console.log(isInRange);
   return isInRange;
 }
+
+// 2. Виклик
+isNumberInRange(10, 30, 17);
+isNumberInRange(10, 30, 5);
+isNumberInRange(20, 50, 24);
+isNumberInRange(20, 50, 76);
 
 //! =============================================
 // Task 22
@@ -499,6 +506,13 @@ function isNumberInRange(start, end, number) {
 //! =============================================
 // Task 2-21
 //! =============================================
+// function findLongestWord(string) {
+//   const words = string;
+//   for (let i = 0; i < words.length; i += i) {}
+//   return words;
+// }
+// console.log(findLongestWord("Google do a roll"));
+
 // function findLongestWord(string) {
 //   // Change code below this line
 //   const arr = string.split(" ");
