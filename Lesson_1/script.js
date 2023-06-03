@@ -25,8 +25,14 @@
 //! =============================================
 
 //! =============================================
-// Task 1
+//*        Оголошення змінної:      <ключове слово> <назва змінної> = <значення>
+//*        назва змінної записується в 'camelCase'
+//*              const age = 20;
+//*  Task 1      const userName = "Mango";
+//*              const socialProfileTag = "@gluck";
+//*              const totalWorkerSalary = 4052;
 //! =============================================
+// // Оголоси дві змінні, productName для назви товару, і pricePerItem для зберігання ціни за штуку.
 
 // const productName = 'Droid'
 // // console.log(productName);
@@ -36,8 +42,16 @@
 // // 2000
 
 //! =============================================
-// Task 2
+//*      let - змінна, якій у майбутньому можна буде присвоїти нове значення
+//*          Оголошення змінної age:
+//* Task 2     let age = 20;
+//*            ✅ Правильно, звертаємося після оголошення
+//*            age = 25;
+//*            console.log(age); // 25
 //! =============================================
+
+// Ім'я товару змінили на "Repair droid" і збільшили ціну на +1500.
+// Перевизнач значення змінних pricePerItem і productName після їх оголошення.
 
 // let productName = "Droid";
 // let pricePerItem = 2000;
@@ -47,10 +61,12 @@
 // pricePerItem = pricePerItem + 1500;
 
 //! =============================================
-// Task 3
+//*           Number - цілі числа і числа з плаваючою комою (крапкою).
+//* Task 3    String - рядки, послідовність від нуля або більше символів. Рядок починається і закінчується одинарною ' або подвійними лапками ".
+//*           Boolean - логічний тип даних, прапорці стану. Всього два значення: true і false.
+//*                     Наприклад, на питання, чи увімкнено світло в кімнаті, можна відповісти так(true) або ні(false).
 //! =============================================
 
-// // Change code below this line
 // // Числа
 // const topSpeed = 160;
 // let distance = 617.54;
@@ -659,7 +675,7 @@
 //!             break;     - НЕ ЗАБУВАЄМО!
 //* Task 28   case значення:
 //*             інструкції;
-//!             break;
+//!             break;     - в алгоритмі використовується оператор строгої рівності ===
 //*           default:     - Якщо жодного збігу значень не відбулося
 //*              інструкції;
 //*          }            - break після блоку default не потрібен
@@ -839,6 +855,37 @@
 //! =============================================
 //* Task 33
 //! =============================================
+
+// Ф-ція formatMessage(message, maxLength) приймає рядок (message) і форматує його,
+//   якщо довжина перевищує значення maxLength.
+
+// Доповни код ф-ції щоб, якщо довжина рядка (message):
+//      не перевищує maxLength, функція повертає його в початковому вигляді.
+//      більша за maxLength, то функція обрізає рядок до maxLength символів і додає в кінець три крапки "...",
+//      після чого повертає скорочену версію.
+
+function formatMessage(message, maxLength) {
+  let result;
+  // Change code below this line
+  const substring = message.slice(0, maxLength); // Change this line
+
+  //* if (message.length <= maxLength) {
+  //*   result = message;
+  //* } else {
+  //*   result = message.slice(0, length) + "...";
+  //* }
+
+  console.log(substring); // - якщо потрібно було б виводити на консоль
+  // Change code above this line
+  return result;
+}
+
+formatMessage("Curabitur ligula sapien", 16); // "Curabitur ligula..."
+formatMessage("Curabitur ligula sapien", 23); // "Curabitur ligula sapien"
+formatMessage("Vestibulum facilisis purus nec", 20); // "Vestibulum facilisis..."
+formatMessage("Vestibulum facilisis purus nec", 30); // "Vestibulum facilisis purus nec"
+formatMessage("Nunc sed turpis a felis in nunc fringilla", 15); // "Nunc sed turpis..."
+formatMessage("Nunc sed turpis a felis in nunc fringilla", 41); // "Nunc sed turpis a felis in nunc fringilla"
 
 //! =============================================
 //* Task 34
