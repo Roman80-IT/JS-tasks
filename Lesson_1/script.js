@@ -430,22 +430,36 @@
 // Task 21
 //! =============================================
 
-function isNumberInRange(start, end, number) {
-  const isInRange = number >= start && number <= end; // Change this line
+// function isNumberInRange(start, end, number) {
+//   const isInRange = number >= start && number <= end; // Change this line
 
-  console.log(isInRange);
-  return isInRange;
-}
+//   console.log(isInRange);
+//   return isInRange;
+// }
 
-// 2. Виклик
-isNumberInRange(10, 30, 17);
-isNumberInRange(10, 30, 5);
-isNumberInRange(20, 50, 24);
-isNumberInRange(20, 50, 76);
+// // 2. Виклик
+// isNumberInRange(10, 30, 17);
+// isNumberInRange(10, 30, 5);
+// isNumberInRange(20, 50, 24);
+// isNumberInRange(20, 50, 76);
 
 //! =============================================
+//                  логічне «АБО» запинається на істині і повертає те, на чому запнулося або останній операнд false.
 // Task 22
+//
 //! =============================================
+
+// function checkIfCanAccessContent(subType) {
+//   const canAccessContent = subType === "pro" || subType === "vip"; // Change this line
+
+//   console.log(canAccessContent); // - якщо потрібно було б виводити на консоль
+//   return canAccessContent;
+// }
+
+// checkIfCanAccessContent("pro");
+// checkIfCanAccessContent("starter");
+// checkIfCanAccessContent("vip");
+// checkIfCanAccessContent("free");
 
 //! =============================================
 // Task 23
