@@ -534,7 +534,7 @@
 // getDiscount(50000); //  0.1
 
 //! =============================================
-//*          Тернарний оператор - синтаксично коротша заміна інструкції 'if...else'
+//*          Тернарний оператор - коротша заміна інструкції 'if...else'
 //*            const age = 20;
 //* Task 25    const type = age >= 18 ? "adult" : "child";
 //*            console.log(type); // "adult"
@@ -575,27 +575,83 @@
 //     - Якщо значення password і ADMIN_PASSWORD збігаються, присвой змінній message рядок "Access is allowed".
 //     - В іншому випадку, присвой message рядок "Access denied, wrong password!".
 
-function checkPassword(password) {
-  const ADMIN_PASSWORD = "jqueryismyjam";
-  let message;
-  // Change code below this line
-  message =
-    password === ADMIN_PASSWORD
-      ? "Access is allowed"
-      : "Access denied, wrong password!";
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   let message;
+//   // Change code below this line
+//   message =
+//     password === ADMIN_PASSWORD
+//       ? "Access is allowed"
+//       : "Access denied, wrong password!";
 
-  console.log(message); // - якщо потрібно було б виводити на консоль
-  // Change code above this line
-  return message;
-}
+//   console.log(message); // - якщо потрібно було б виводити на консоль
+//   // Change code above this line
+//   return message;
+// }
 
-checkPassword("jqueryismyjam"); //  "Access is allowed"
-checkPassword("angul4r1sl1f3"); //  "Access denied, wrong password!"
-checkPassword("r3actsux"); //  "Access denied, wrong password!"
+// checkPassword("jqueryismyjam"); //  "Access is allowed"
+// checkPassword("angul4r1sl1f3"); //  "Access denied, wrong password!"
+// checkPassword("r3actsux"); //  "Access denied, wrong password!"
 
 //! =============================================
-// Task 27
+//*           switch - заміна інструкції 'if...else'
+//*           switch (значення) {
+//*           case значення:
+//*  Task 27  інструкції;
+//!           break;
+//*
+//*          case значення:
+//*          інструкції;
+//!          break;
+//*          }
 //! =============================================
+
+// if (type === "starter") {
+//   price = 0;
+// } else if (type === "professional") {
+//   price = 20;
+// } else if (type === "organization") {
+//   price = 50;
+// }
+
+// Ф-ція getSubscriptionPrice(type) отримує рядок з типом передплати користувача (type), перевіряє її на збіг
+//    з 3 - ма типами щомісячної передплати та повертає ціну, що зберігається у змінній price.
+// Якщо значення параметра type - це рядок:
+//    "starter" - ціна передплати 0 кредитів.
+//    "professional" - ціна передплати 20 кредитів.
+//    "organization" - ціна передплати 50 кредитів.
+
+// function getSubscriptionPrice(type) {
+//   let price;
+//   // Change code below this line
+
+//   switch (
+//     type // Change this line
+//   ) {
+//     case "starter": // Change this line
+//       price = 0; // Change this line
+//       break;
+
+//     case "professional": // Change this line
+//       price = 20; // Change this line
+//       break;
+
+//     case "organization": // Change this line
+//       price = 50; // Change this line
+//       break;
+//   }
+//   console.log(price); // - якщо потрібно було б виводити на консоль
+//   // Change code above this line
+//   return price;
+// }
+
+// // console.log(getSubscriptionPrice("professional")); // - альтернативне виведення на консоль
+// // console.log(getSubscriptionPrice("organization"));
+// // console.log(getSubscriptionPrice("starter"));
+
+// getSubscriptionPrice("professional"); //  20
+// getSubscriptionPrice("organization"); //  50
+// getSubscriptionPrice("starter"); //  0
 
 //! =============================================
 // Task 28
