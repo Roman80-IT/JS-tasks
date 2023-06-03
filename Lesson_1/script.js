@@ -465,8 +465,8 @@
 // checkIfCanAccessContent("free");
 
 //! =============================================
-//            Логічне «НЕ» Оператор '!' приводить операнд до буля,
-//            а потім - інверсію - замінює на протилежний true -> false або false -> true
+//!            Логічне «НЕ» Оператор '!' приводить операнд до буля,
+//!            а потім - інверсію - замінює на протилежний true -> false або false -> true
 //               console.log(!true); // false
 //               console.log(!false); // true
 //               console.log(!3); // !3 -> !true -> false
@@ -493,28 +493,105 @@
 // isNumberNotInRange(20, 50, 76);
 
 //! =============================================
-// Task 24
+//*                 if () {
+//*                   } else if () {
+//*   Task 24         } else if () {
+//*                   } else {
+//*                   }               «шукаю перше виконання умови, ігнорую все інше»
+//! =============================================
+// Якщо витрачено від 50000 (включно) або більше кредитів - знижка 10% (золотий партнер)
+// Якщо витрачено від 20000 (включно) до 50000 кредитів - знижка 5% (срібний партнер)
+// Якщо витрачено від 5000 (включно) до 20000 кредитів - знижка 2% (бронзовий партнер)
+// Якщо витрачено менше 5000 кредитів - знижка 0 (базовий партнер)
+
+// function getDiscount(totalSpent) {
+//   const BASE_DISCOUNT = 0;
+//   const BRONZE_DISCOUNT = 0.02;
+//   const SILVER_DISCOUNT = 0.05;
+//   const GOLD_DISCOUNT = 0.1;
+//   let discount;
+//   // Change code below this line
+//   if (totalSpent >= 50000) {
+//     discount = GOLD_DISCOUNT;
+//   } else if (totalSpent >= 20000) {
+//     discount = SILVER_DISCOUNT;
+//   } else if (totalSpent >= 5000) {
+//     discount = BRONZE_DISCOUNT;
+//   } else {
+//     discount = BASE_DISCOUNT;
+//   }
+//   console.log(discount); // - якщо потрібно було б виводити на консоль
+//   // Change code above this line
+//   return discount;
+// }
+
+// getDiscount(137000); // 0.1
+// getDiscount(46900); //  0.05
+// getDiscount(8250); //  0.02
+// getDiscount(1300); //  0
+// getDiscount(5000); //  0.02
+// getDiscount(20000); //  0.05
+// getDiscount(50000); //  0.1
+
+//! =============================================
+//*          Тернарний оператор - синтаксично коротша заміна інструкції 'if...else'
+//*            const age = 20;
+//* Task 25    const type = age >= 18 ? "adult" : "child";
+//*            console.log(type); // "adult"
+//*
 //! =============================================
 
-function getDiscount(totalSpent) {
-  const BASE_DISCOUNT = 0;
-  const BRONZE_DISCOUNT = 0.02;
-  const SILVER_DISCOUNT = 0.05;
-  const GOLD_DISCOUNT = 0.1;
-  let discount;
-  // Change code below this line
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
 
+//   //   if (ordered > available) {
+//   //     message = "Not enough goods in stock!";
+//   //   } else {
+//   //     message = "The order is accepted, our manager will contact you";
+//   //     }
+
+//   message =
+//     ordered > available
+//       ? "Not enough goods in stock!"
+//       : "The order is accepted, our manager will contact you";
+
+//   console.log(message); // - якщо потрібно було б виводити на консоль
+//   // Change code above this line
+//   return message;
+// }
+
+// checkStorage(100, 50); //  "The order is accepted, our manager will contact you"
+// checkStorage(100, 130); //  "Not enough goods in stock!"
+// checkStorage(200, 20); //  "The order is accepted, our manager will contact you"
+// checkStorage(200, 150); //  "The order is accepted, our manager will contact you"
+// checkStorage(150, 180); //  "Not enough goods in stock!"
+
+//! =============================================
+//* Task 26   Тернарний оператор
+//! =============================================
+// Ф-ція checkPassword(password) порівнює переданий їй пароль зі збереженим паролем адміністратора (константа ADMIN_PASSWORD) і повертає рядок з повідомленням про результат.
+// Використовуючи тернарний оператор, доповни функцію таким чином, що:
+//     - Якщо значення password і ADMIN_PASSWORD збігаються, присвой змінній message рядок "Access is allowed".
+//     - В іншому випадку, присвой message рядок "Access denied, wrong password!".
+
+function checkPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
+  // Change code below this line
+  message =
+    password === ADMIN_PASSWORD
+      ? "Access is allowed"
+      : "Access denied, wrong password!";
+
+  console.log(message); // - якщо потрібно було б виводити на консоль
   // Change code above this line
-  return discount;
+  return message;
 }
 
-//! =============================================
-// Task 25
-//! =============================================
-
-//! =============================================
-// Task 26
-//! =============================================
+checkPassword("jqueryismyjam"); //  "Access is allowed"
+checkPassword("angul4r1sl1f3"); //  "Access denied, wrong password!"
+checkPassword("r3actsux"); //  "Access denied, wrong password!"
 
 //! =============================================
 // Task 27
