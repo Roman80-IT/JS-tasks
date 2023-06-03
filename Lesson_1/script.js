@@ -1,3 +1,5 @@
+// $ node Lesson_1/script - запуск через термінал
+//
 // "JavaScript is awesome".length;
 
 // Змінні, оголошені як const, обов'язково повинні бути ініціалізовані
@@ -444,8 +446,8 @@
 // isNumberInRange(20, 50, 76);
 
 //! =============================================
-//                  логічне «АБО» запинається на істині і повертає те, на чому запнулося або останній операнд false.
-// Task 22
+//                  логічне «АБО» запинається на істині і повертає те,
+// Task 22          на чому запнулося або останній операнд false.
 //
 //! =============================================
 
@@ -456,18 +458,55 @@
 //   return canAccessContent;
 // }
 
+// // 2. Виклик
 // checkIfCanAccessContent("pro");
 // checkIfCanAccessContent("starter");
 // checkIfCanAccessContent("vip");
 // checkIfCanAccessContent("free");
 
 //! =============================================
-// Task 23
+//            Логічне «НЕ» Оператор '!' приводить операнд до буля,
+//            а потім - інверсію - замінює на протилежний true -> false або false -> true
+//               console.log(!true); // false
+//               console.log(!false); // true
+//               console.log(!3); // !3 -> !true -> false
+// Task 23       console.log(!"Mango"); // !'Mango' -> !true -> false
+//               console.log(!0); // !0 -> !false -> true
+//               console.log(!""); // !'' -> !false -> true
+//
+//               const isOnline = true;
+//               const isNotOnline = !isOnline; // !isOnline -> !true -> false
 //! =============================================
+
+// function isNumberNotInRange(start, end, number) {
+//   const isInRange = number >= start && number <= end;
+//   const isNotInRange = !isInRange; // Change this line
+
+//   console.log(isNotInRange); // - якщо потрібно було б виводити на консоль
+//   return isNotInRange;
+// }
+
+// // 2. Виклик
+// isNumberNotInRange(10, 30, 17);
+// isNumberNotInRange(10, 30, 5);
+// isNumberNotInRange(20, 50, 24);
+// isNumberNotInRange(20, 50, 76);
 
 //! =============================================
 // Task 24
 //! =============================================
+
+function getDiscount(totalSpent) {
+  const BASE_DISCOUNT = 0;
+  const BRONZE_DISCOUNT = 0.02;
+  const SILVER_DISCOUNT = 0.05;
+  const GOLD_DISCOUNT = 0.1;
+  let discount;
+  // Change code below this line
+
+  // Change code above this line
+  return discount;
+}
 
 //! =============================================
 // Task 25
