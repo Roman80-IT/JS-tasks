@@ -1,4 +1,4 @@
-// $ node Lesson_1/script - запуск через термінал
+// node Lesson_1/script - запуск через термінал
 //
 // "JavaScript is awesome".length;
 
@@ -591,28 +591,27 @@
 
 // checkPassword("jqueryismyjam"); //  "Access is allowed"
 // checkPassword("angul4r1sl1f3"); //  "Access denied, wrong password!"
-// checkPassword("r3actsux"); //  "Access denied, wrong password!"
+// checkPassword("r3actsux"); //       "Access denied, wrong password!"
 
 //! =============================================
 //*           switch - заміна інструкції 'if...else'
-//*           switch (значення) {
-//*           case значення:
+//*           switch (що порівнюють) {
+//*           case з чим порівнюють:
 //*  Task 27  інструкції;
-//!           break;
-//*
-//*          case значення:
+//!           break;          в алгоритмі використовується оператор строгої рівності ===
+//*          case з чим порівнюють:
 //*          інструкції;
-//!          break;
-//*          }
+//!          break;           Оператор break в кінці кожного блоку case необхідний, щоб перервати подальші перевірки
+//*          }                та одразу перейти до коду після switch, коли перевірка на рівність повернула true.
 //! =============================================
 
-// if (type === "starter") {
-//   price = 0;
-// } else if (type === "professional") {
-//   price = 20;
-// } else if (type === "organization") {
-//   price = 50;
-// }
+//* if (type === "starter") {
+//*   price = 0;
+//* } else if (type === "professional") {
+//*   price = 20;
+//* } else if (type === "organization") {
+//*   price = 50;
+//* }
 
 // Ф-ція getSubscriptionPrice(type) отримує рядок з типом передплати користувача (type), перевіряє її на збіг
 //    з 3 - ма типами щомісячної передплати та повертає ціну, що зберігається у змінній price.
@@ -651,42 +650,165 @@
 
 // getSubscriptionPrice("professional"); //  20
 // getSubscriptionPrice("organization"); //  50
-// getSubscriptionPrice("starter"); //  0
+// getSubscriptionPrice("starter"); //       0
 
 //! =============================================
-// Task 28
+//*          switch (значення) {
+//*           case значення:
+//*             інструкції;
+//!             break;     - НЕ ЗАБУВАЄМО!
+//* Task 28   case значення:
+//*             інструкції;
+//!             break;
+//*           default:     - Якщо жодного збігу значень не відбулося
+//*              інструкції;
+//*          }            - break після блоку default не потрібен
+//! =============================================
+
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   let message;
+//   // Change code below this line
+
+//   //   if (password === null) {
+//   //     message = "Canceled by user!";
+//   //   } else if (password === ADMIN_PASSWORD) {
+//   //     message = "Welcome!";
+//   //   } else {
+//   //     message = "Access denied, wrong password!";
+//   //   }
+
+//   switch (password) {
+//     case null:
+//       message = "Canceled by user!";
+//       console.log(message); // - якщо потрібно було б виводити на консоль
+//       break;
+//     case ADMIN_PASSWORD:
+//       message = "Welcome!";
+//       console.log(message); // - якщо потрібно було б виводити на консоль
+//       break;
+//     default:
+//       message = "Access denied, wrong password!";
+//       console.log(message); // - якщо потрібно було б виводити на консоль
+//   }
+//   // Change code above this line
+//   return message;
+// }
+
+// // console.log(checkPassword("mangohackzor")); // - ТУТ НЕ БУДЕ ПРАЦЮВАТИ (частково)
+// // console.log(checkPassword(null)); // - ТУТ НЕ БУДЕ ПРАЦЮВАТИ
+// // console.log(checkPassword("polyhax")); // - ТУТ НЕ БУДЕ ПРАЦЮВАТИ (частково)
+// // console.log(checkPassword("jqueryismyjam")); // - ТУТ НЕ БУДЕ ПРАЦЮВАТИ
+
+// checkPassword("mangohackzor"); //   "Access denied, wrong password!"
+// checkPassword(null); //             "Canceled by user!"
+// checkPassword("polyhax"); //        "Access denied, wrong password!"
+// checkPassword("jqueryismyjam"); //  "Welcome!"
+
+//! =============================================
+//* Task 29
+//! =============================================
+
+// перевіряти можливість доставки товару в країну користувача (параметр country) і
+// повертати повідомлення про результат, що зберігається у змінній message.
+//   China - 100 кредитів
+//   Chile - 250 кредитів
+//   Australia - 170 кредитів
+//   Jamaica - 120 кредитів
+// Формат рядка, що повертається "Shipping to <country> will cost <price> credits", де замість <country> і <price>,
+// необхідно підставити відповідні значення.
+
+// function getShippingCost(country) {
+//   let message = "";
+//   // Change code below this line
+//   let price;
+//   switch (country) {
+//     case "China":
+//       price = 100;
+//       message = `Shipping to ${country} will cost ${price} credits`;
+//       //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+//       break;
+//     case "Chile":
+//       price = 250;
+//       message = `Shipping to ${country} will cost ${price} credits`;
+//       //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+//       break;
+//     case "Australia":
+//       price = 170;
+//       message = `Shipping to ${country} will cost ${price} credits`;
+//       //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+//       break;
+//     case "Jamaica":
+//       price = 120;
+//       message = `Shipping to ${country} will cost ${price} credits`;
+//       //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+//       break;
+//     default:
+//       message = "Sorry, there is no delivery to your country";
+//     //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+//   }
+//   //   console.log(message); // - якщо потрібно було б виводити на консоль
+//   // Change code above this line
+//   return message;
+// }
+
+// console.log(getShippingCost("Australia"));
+// console.log(getShippingCost("Germany"));
+// console.log(getShippingCost("China"));
+// console.log(getShippingCost("Chile"));
+// console.log(getShippingCost("Jamaica"));
+// console.log(getShippingCost("Sweden"));
+
+// getShippingCost("Australia"); //  "Shipping to Australia will cost 170 credits"
+// getShippingCost("Germany"); //  "Sorry, there is no delivery to your country"
+// getShippingCost("China"); //  "Shipping to China will cost 100 credits"
+// getShippingCost("Chile"); //  "Shipping to Chile will cost 250 credits"
+// getShippingCost("Jamaica"); //  "Shipping to Jamaica will cost 120 credits"
+// getShippingCost("Sweden"); //  "Sorry, there is no delivery to your country"
+
+//! =============================================
+//*        length           const productName = "Repair droid";
+//*
+//*               Якщо у змінній зберігається рядок
+//* Task 30       console.log(productName.length); // 12
+//*
+//*             Якщо рядковий літерал
+//*             console.log("Repair droid".length); // 12
+//! =============================================
+
+function getNameLength(name) {
+  const message = `Name ${} is ${} characters long`; // Change this line
+
+  return message;
+}
+
+getNameLength("Poly") повертає "Name Poly is 4 characters long"
+Виклик функції getNameLength("Harambe") повертає "Name Harambe is 6 characters long"
+Виклик функції getNameLength("Billy") повертає "Name Billy is 5 characters long"
+Виклик функції getNameLength("Joe") повертає "Name Joe is 3 characters long"
+
+//! =============================================
+//* Task 31
 //! =============================================
 
 //! =============================================
-// Task 29
+//* Task 32
 //! =============================================
 
 //! =============================================
-// Task 30
+//* Task 33
 //! =============================================
 
 //! =============================================
-// Task 31
+//* Task 34
 //! =============================================
 
 //! =============================================
-// Task 32
+//* Task 35
 //! =============================================
 
 //! =============================================
-// Task 33
-//! =============================================
-
-//! =============================================
-// Task 34
-//! =============================================
-
-//! =============================================
-// Task 35
-//! =============================================
-
-//! =============================================
-// Task 36
+//* Task 36
 //! =============================================
 
 //! =============================================
