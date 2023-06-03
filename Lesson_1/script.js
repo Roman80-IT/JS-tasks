@@ -853,7 +853,7 @@
 // getSubstring("Hello world", 0); // ""
 
 //! =============================================
-//* Task 33
+//* Task 33         length,  result = message.slice(0, maxLength) + "..."
 //! =============================================
 
 // Ф-ція formatMessage(message, maxLength) приймає рядок (message) і форматує його,
@@ -864,31 +864,31 @@
 //      більша за maxLength, то функція обрізає рядок до maxLength символів і додає в кінець три крапки "...",
 //      після чого повертає скорочену версію.
 
-function formatMessage(message, maxLength) {
-  let result;
-  // Change code below this line
-  const substring = message.slice(0, maxLength); // Change this line
+// function formatMessage(message, maxLength) {
+//   let result;
 
-  //* if (message.length <= maxLength) {
-  //*   result = message;
-  //* } else {
-  //*   result = message.slice(0, length) + "...";
-  //* }
+//   // Change code below this line
 
-  console.log(substring); // - якщо потрібно було б виводити на консоль
-  // Change code above this line
-  return result;
-}
+//   if (message.length <= maxLength) {
+//     result = message;
+//   } else {
+//     result = message.slice(0, maxLength) + "...";
+//   }
 
-formatMessage("Curabitur ligula sapien", 16); // "Curabitur ligula..."
-formatMessage("Curabitur ligula sapien", 23); // "Curabitur ligula sapien"
-formatMessage("Vestibulum facilisis purus nec", 20); // "Vestibulum facilisis..."
-formatMessage("Vestibulum facilisis purus nec", 30); // "Vestibulum facilisis purus nec"
-formatMessage("Nunc sed turpis a felis in nunc fringilla", 15); // "Nunc sed turpis..."
-formatMessage("Nunc sed turpis a felis in nunc fringilla", 41); // "Nunc sed turpis a felis in nunc fringilla"
+//   console.log(result); // - якщо потрібно було б виводити на консоль
+//   // Change code above this line
+//   return result;
+// }
+
+// formatMessage("Curabitur ligula sapien", 16); // "Curabitur ligula..."
+// formatMessage("Curabitur ligula sapien", 23); // "Curabitur ligula sapien"
+// formatMessage("Vestibulum facilisis purus nec", 20); // "Vestibulum facilisis..."
+// formatMessage("Vestibulum facilisis purus nec", 30); // "Vestibulum facilisis purus nec"
+// formatMessage("Nunc sed turpis a felis in nunc fringilla", 15); // "Nunc sed turpis..."
+// formatMessage("Nunc sed turpis a felis in nunc fringilla", 41); // "Nunc sed turpis a felis in nunc fringilla"
 
 //! =============================================
-//* Task 34
+//* Task 34     toLowerCase() і toUpperCase()
 //! =============================================
 
 //! =============================================
