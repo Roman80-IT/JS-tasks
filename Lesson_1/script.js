@@ -74,7 +74,7 @@
 // console.log(totalPrice);
 
 //! =============================================
-// Task 5
+//* Task 5
 //! =============================================
 
 // const productName = "Droid";
@@ -84,7 +84,7 @@
 // const message = `You picked ${productName}, price per item is ${pricePerItem} credits`;
 
 //! =============================================
-// Task 6
+//* Task 6
 //! =============================================
 
 // const pricePerDroid = 800;
@@ -96,7 +96,7 @@
 // console.log(message);
 
 //! =============================================
-// Task 7
+//* Task 7
 //! =============================================
 
 // // 1. Оголошення функції sayHi
@@ -109,7 +109,7 @@
 // sayHi(); // Hello, this is my first function!
 
 //! =============================================
-// Task 8
+//* Task 8
 //! =============================================
 
 // // 1. Оголошення параметрів x, y, z
@@ -135,7 +135,7 @@
 // add(5, 10, 15);
 
 //! =============================================
-// Task 9
+//* Task 9
 //! =============================================
 
 // function multiply(x, y, z) {
@@ -170,7 +170,7 @@
 // console.log(add(5, 10, 15));
 
 //! =============================================
-// Task 10
+//* Task 10
 //! =============================================
 
 // 1. Оголошення параметрів name, price
@@ -210,7 +210,7 @@
 // console.log(calculateTotalPrice(12, 70));
 
 //! =============================================
-// Task 12
+//* Task 12
 //! =============================================
 
 // // 1. Оголошення параметрів
@@ -230,9 +230,9 @@
 // console.log(makeOrderMessage(10, 70, 200));
 
 //! =============================================
-// Task 13
-// > - більше, < - менше
-// >= - більше або дорівнює, <= - менше або дорівнює
+//* Task 13
+//*            > - більше, < - менше
+//*            >= - більше або дорівнює, <= - менше або дорівнює
 //! =============================================
 
 // function isAdult(age) {
@@ -251,7 +251,7 @@
 // без виводу в консоль, тому не відображається
 
 //! =============================================
-// Task 14   оператори === (строга рівність) і !== (строга нерівність)
+//* Task 14    оператори === (строга рівність) і !== (строга нерівність)
 //! =============================================
 
 // function isValidPassword(password) {
@@ -270,9 +270,9 @@
 // isValidPassword("jqueryismyjam");
 
 //! =============================================
-//                   if () {
-//   Task 15         } else {
-//                   }
+//*                   if () {
+//*   Task 15         } else {
+//*                   }
 //! =============================================
 
 // function checkAge(age) {
@@ -296,7 +296,7 @@
 // checkAge(38);
 
 //! =============================================
-// Task 16
+//* Task 16
 //! =============================================
 
 // function checkStorage(available, ordered) {
@@ -320,8 +320,8 @@
 // checkStorage(150, 180);
 
 //! =============================================
-// Task 17  Комбіновані оператори     age = age + 1;
-//                                    age += 1;
+//* Task 17  Комбіновані оператори     age = age + 1;
+//*                                    age += 1;
 //! =============================================
 
 // let a = 5;
@@ -341,9 +341,9 @@
 // console.log("d=", d);
 
 //! =============================================
-//                   if () {         `You ${name} are best`;
-//   Task 18         } else {
-//                   }
+//*                   if () {         `You ${name} are best`;
+//*   Task 18         } else {
+//*                   }
 //! =============================================
 
 // function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
@@ -370,11 +370,11 @@
 // makeTransaction(500, 10, 5000);
 
 //! =============================================
-//                   if () {         ===
-//                   } else if {     null - особливе значення, яке по суті означає ніщо
-//   Task 19         } else if {
-//                   } else {
-//                   }               «шукаю перше виконання умови, ігнорую все інше»
+//*                   if () {         ===
+//*                   } else if {     null - особливе значення, яке по суті означає ніщо
+//*   Task 19         } else if {
+//*                   } else {
+//*                   }               «шукаю перше виконання умови, ігнорую все інше»
 //! =============================================
 
 // function checkPassword(password) {
@@ -428,8 +428,8 @@
 // checkStorage(150, 0);
 
 //! =============================================
-//                    Логічні оператори
-// Task 21
+//*                    Логічні оператори
+//* Task 21
 //! =============================================
 
 // function isNumberInRange(start, end, number) {
@@ -776,24 +776,65 @@
 //*             console.log("Repair droid".length); // 12
 //! =============================================
 
-function getNameLength(name) {
-  const message = `Name ${} is ${} characters long`; // Change this line
+// function getNameLength(name) {
+//   const message = `Name ${name} is ${name.length} characters long`; // Change this line
 
-  return message;
-}
+//   console.log(message); // - якщо потрібно було б виводити на консоль
+//   return message;
+// }
 
-getNameLength("Poly") повертає "Name Poly is 4 characters long"
-Виклик функції getNameLength("Harambe") повертає "Name Harambe is 6 characters long"
-Виклик функції getNameLength("Billy") повертає "Name Billy is 5 characters long"
-Виклик функції getNameLength("Joe") повертає "Name Joe is 3 characters long"
-
-//! =============================================
-//* Task 31
-//! =============================================
+// getNameLength("Poly"); //    "Name Poly is 4 characters long"
+// getNameLength("Harambe"); // "Name Harambe is 6 characters long"
+// getNameLength("Billy"); //   "Name Billy is 5 characters long"
+// getNameLength("Joe"); //     "Name Joe is 3 characters long"
 
 //! =============================================
-//* Task 32
+//*             const productName = "Repair droid";
+//*             console.log(productName[0]); // "R"
+//* Task 31     console.log(productName[5]); // "r"
+//*             console.log(productName[11]); // "d"
+//*             console.log(productName[productName.length - 1]); // "d"
+//*                const lastElement = courseTopic[courseTopic.length - 1];
 //! =============================================
+
+// const courseTopic = "JavaScript essentials";
+// // Change code below this line
+
+// const courseTopicLength = courseTopic.length;
+// const firstElement = courseTopic[0];
+// const lastElement = courseTopic[courseTopic.length - 1];
+
+// // Change code above this line
+
+// console.log(courseTopicLength);
+// console.log(firstElement);
+// console.log(lastElement);
+
+// Значення courseTopicLength - 21
+// Значення firstElement -     "J"
+// Значення lastElement -      "s"
+
+//! =============================================
+//*       slice(startIndex, endIndex) використовується для створення копії частини
+//*          const productName = "Repair droid";
+//* Task 32    console.log(productName.slice(0, 4)); // "Repa"
+//*            console.log(productName.slice(3, 9)); // "air dr"
+//*            console.log(productName.slice(0, productName.length)); // "Repair droid"
+//*            console.log(productName.slice(7, productName.length)); // "droid"
+//! =============================================
+
+// function getSubstring(string, length) {
+//   const substring = string.slice(0, length); // Change this line
+
+//   console.log(substring); // - якщо потрібно було б виводити на консоль
+//   return substring;
+// }
+
+// getSubstring("Hello world", 3); // "Hel"
+// getSubstring("Hello world", 6); // "Hello"
+// getSubstring("Hello world", 8); // "Hello wo"
+// getSubstring("Hello world", 11); // "Hello world"
+// getSubstring("Hello world", 0); // ""
 
 //! =============================================
 //* Task 33
