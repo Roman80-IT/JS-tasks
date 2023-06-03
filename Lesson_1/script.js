@@ -889,7 +889,22 @@
 
 //! =============================================
 //* Task 34     toLowerCase() і toUpperCase()
+//*             name.toUpperCase();
 //! =============================================
+
+// Ф-ція normalizeInput(input) приймає рядок (параметр input) і повертає його в нижньому регістрі.
+//  Присвой змінній normalizedInput вираз створення рядка у нижньому регістрі з параметра input.
+
+// function normalizeInput(input) {
+//   const normalizedInput = input.toLowerCase(); // Change this line
+
+//   console.log(normalizedInput); // - якщо потрібно було б виводити на консоль
+//   return normalizedInput;
+// }
+
+// normalizeInput("Hello world"); //      "hello world"
+// normalizeInput("This ISN'T SpaM"); //  "this isn't spam"
+// normalizeInput("Big SALE"); //         "big sale"
 
 //! =============================================
 //* Task 35
