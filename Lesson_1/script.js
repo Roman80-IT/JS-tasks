@@ -362,21 +362,21 @@
 //*                   }
 //! =============================================
 
-// function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
-//   let message;
-//   // Change code below this line
-//   let totalPrice = pricePerDroid * orderedQuantity;
-//   if (totalPrice > customerCredits) {
-//     message = "Insufficient funds!";
-//   } else {
-//     message = `You ordered ${orderedQuantity} droids, you have ${
-//       customerCredits - totalPrice
-//     } credits left`;
-//   }
-//   console.log(message); // - якщо потрібно було б виводити на консоль
-//   // Change code above this line
-//   return message;
-// }
+function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+  let message;
+  // Change code below this line
+  let totalPrice = pricePerDroid * orderedQuantity;
+  if (totalPrice > customerCredits) {
+    message = "Insufficient funds!";
+  } else {
+    message = `You ordered ${orderedQuantity} droids, you have ${
+      customerCredits - totalPrice
+    } credits left`;
+  }
+  console.log(message); // - якщо потрібно було б виводити на консоль
+  // Change code above this line
+  return message;
+}
 
 // // 2. Виклик
 // makeTransaction(3000, 5, 23000);

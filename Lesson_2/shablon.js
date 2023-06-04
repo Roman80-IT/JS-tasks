@@ -1,66 +1,8 @@
 // node Lesson_2/script - запуск через термінал ≡
 
 //! =============================================
-//* Task 1k      патерн «раннє повернення» 'return'
-//*             У ф-ції може бути більше одного оператора 'return'
+//* Task 1
 //! =============================================
-
-// // ВАРІАНТ з раннім поверненням return
-// function withdraw(amount, balance) {
-//   if (amount === 0) {
-//     console.log("Для проведення операції введіть суму більшу за нуль");
-//     return;
-//   }
-//   if (amount > balance) {
-//     console.log("Недостатньо коштів на рахунку");
-//     return;
-//   }
-//   console.log("Операція зняття коштів проведена");
-// }
-
-// // ВАРІАНТ без раннього повернення
-// function withdraw(amount, balance) {
-//   let message = "";
-//   if (amount === 0) {
-//     message = "Для проведення операції введіть суму більшу за нуль";
-//   } else if (amount > balance) {
-//     message = "Недостатньо коштів на рахунку";
-//   } else {
-//     message = "Операція зняття коштів проведена";
-//   }
-//   console.log(message);
-//   //   return message;
-// }
-
-// withdraw(0, 300); // "Для проведення операції введіть суму більшу за нуль"
-// withdraw(500, 300); // "Недостатньо коштів на рахунку"
-// withdraw(100, 300); // "Операція зняття коштів проведена"
-
-//! =============================================
-//* Task 1       патерн «раннє повернення» 'return'
-//! =============================================
-
-// У виразі перевірки віку використаний оператор >=
-//     В тілі функції є тільки одна інструкція if
-// В тілі функції відсутні інструкції else або else if
-
-// function checkAge(age) {
-//   if (age >= 18) {
-//     // Change this line
-//     return "You are an adult";
-//   }
-//   return "You are a minor";
-// }
-
-// console.log(checkAge(20)); //  "You are an adult"
-// console.log(checkAge(8)); //  "You are an adult"
-// console.log(checkAge(14)); //  "You are an adult"
-// console.log(checkAge(38)); //  "You are an adult"
-
-// checkAge(20); //  "You are an adult"
-// checkAge(8); //  "You are a minor"
-// checkAge(14); //  "You are a minor"
-// checkAge(38); //  "You are an adult"
 
 //! =============================================
 //* Task 2
