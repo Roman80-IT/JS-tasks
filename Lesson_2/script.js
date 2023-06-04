@@ -170,6 +170,21 @@
 //* planets[2]; // "Venus"
 //! =============================================
 
+//* Оголоси три змінні і присвой кожній з них значення, використовуючи нотацію квадратних дужок.
+//*  Ім'я змінної	   Значення змінної
+//*   firstElement -     "apple"
+//*   secondElement -    "plum"
+//*   lastElement -      "orange"
+
+// const fruits = ["apple", "plum", "pear", "orange"];
+// const firstElement = fruits[0];
+// const secondElement = fruits[1];
+// const lastElement = fruits[fruits.length - 1];
+
+// console.log(firstElement); // - вивід на консоль
+// console.log(secondElement); // - вивід на консоль
+// console.log(lastElement); // - вивід на консоль
+
 //! =============================================
 //* Task 6
 //! =============================================
