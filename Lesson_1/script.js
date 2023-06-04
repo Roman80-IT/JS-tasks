@@ -938,7 +938,9 @@
 // checkForName("Vadim Nekrasov", "Dima"); //     false
 
 //! =============================================
-//* Task 36
+//*             Перевірка речення на вміст 2-х слів
+//* Task 36       lowerCaseMessage.includes("spam") ≡ message.toLowerCase().includes("spam")
+//*               const type = age >= 18 ? "adult" : "child";
 //! =============================================
 
 // Ф-ція checkForSpam(message) приймає рядок (message), перевіряє його на вміст заборонених слів spam і sale,
@@ -949,17 +951,21 @@
 function checkForSpam(message) {
   let result;
   // Change code below this line
-  let lowerCaseMessage = message.toLowerCase();
-  const result = message
-        .toLowerCase()
-    
-// Перевірка на два слова:
-  if (lowerCaseMessage.includes('spam') || lowerCaseMessage.includes('sale')) {
-    return true; // Знайдено заборонені слова
-  } else {
-    return false; // Заборонених слів немає
-  }
-    .includes("spam" || "sale"); // Change this line
+  let lowerCaseMessage = message.toLowerCase(); // не обов'язково створювати
+
+  // ВАРІАНТ  if...else
+  // if (lowerCaseMessage.includes("spam") || lowerCaseMessage.includes("sale")) {
+  //   result = true; // Знайдено заборонені слова
+  // } else {
+  //   result = false; // Заборонених слів немає
+  // }
+
+  // ВАРІАНТ  ?
+  result =
+    lowerCaseMessage.includes("spam") || lowerCaseMessage.includes("sale");
+  // ? true
+  // : false;
+
   console.log(result); // - якщо потрібно було б виводити на консоль
   // Change code above this line
   return result;
