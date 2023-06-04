@@ -949,7 +949,18 @@
 function checkForSpam(message) {
   let result;
   // Change code below this line
-
+  let lowerCaseMessage = message.toLowerCase();
+  const result = message
+        .toLowerCase()
+    
+// Перевірка на два слова:
+  if (lowerCaseMessage.includes('spam') || lowerCaseMessage.includes('sale')) {
+    return true; // Знайдено заборонені слова
+  } else {
+    return false; // Заборонених слів немає
+  }
+    .includes("spam" || "sale"); // Change this line
+  console.log(result); // - якщо потрібно було б виводити на консоль
   // Change code above this line
   return result;
 }
