@@ -907,12 +907,60 @@
 // normalizeInput("Big SALE"); //         "big sale"
 
 //! =============================================
-//* Task 35
+//*                Метод рядків includes(substring) перевіряє, чи входить підрядок 'substring' у рядок,
+//!                повертає буль - 'true', якщо входить, і 'false' - в іншому випадку.
+//*                Регістр символів в рядку і підрядку має значення, оскільки, наприклад літера "a" не дорівнює літері "А".
+//* Task 35                 const productName = "Repair droid";
+//*                         console.log(productName.includes("a")); // true
+//*                         console.log(productName.includes("A")); // false
+//*                         console.log(productName.includes("droid")); // true
+//*                         console.log(productName.includes("Droid")); // false
 //! =============================================
+
+// Ф-ція checkForName(fullname, name) приймає два параметри та повертає буль true або false - результат перевірки входження підрядка name у рядок fullname.
+//    fullname - повне ім'я, що складається з двох слів (імені та прізвища), розділених пробілом.
+//    name - ім'я для перевірки входження в повне ім'я.
+// Присвой змінній result вираз перевірки входження імені (name), у повне ім'я (fullname).
+//    Нехай функція чітко розрізняє регістр літер, тобто «Петя» і «петя» - для неї різні імена.
+
+// function checkForName(fullName, name) {
+//   const result = fullName.includes(name); // Change this line
+//   console.log(result); // - якщо потрібно було б виводити на консоль
+//   return result;
+// }
+
+// checkForName("Egor Kolbasov", "Egor"); //      true
+// checkForName("Egor Kolbasov", "egor"); //      false
+// checkForName("Egor Kolbasov", "egOr"); //      false
+// checkForName("Egor Kolbasov", "Zhenya"); //    false
+// checkForName("Vadim Nekrasov", "Vadim"); //    true
+// checkForName("Vadim Nekrasov", "vadim"); //    false
+// checkForName("Vadim Nekrasov", "Dima"); //     false
 
 //! =============================================
 //* Task 36
 //! =============================================
+
+// Ф-ція checkForSpam(message) приймає рядок (message), перевіряє його на вміст заборонених слів spam і sale,
+//     і повертає результат перевірки.Слова в рядку параметра message можуть бути у довільному регістрі, наприклад SPAM або sAlE.
+// Якщо знайшли заборонене слово (spam або sale) то функція повертає буль true.
+// Якщо в рядку відсутні заборонені слова, функція повертає буль false.
+
+function checkForSpam(message) {
+  let result;
+  // Change code below this line
+
+  // Change code above this line
+  return result;
+}
+
+checkForSpam("Latest technology news"); //   false
+checkForSpam("JavaScript weekly newsletter"); //   false
+checkForSpam("Get best sale offers now!"); //   true
+checkForSpam("Amazing SalE, only tonight!"); //   true
+checkForSpam("Trust me, this is not a spam message"); //   true
+checkForSpam("Get rid of sPaM emails. Our book in on sale!"); //   true
+checkForSpam("[SPAM] How to earn fast money?"); //   true
 
 //! =============================================
 // Task 2-21
