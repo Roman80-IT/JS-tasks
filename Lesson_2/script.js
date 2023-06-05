@@ -1,5 +1,10 @@
 // node Lesson_2/script - запуск через термінал ≡
 
+// Вивід на консоль в лапках:
+// console.log("Name =", '"' + name + '"');
+// console.log("Name =", '"'.concat(name, '"')); // Вивід на консоль в лапках, використовуючи метод concat(), який об'єднує рядки
+//                          використовуємо '"'.concat(name, '"') для об'єднання лапок ", значення name та ще одних лапок ".
+
 //! =============================================
 //* Task 1K      патерн «раннє повернення» 'return'
 //*             У ф-ції може бути більше одного оператора 'return'
@@ -253,13 +258,32 @@
 // console.log("number of items =", fruitsArrayLength); // Вивід на консоль
 
 //! =============================================
-//* Task 8    значення останнього елемента - довжина масиву завжди на одиницю більша за індекс останнього елемента.
-//  Використовуючи формулу довжина_масиву - 1, можна отримати значення останнього елемента масиву довільної довжини.
-
-// const planets = ["Earth", "Mars", "Venus"];
-// const lastElementIndex = planets.length - 1;
-// planets[lastElementIndex]; // "Venus"
+//*              значення останнього елемента - довжина масиву завжди на одиницю більша за індекс останнього елемента.
+//*              довжина_масиву - 1 - отримуємо значення останнього елемента масиву довільної довжини.
+//* Task 8                const planets = ["Earth", "Mars", "Venus"];
+//*                       const lastElementIndex = planets.length - 1;
+//*                       planets[lastElementIndex]; // "Venus"
 //! =============================================
+
+//* Оголоси дві змінні:
+//* Ім'я змінної	                    Очікуване значення
+//* lastElementIndex	  (індекс останнього елемента масиву fruits через довжина_масиву - 1
+//* lastElement	          (Значення останнього елемента масиву)
+//* Оголошена змінна lastElementIndex
+//* Значення змінної lastElementIndex - це число 3
+//* Оголошена змінна lastElement
+//* Значення змінної lastElement - це рядок "banana"
+
+const fruits = ["apple", "peach", "pear", "banana"];
+// Change code below this line
+
+const lastElementIndex = fruits.length - 1;
+const lastElement = fruits[lastElementIndex];
+
+console.log("index of items =", lastElementIndex); // Вивід на консоль
+console.log("lastElement =", '"' + lastElement + '"'); // Вивід на консоль в лапках
+console.log("lastElement =", '"'.concat(lastElement, '"')); // Вивід на консоль в лапках, використовуючи метод concat(), який об'єднує рядки
+//                                         використовуємо '"'.concat(lastElement, '"') для об'єднання лапок ", значення character та ще одних лапок ".
 
 //! =============================================
 //* Task 9
