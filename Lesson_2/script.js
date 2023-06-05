@@ -420,12 +420,59 @@
 // console.log(calculateEngravingPrice("Web-development is creative work", 20)); // 80
 
 //! =============================================
-//* Task 12
+//*    join(delimiter)              з'єднання елементів масиву в рядок.
+//*             У рядку елементи будуть розділені символом або групою символів, зазначених у delimiter.
+//*             Тобто це зворотна операція методу рядків split(delimiter).
+//*  Task 12         const words = ["JavaScript", "is", "amazing"];
+//*                  console.log(words.join("")); // 'JavaScriptisamazing'
+//*                  console.log(words.join(" ")); // 'JavaScript is amazing'
+//*                  console.log(words.join("*")); // 'JavaScript*is*amazing'
 //! =============================================
 
+//* Доповни код функції makeStringFromArray(array, delimiter), щоб вона повертала
+//* у змінній string результат з'єднання елементів масиву array з роздільником delimiter - рядок.
+//*       Оголошена функція makeStringFromArray(array, delimiter)
+//*       Виклик makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " ") повертає "Mango hurries to the train"
+//*       Виклик makeStringFromArray(["M", "a", "n", "g", "o"], "")) повертає "Mango"
+//*       Виклик makeStringFromArray(["top", "picks", "for", "you"], "_") повертає "top_picks_for_you"
+
+// function makeStringFromArray(array, delimiter) {
+//   let string;
+//   // Change code below this line
+//   string = array.join(delimiter);
+//   console.log(string); // Вивід на консоль
+//   // Change code above this line
+//   return string;
+// }
+
+// makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " "); //  "Mango hurries to the train"
+// makeStringFromArray(["M", "a", "n", "g", "o"], ""); //  "Mango"
+// makeStringFromArray(["top", "picks", "for", "you"], "_"); //  "top_picks_for_you"
+
 //! =============================================
-//* Task 13
+//*          ЗАДАЧА: ГЕНЕРАТОР SLUG
+//*              Slug - це завжди рядок у нижньому регістрі, слова якого розділені тире.
+//* Task 13      Термін slug - це людино-зрозумілий унікальний ідентифікатор, який використовується у веб-розробці
+//*                 для створення читабельних URL - адрес.
+//*               Наприклад, замість адресного рядку mysite.com/posts/1q8fh74tx,
+//*               можна зробити slug з назви статті - адреса буде: mysite.com/posts/arrays-for-begginers.
 //! =============================================
+
+//* Напиши ф-цію slugify(title), яка приймає заголовок статті title, і повертає slug, створений з цього рядка.
+//*       Значенням параметра title будуть рядки, слова яких розділені лише пробілами
+//*           Усі символи slug повинні бути у нижньому регістрі
+//*           Всі слова slug повинні бути розділені тире
+
+// function slugify(title) {
+//   // Change code below this line
+//   return title.toLowerCase().split(" ").join("-");
+//   // Change code above this line
+// }
+
+// console.log(slugify("Arrays for begginers")); //  "arrays-for-begginers"
+// console.log(slugify("English for developer")); //  "english-for-developer"
+// console.log(slugify("Ten secrets of JavaScript")); //  "ten-secrets-of-javascript"
+// console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); //  "how-to-become-a-junior-developer-in-two-weeks"
 
 //! =============================================
 //* Task 14
