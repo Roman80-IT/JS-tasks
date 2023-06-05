@@ -401,23 +401,23 @@
 // Виклик calculateEngravingPrice("Web-development is creative work", 40) повертає 160
 // Виклик calculateEngravingPrice("Web-development is creative work", 20) повертає 80
 
-function calculateEngravingPrice(message, pricePerWord) {
-  // Change code below this line
-  // -- ВАРІАНТ-1А --
-  //   let numberWord = message.split(" ").length; // двійна команда
-  // -- ВАРІАНТ-2 --
-  //     let wordEngraving = message.split(" ");
-  //     let numberWord = wordEngraving.length;
-  // -- ВАРІАНТ-2 --
-  let totalPrice = pricePerWord * message.split(" ").length; // двійна команда
-  //   console.log(totalPrice); // Вивід на консоль
-  return totalPrice;
-  // Change code above this line
-}
-console.log(calculateEngravingPrice("JavaScript is in my blood", 10)); // 50
-console.log(calculateEngravingPrice("JavaScript is in my blood", 20)); // 100
-console.log(calculateEngravingPrice("Web-development is creative work", 40)); // 160
-console.log(calculateEngravingPrice("Web-development is creative work", 20)); // 80
+// function calculateEngravingPrice(message, pricePerWord) {
+// Change code below this line
+// -- ВАРІАНТ-1 --
+//     let wordEngraving = message.split(" ");
+//     let numberWord = wordEngraving.length;
+// -- ВАРІАНТ-2 --
+//   let totalPrice = pricePerWord * message.split(" ").length; // двійна команда
+//   //   console.log(totalPrice); // Вивід на консоль
+//   return totalPrice;
+// -- ВАРІАНТ-3 --
+//   return message.split(" ").length * pricePerWord; // двійна команда з return-ом
+//   // Change code above this line
+// }
+// console.log(calculateEngravingPrice("JavaScript is in my blood", 10)); // 50
+// console.log(calculateEngravingPrice("JavaScript is in my blood", 20)); // 100
+// console.log(calculateEngravingPrice("Web-development is creative work", 40)); // 160
+// console.log(calculateEngravingPrice("Web-development is creative work", 20)); // 80
 
 //! =============================================
 //* Task 12
