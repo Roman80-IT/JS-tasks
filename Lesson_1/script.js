@@ -25,12 +25,13 @@
 //! =============================================
 
 //! =============================================
-//*        Оголошення змінної:      <ключове слово> <назва змінної> = <значення>
-//*        назва змінної записується в 'camelCase'
-//*              const age = 20;
-//*  Task 1      const userName = "Mango";
-//*              const socialProfileTag = "@gluck";
-//*              const totalWorkerSalary = 4052;
+//?       const
+//?              Оголошення змінної:      <ключове слово> <назва змінної> = <значення>
+//*              записується у форматi 'camelCase'
+//*  Task 1            const age = 20;
+//*                  const userName = "Mango";
+//*                  const socialProfileTag = "@gluck";
+//*                  const totalWorkerSalary = 4052;
 //! =============================================
 // // Оголоси дві змінні, productName для назви товару, і pricePerItem для зберігання ціни за штуку.
 
@@ -42,7 +43,8 @@
 // // 2000
 
 //! =============================================
-//*      let - змінна, якій у майбутньому можна буде присвоїти нове значення
+//?      let
+//*          - змінна, якій у майбутньому можна буде присвоїти нове значення
 //*          Оголошення змінної age:
 //* Task 2     let age = 20;
 //*            ✅ Правильно, звертаємося після оголошення
@@ -61,10 +63,11 @@
 // pricePerItem = pricePerItem + 1500;
 
 //! =============================================
+//?      Number      String      Boolean
 //*           Number - цілі числа і числа з плаваючою комою (крапкою).
 //* Task 3    String - рядки, послідовність від нуля або більше символів. Рядок починається і закінчується одинарною ' або подвійними лапками ".
 //*           Boolean - логічний тип даних, прапорці стану. Всього два значення: true і false.
-//*                     Наприклад, на питання, чи увімкнено світло в кімнаті, можна відповісти так(true) або ні(false).
+//*                     (на питання, чи увімкнено світло в кімнаті, можна відповісти так(true) або ні(false).)
 //! =============================================
 
 // // Числа
@@ -362,21 +365,21 @@
 //*                   }
 //! =============================================
 
-function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
-  let message;
-  // Change code below this line
-  let totalPrice = pricePerDroid * orderedQuantity;
-  if (totalPrice > customerCredits) {
-    message = "Insufficient funds!";
-  } else {
-    message = `You ordered ${orderedQuantity} droids, you have ${
-      customerCredits - totalPrice
-    } credits left`;
-  }
-  console.log(message); // - якщо потрібно було б виводити на консоль
-  // Change code above this line
-  return message;
-}
+// function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+//   let message;
+//   // Change code below this line
+//   let totalPrice = pricePerDroid * orderedQuantity;
+//   if (totalPrice > customerCredits) {
+//     message = "Insufficient funds!";
+//   } else {
+//     message = `You ordered ${orderedQuantity} droids, you have ${
+//       customerCredits - totalPrice
+//     } credits left`;
+//   }
+//   console.log(message); // - якщо потрібно було б виводити на консоль
+//   // Change code above this line
+//   return message;
+// }
 
 // // 2. Виклик
 // makeTransaction(3000, 5, 23000);
@@ -483,14 +486,14 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
 //! =============================================
 //!            Логічне «НЕ» Оператор '!' приводить операнд до буля,
 //!            а потім - інверсію - замінює на протилежний true -> false або false -> true
-//               console.log(!true); // false
-//               console.log(!false); // true
+//*               console.log(!true); // false
+//*               console.log(!false); // true
 //               console.log(!3); // !3 -> !true -> false
 // Task 23       console.log(!"Mango"); // !'Mango' -> !true -> false
 //               console.log(!0); // !0 -> !false -> true
 //               console.log(!""); // !'' -> !false -> true
 //
-//               const isOnline = true;
+//*               const isOnline = true;
 //               const isNotOnline = !isOnline; // !isOnline -> !true -> false
 //! =============================================
 
@@ -615,8 +618,8 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
 //*           case з чим порівнюють:
 //*  Task 27  інструкції;
 //!           break;          в алгоритмі використовується оператор строгої рівності ===
-//*          case з чим порівнюють:
-//*          інструкції;
+//*             case з чим порівнюють:
+//*             інструкції;
 //!          break;           Оператор break в кінці кожного блоку case необхідний, щоб перервати подальші перевірки
 //*          }                та одразу перейти до коду після switch, коли перевірка на рівність повернула true.
 //! =============================================
@@ -722,79 +725,67 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
 // checkPassword("jqueryismyjam"); //  "Welcome!"
 
 //! =============================================
-//* Task 29
+//? Task 29   ДОСТАВКА ТОВАРУ    switch
 //! =============================================
 
-// перевіряти можливість доставки товару в країну користувача (параметр country) і
-// повертати повідомлення про результат, що зберігається у змінній message.
-//   China - 100 кредитів
-//   Chile - 250 кредитів
-//   Australia - 170 кредитів
-//   Jamaica - 120 кредитів
-// Формат рядка, що повертається "Shipping to <country> will cost <price> credits", де замість <country> і <price>,
-// необхідно підставити відповідні значення.
+// перевірити можливість доставки товару в країну (country) і
+// повертати повідомлення про результат (message).
+//    China - 100 кредитів
+//    Chile - 250 кредитів
+//    Australia - 170 кредитів
+//    Jamaica - 120 кредитів
+// Формат рядка:  "Shipping to <country> will cost <price> credits", де замість <country> і <price>,
 
-// function getShippingCost(country) {
-//   let message = "";
-//   // Change code below this line
-//   let price;
-//   switch (country) {
-//     case "China":
-//       price = 100;
-//       message = `Shipping to ${country} will cost ${price} credits`;
-//       //   console.log(message); // - покроковий вивід на консоль (не потрібно)
-//       break;
-//     case "Chile":
-//       price = 250;
-//       message = `Shipping to ${country} will cost ${price} credits`;
-//       //   console.log(message); // - покроковий вивід на консоль (не потрібно)
-//       break;
-//     case "Australia":
-//       price = 170;
-//       message = `Shipping to ${country} will cost ${price} credits`;
-//       //   console.log(message); // - покроковий вивід на консоль (не потрібно)
-//       break;
-//     case "Jamaica":
-//       price = 120;
-//       message = `Shipping to ${country} will cost ${price} credits`;
-//       //   console.log(message); // - покроковий вивід на консоль (не потрібно)
-//       break;
-//     default:
-//       message = "Sorry, there is no delivery to your country";
-//     //   console.log(message); // - покроковий вивід на консоль (не потрібно)
-//   }
-//   //   console.log(message); // - якщо потрібно було б виводити на консоль
-//   // Change code above this line
-//   return message;
-// }
+function getShippingCost(country) {
+  let message = "";
+  let price;
+  switch (country) {
+    case "China":
+      price = 100;
+      message = `Shipping to ${country} will cost ${price} credits`;
+      //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+      break;
+    case "Chile":
+      price = 250;
+      message = `Shipping to ${country} will cost ${price} credits`;
+      //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+      break;
+    case "Australia":
+      price = 170;
+      message = `Shipping to ${country} will cost ${price} credits`;
+      //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+      break;
+    case "Jamaica":
+      price = 120;
+      message = `Shipping to ${country} will cost ${price} credits`;
+      //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+      break;
+    default:
+      message = "Sorry, there is no delivery to your country";
+    //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+  }
+  //   console.log(message); // - якщо потрібно було б виводити на консоль
+  return message;
+}
 
-// console.log(getShippingCost("Australia"));
-// console.log(getShippingCost("Germany"));
-// console.log(getShippingCost("China"));
-// console.log(getShippingCost("Chile"));
-// console.log(getShippingCost("Jamaica"));
-// console.log(getShippingCost("Sweden"));
-
-// getShippingCost("Australia"); //  "Shipping to Australia will cost 170 credits"
-// getShippingCost("Germany"); //  "Sorry, there is no delivery to your country"
-// getShippingCost("China"); //  "Shipping to China will cost 100 credits"
-// getShippingCost("Chile"); //  "Shipping to Chile will cost 250 credits"
-// getShippingCost("Jamaica"); //  "Shipping to Jamaica will cost 120 credits"
-// getShippingCost("Sweden"); //  "Sorry, there is no delivery to your country"
+console.log(getShippingCost("Australia")); //  "Shipping to Australia will cost 170 credits"
+console.log(getShippingCost("Germany")); //  "Sorry, there is no delivery to your country"
+console.log(getShippingCost("China")); //  "Shipping to China will cost 100 credits"
+console.log(getShippingCost("Chile")); //  "Shipping to Chile will cost 250 credits"
+console.log(getShippingCost("Jamaica")); //  "Shipping to Jamaica will cost 120 credits"
+console.log(getShippingCost("Sweden")); //  "Sorry, there is no delivery to your country"
 
 //! =============================================
-//*        length           const productName = "Repair droid";
-//*
-//*               Якщо у змінній зберігається рядок
-//* Task 30       console.log(productName.length); // 12
-//*
-//*             Якщо рядковий літерал
+//?        length      визначає довжину рядка
+//*             const name = "Repair droid";
+//*               рядок:
+//* Task 30       console.log(name.length); // 12
+//*             рядковий літерал:
 //*             console.log("Repair droid".length); // 12
 //! =============================================
 
 // function getNameLength(name) {
-//   const message = `Name ${name} is ${name.length} characters long`; // Change this line
-
+//   const message = `Name ${name} is ${name.length} characters long`;
 //   console.log(message); // - якщо потрібно було б виводити на консоль
 //   return message;
 // }
@@ -805,33 +796,29 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
 // getNameLength("Joe"); //     "Name Joe is 3 characters long"
 
 //! =============================================
-//*             const productName = "Repair droid";
-//*             console.log(productName[0]); // "R"
-//* Task 31     console.log(productName[5]); // "r"
-//*             console.log(productName[11]); // "d"
-//*             console.log(productName[productName.length - 1]); // "d"
-//*                const lastElement = courseTopic[courseTopic.length - 1];
+//?      РЯДОК        доступ - рядок[індекс]
+//*             const name = "Repair droid";
+//*               console.log(name[0]); // "R"
+//* Task 31       console.log(name[5]); // "r"
+//*               console.log(name[11]); // "d"
+//*               console.log(name[name.length - 1]); // "d"
+//?                  const lastElement = name[name.length - 1];   до останнього елемента
 //! =============================================
 
 // const courseTopic = "JavaScript essentials";
 // // Change code below this line
-
 // const courseTopicLength = courseTopic.length;
 // const firstElement = courseTopic[0];
 // const lastElement = courseTopic[courseTopic.length - 1];
-
 // // Change code above this line
 
-// console.log(courseTopicLength);
-// console.log(firstElement);
-// console.log(lastElement);
-
-// Значення courseTopicLength - 21
-// Значення firstElement -     "J"
-// Значення lastElement -      "s"
+// console.log(courseTopicLength);  // 21
+// console.log(firstElement);  // "J"
+// console.log(lastElement);   // "s"
 
 //! =============================================
-//*       slice(startIndex, endIndex) використовується для створення копії частини
+//?       slice(startIndex, endIndex)
+//?          використовується для створення копії частини або всього рядка
 //*          const productName = "Repair droid";
 //* Task 32    console.log(productName.slice(0, 4)); // "Repa"
 //*            console.log(productName.slice(3, 9)); // "air dr"
@@ -840,8 +827,7 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
 //! =============================================
 
 // function getSubstring(string, length) {
-//   const substring = string.slice(0, length); // Change this line
-
+//   const substring = string.slice(0, length);
 //   console.log(substring); // - якщо потрібно було б виводити на консоль
 //   return substring;
 // }
@@ -853,14 +839,13 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
 // getSubstring("Hello world", 0); // ""
 
 //! =============================================
-//* Task 33         length,  result = message.slice(0, maxLength) + "..."
+//? Task 33         length        slice(startIndex, endIndex)        message.slice(0, maxLength) + "..."
 //! =============================================
 
-// Ф-ція formatMessage(message, maxLength) приймає рядок (message) і форматує його,
-//   якщо довжина перевищує значення maxLength.
-
-// Доповни код ф-ції щоб, якщо довжина рядка (message):
-//      не перевищує maxLength, функція повертає його в початковому вигляді.
+// Ф-ція formatMessage(message, maxLength) приймає і форматує рядок (message),
+//   якщо довжина > maxLength.
+//    довжина рядка (message):
+//      не перевищує maxLength - ф-ція повертає його в початковому вигляді.
 //      більша за maxLength, то функція обрізає рядок до maxLength символів і додає в кінець три крапки "...",
 //      після чого повертає скорочену версію.
 
@@ -868,13 +853,11 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
 //   let result;
 
 //   // Change code below this line
-
 //   if (message.length <= maxLength) {
 //     result = message;
 //   } else {
 //     result = message.slice(0, maxLength) + "...";
 //   }
-
 //   console.log(result); // - якщо потрібно було б виводити на консоль
 //   // Change code above this line
 //   return result;
@@ -888,8 +871,8 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
 // formatMessage("Nunc sed turpis a felis in nunc fringilla", 41); // "Nunc sed turpis a felis in nunc fringilla"
 
 //! =============================================
-//* Task 34     toLowerCase() і toUpperCase()
-//*             name.toUpperCase();
+//? Task 34     toLowerCase() і toUpperCase()
+//*                 name.toUpperCase();
 //! =============================================
 
 // Ф-ція normalizeInput(input) приймає рядок (параметр input) і повертає його в нижньому регістрі.
@@ -907,6 +890,7 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
 // normalizeInput("Big SALE"); //         "big sale"
 
 //! =============================================
+//?         includes(substring);
 //*                Метод рядків includes(substring) перевіряє, чи входить підрядок 'substring' у рядок,
 //!                повертає буль - 'true', якщо входить, і 'false' - в іншому випадку.
 //*                Регістр символів в рядку і підрядку має значення, оскільки, наприклад літера "a" не дорівнює літері "А".
@@ -938,46 +922,47 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
 // checkForName("Vadim Nekrasov", "Dima"); //     false
 
 //! =============================================
-//*             Перевірка речення на вміст 2-х слів
-//* Task 36       lowerCaseMessage.includes("spam") ≡ message.toLowerCase().includes("spam")
+//?             Перевірка речення на вміст слів (2-х)
+//? Task 36         'if...else'     '? :'
+//*               lowerCaseMessage.includes("spam") ≡ message.toLowerCase().includes("spam")
 //*               const type = age >= 18 ? "adult" : "child";
 //! =============================================
 
-// Ф-ція checkForSpam(message) приймає рядок (message), перевіряє його на вміст заборонених слів spam і sale,
-//     і повертає результат перевірки.Слова в рядку параметра message можуть бути у довільному регістрі, наприклад SPAM або sAlE.
-// Якщо знайшли заборонене слово (spam або sale) то функція повертає буль true.
-// Якщо в рядку відсутні заборонені слова, функція повертає буль false.
+//   Ф-ція checkForSpam(message) приймає рядок (message), перевіряє його на вміст заборонених слів spam і sale,
+//     і повертає результат перевірки. Слова в рядку параметра message можуть бути у довільному регістрі (SPAM або sAlE).
+//   Якщо знайшли заборонене слово (spam або sale) то ф-ція повертає буль true.
+//   Якщо в рядку відсутні заборонені слова - ф-ція повертає буль false.
 
-function checkForSpam(message) {
-  let result;
-  // Change code below this line
-  let lowerCaseMessage = message.toLowerCase(); // не обов'язково створювати
+// function checkForSpam(message) {
+//   let result;
+//   // Change code below this line
+//   let lowerCaseMessage = message.toLowerCase(); // не обов'язково створювати
 
-  // ВАРІАНТ  if...else
-  // if (lowerCaseMessage.includes("spam") || lowerCaseMessage.includes("sale")) {
-  //   result = true; // Знайдено заборонені слова
-  // } else {
-  //   result = false; // Заборонених слів немає
-  // }
+// --- ВАРІАНТ  if...else ---
+// if (lowerCaseMessage.includes("spam") || lowerCaseMessage.includes("sale")) {
+//   result = true; // Знайдено заборонені слова
+// } else {
+//   result = false; // Заборонених слів немає
+// }
 
-  // ВАРІАНТ  ?
-  result =
-    lowerCaseMessage.includes("spam") || lowerCaseMessage.includes("sale");
-  // ? true
-  // : false;
+// --- ВАРІАНТ  ? ---
+//   result =
+//     lowerCaseMessage.includes("spam") || lowerCaseMessage.includes("sale");
+// ? true
+// : false;
 
-  console.log(result); // - якщо потрібно було б виводити на консоль
-  // Change code above this line
-  return result;
-}
+//   console.log(result); // - якщо потрібно було б виводити на консоль
+//   // Change code above this line
+//   return result;
+// }
 
-checkForSpam("Latest technology news"); //   false
-checkForSpam("JavaScript weekly newsletter"); //   false
-checkForSpam("Get best sale offers now!"); //   true
-checkForSpam("Amazing SalE, only tonight!"); //   true
-checkForSpam("Trust me, this is not a spam message"); //   true
-checkForSpam("Get rid of sPaM emails. Our book in on sale!"); //   true
-checkForSpam("[SPAM] How to earn fast money?"); //   true
+// checkForSpam("Latest technology news"); //   false
+// checkForSpam("JavaScript weekly newsletter"); //   false
+// checkForSpam("Get best sale offers now!"); //   true
+// checkForSpam("Amazing SalE, only tonight!"); //   true
+// checkForSpam("Trust me, this is not a spam message"); //   true
+// checkForSpam("Get rid of sPaM emails. Our book in on sale!"); //   true
+// checkForSpam("[SPAM] How to earn fast money?"); //   true
 
 //! =============================================
 // Task 2-21
