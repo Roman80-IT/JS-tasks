@@ -487,6 +487,7 @@
 //*                   console.log(planets.slice(1, 3)); // ['Mars', 'Venus']
 //*                   console.log(planets.slice(-2)); // ['Jupiter', 'Saturn']
 //*                   console.log(planets.slice()); // ['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn']
+//                    const nonExtremeEls = fruits.slice(1, fruits.length - 1);
 //! =============================================
 
 //* Доповни код таким чином, щоб змінні містили часткові копії вихідного масиву fruits.
@@ -508,12 +509,51 @@
 // console.log(lastThreeEls); // lastThreeEls - ["pear", "orange", "banana"]
 
 //! =============================================
-//* Task 15
+//?        concat
+//*              Метод concat використовується для об'єднання двох або більше масивів. Він не змінює масив на якому викликається,
+//*              а повертає новий. Порядок аргументів методу впливає на порядок елементів нового масиву.
+//*                  const firstArray = ["Mercury", "Venus", "Earth"];
+//* Task 15          const secondArray = ["Mars", "Jupiter"];
+//*                  const thirdArray = ["Saturn", "Uranus", "Neptune"];
+//*                  const allPlanets = firstArray.concat(secondArray, thirdArray);
+//*                  console.log(firstArray); // ['Mercury', 'Venus', 'Earth'];
+//*                  console.log(allPlanets); // ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
 //! =============================================
 
+//* Доповни код таким чином, щоб у змінній allClients утворився масив усіх елементів масивів oldClients і newClients.
+//* Змінній allClients присвоєний масив після застосування методу concat з правильними аргументами
+
+// const oldClients = ["Mango", "Ajax", "Poly", "Kiwi"];
+// const newClients = ["Peach", "Houston"];
+
+// const allClients = oldClients.concat(newClients); // Change this line
+
+// console.log(oldClients); //  ["Mango", "Ajax", "Poly", "Kiwi"]
+// console.log(newClients); //  ["Peach", "Houston"]
+// console.log(allClients); //  ["Mango", "Ajax", "Poly", "Kiwi", "Peach", "Houston"]
+
 //! =============================================
-//* Task 16
+//* Task 16     КОМПОЗИЦІЯ МАСИВІВ
 //! =============================================
+
+// ф-ціz makeArray(firstArray, secondArray, maxLength) для створення нового масиву з двох вихідних firstArray і secondArray.
+//  Параметр maxLength містить максимально допустиму довжину нового масиву.
+
+// Якщо к-сть елементів нового масиву більша за maxLength, ф-ція повинна повернути копію масиву довжиною maxLength елементів.
+//  В іншому випадку ф-ція повинна повернути новий масив повністю.
+
+function makeArray(firstArray, secondArray, maxLength) {
+  // Change code below this line
+  const allClients = oldClients.concat(newClients);
+  // Change code above this line
+}
+
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); //  ["Mango", "Poly", "Ajax"]
+console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); //  ["Mango", "Poly", "Houston", "Ajax"]
+console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); //  ["Mango", "Ajax", "Chelsea"]
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); //  ["Earth", "Jupiter"]
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); //  ["Earth", "Jupiter", "Neptune", "Uranus"]
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); //  []
 
 //! =============================================
 //* Task 17
