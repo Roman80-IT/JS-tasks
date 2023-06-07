@@ -1,4 +1,4 @@
-// node Lesson_2/script - запуск через термінал ≡
+//*    node Lesson_2/script     - запуск через термінал ≡
 
 //? Вивід на консоль в лапках:
 // console.log("Name =", '"' + name + '"');
@@ -6,6 +6,25 @@
 //                          використовуємо '"'.concat(name, '"') для об'єднання лапок ", значення name та ще одних лапок ".
 
 //? array[array.length - 1]; останній елемент масиву
+
+//? Number();
+// Якщо впевнені, що всі елементи масиву мають числовий тип даних або можуть бути перетворені на числа в задачі, тоді не обов'язково використовувати Number().
+// В цьому випадку можна просто додавати значення елементів масиву без додаткового перетворення.
+
+//! =============================================
+
+//? Оператор typeof
+//* Використовується для отримання типу значення змінної. Повертає на місце свого виклику тип значення змінної, вказаного після нього - рядок, в якому вказано тип.
+//* let username;
+// console.log(typeof username); // "undefined"
+//* let inputValue = null;
+// console.log(typeof inputValue); // "object"
+//* const quantity = 17;
+// console.log(typeof quantity); // "number"
+//* const message = "JavaScript is awesome!";
+// console.log(typeof message); // "string"
+//* const isSidebarOpen = false;
+// console.log(typeof isSidebarOpen); // "boolean"
 
 //! =============================================
 //?    split()           розбиває рядок на масив:    myString.split(delimiter)
@@ -747,10 +766,10 @@
 // console.log(filterArray([12, 24, 8, 41, 76], 20)); //  [24, 41, 76]
 
 //! =============================================
-//? Task 24  includes(value)
-//*             перевіряє, чи присутній в масиві елемент зі значенням value, і повертає true або false
-//*             Сфера застосування - коли необхідно перевірити, чи присутній елемент в масиві,
-//*                 і не важлива його позиція(індекс).
+//?       includes(value)
+//*  Task 24        перевіряє, чи присутній в масиві елемент зі значенням value, і повертає true або false
+//*                   сфера застосування - коли необхідно перевірити, чи присутній елемент в масиві,
+//*                   і не важлива його позиція(індекс).
 //! =============================================
 
 //* Ф-ція checkFruit(fruit) приймає рядок з назвою фрукта (fruit), і перевіряє, чи присутній такий фрукт в масиві fruits.
@@ -771,12 +790,136 @@
 // console.log(checkFruit("apple")); //  true
 
 //! =============================================
-//* Task 25
+//?        СПІЛЬНІ ЕЛЕМЕНТИ
+//*               елементи, які присутні у всіх масивах
+//* Task 25            Наприклад, у двох масивах[1, 3, 5] і [0, 8, 5, 3] спільними будуть числа 3 і 5.
+//*                    А числа 0, 1 і 8 присутні тільки в одному з масивів.
+//?        for       includes         push
 //! =============================================
+//!      if (array1[i] === array2[i]) {              - порівнювати елементи з однаковим індексом некоректно, особливо коли масиви мають різну довжину.
+//! =============================================
+//* Напиши функцію getCommonElements(array1, array2), яка отримує два масиви довільної довжини в параметри array1 і array2, і повертає новий масив, що складається з тих елементів, які присутні в обох вихідних масивах.
+//* В циклі for використовувалися методи includes і push
+
+// function getCommonElements(array1, array2) {
+//   const commonElements = [];
+//   for (let i = 0; i < array1.length; i++) {
+//     if (array2.includes(array1[i])) {
+//       commonElements.push(array1[i]);
+//     }
+//   }
+//   return commonElements;
+// }
+
+// ----- Просунутий Вірний варіант циклу -----
+// function getCommonElements(array1, array2) {
+//   const commonElements = [];
+//   for (let i = 0; i < array1.length; i++) {
+//     const currentElement = array1[i];
+//     let found = false;
+//     for (let j = 0; j < array2.length; j++) {
+//       if (currentElement === array2[j]) {
+//         found = true;
+//         break; // важливо зупинити цикл при знаходженні true
+//       }
+//     }
+//     if (found) {
+//       commonElements.push(currentElement);
+//     }
+//   }
+//   return commonElements;
+// }
+
+// ----- Вірний варіант циклу -----
+// function getCommonElements(array1, array2) {
+//   const commonElements = [];
+//   for (let i = 0; i < array1.length; i++) {
+//     const currentElement = array1[i];
+//     for (let j = 0; j < array2.length; j++) {
+//       if (currentElement === array2[j]) {
+//         commonElements.push(currentElement);
+//       }
+//     }
+//   }
+//   return commonElements;
+// }
+
+// ----- Невірний варіант циклу -----
+// function getCommonElements(array1, array2) {
+//   const numbers = [];
+//   for (let i = 0; i < array1.length; i++) {
+//     if (array1[i] === array2[i]) {
+//       //!  порівнювати елементи з однаковим індексом некоректно, особливо коли масиви мають різну довжину.
+//       numbers.push(array1[i]);
+//     }
+//   }
+//   return numbers;
+// }
+
+// ----- Віталій (вірний варіант циклу) -----
+
+// function getCommonElements(array1, array2) {
+//   const result = [];
+
+//   for (let i = 0; i < array1.length; i++) {
+//     for (let j = 0; j < array2.length; j++) {
+//       if (array1[i] === array2[j]) {
+//         result.push(array2[j]);
+//       }
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(getCommonElements([1, 2, 3], [2, 4])); //              [2]
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); //       [1, 2]
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); //    [12, 27, 3]
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); //    [10, 30, 40]
+// console.log(getCommonElements([1, 2, 3], [10, 20, 30])); //          []
 
 //! =============================================
-//* Task 26
+//?            for...of
+//*            цикл, який перебирає ітерабельні об'єкти, такі як масиви та рядки.
+//*               буде виконуватися для кожного елемента - це заміна циклу for, якщо не потрібен доступ до лічильника ітерації.
+//?               for (const variable of iterable) {      variable - змінна, яка буде зберігати значення елемента на кожній ітерації
+//?                 тіло цикла                           iterable - колекція, яка містить ітерабельні елементи, наприклад масив
+//? Task 26       }
+//*             const planets = ["Earth", "Mars", "Venus"];
+//*             for (const planet of planets) {
+//*               console.log(typeof planet);
+//*               console.log(planet);    }
 //! =============================================
+
+//* Виконай рефакторинг коду функції calculateTotalPrice(order), замінивши цикл for на for...of.
+
+//* function calculateTotalPrice(order) {
+//*   let total = 0;
+//*   for (let i = 0; i < order.length; i += 1) {
+//*     total += order[i];
+//*   }
+//*   return total;
+//* }
+
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   for (const item of order) {
+//     total += Number(item); // Number() не обовязково
+//   }
+//   return total;
+// }
+
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   for (const item of order) {
+//     total += item;
+//   }
+//   return total;
+// }
+
+// console.log(calculateTotalPrice([12, 85, 37, 4])); //  138
+// console.log(calculateTotalPrice([164, 48, 291])); //  503
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176])); //  1116
+// console.log(calculateTotalPrice([])); //  0
 
 //! =============================================
 //* Task 27
