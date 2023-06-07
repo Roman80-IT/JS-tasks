@@ -922,8 +922,39 @@
 // console.log(calculateTotalPrice([])); //  0
 
 //! =============================================
-//* Task 27
+//* Task 27       ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ 2.0   цикл for..of
 //! =============================================
+
+// Виконай рефакторинг функції filterArray(numbers, value), замінивши цикл for на for...of.
+
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     const number = numbers[i];
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   }
+//   return filteredNumbers;
+// }
+
+// function filterArray(numbers, value) {
+//   // Change code below this line
+//   const filteredNumbers = [];
+//   for (const item of numbers) {
+//     if (item > value) {
+//       filteredNumbers.push(item);
+//     }
+//   }
+//   return filteredNumbers;
+//   // Change code above this line
+// }
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); //  [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); //  [5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); //  []
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); //  [41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20)); //  [24, 41, 76]
 
 //! =============================================
 //* Task 28
