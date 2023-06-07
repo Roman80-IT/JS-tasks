@@ -669,7 +669,7 @@
 //?    split()           розбиває рядок на масив:    myString.split(delimiter)
 //?    /[+-]+/           Регулярний вираз - шаблон роздільників
 //?    цикл for () {}
-//?    if () {}
+//?    if () {}        .length
 //! =============================================
 
 //* ф-ція findLongestWord(string) приймає довільний рядок, що складається тільки зі слів,
@@ -723,12 +723,52 @@
 // console.log(createArrayOfNumbers(29, 34)); //  [29, 30, 31, 32, 33, 34]
 
 //! =============================================
-//? Task 23    ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ
+//? Task 23        ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ
 //! =============================================
 
+//* ф-ція filterArray(numbers, value) приймає масив чисел (numbers) і повертає новий масив,
+//*  в якому будуть тільки ті елементи масиву numbers, які > value(число).
+//* В циклі for використовувався метод push
+
+// function filterArray(numbers, value) {
+//   const valueNumbers = [];
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > value) {
+//       valueNumbers.push(numbers[i]);
+//     }
+//   }
+//   return valueNumbers;
+// }
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); //  [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); //  [5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); //  []
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); //  [41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20)); //  [24, 41, 76]
+
 //! =============================================
-//* Task 24
+//? Task 24  includes(value)
+//*             перевіряє, чи присутній в масиві елемент зі значенням value, і повертає true або false
+//*             Сфера застосування - коли необхідно перевірити, чи присутній елемент в масиві,
+//*                 і не важлива його позиція(індекс).
 //! =============================================
+
+//* Ф-ція checkFruit(fruit) приймає рядок з назвою фрукта (fruit), і перевіряє, чи присутній такий фрукт в масиві fruits.
+//*    фрукт присутній в масиві, то функція повертає true;
+//*    фрукт відсутній в масиві, то функція повертає false.
+//* використовувався метод includes
+
+// function checkFruit(fruit) {
+//   const fruits = ["apple", "plum", "pear", "orange"];
+
+//   return fruits.includes(fruit); // Change this line
+// }
+
+// console.log(checkFruit("plum")); //  true
+// console.log(checkFruit("mandarin")); // false
+// console.log(checkFruit("pear")); //  true
+// console.log(checkFruit("Pear")); //  false
+// console.log(checkFruit("apple")); //  true
 
 //! =============================================
 //* Task 25
