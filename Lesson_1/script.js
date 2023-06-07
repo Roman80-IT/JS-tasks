@@ -315,23 +315,26 @@
 // checkAge(38);
 
 //! =============================================
-//* Task 16
+//* Task 16    СКЛАД ТОВАРІВ
 //! =============================================
+
+//* Ф-ція checkStorage(available, ordered) перевіряє оформлення замовлення і повертає результат:
+//*    available - загальна кількість товарів на складі
+//*    ordered - одиниць товару в замовленні
 
 // function checkStorage(available, ordered) {
 //   let message;
-//   // Change code below this line
+
 //   if (ordered > available) {
 //     message = "Not enough goods in stock!";
 //   } else {
 //     message = "Order is processed, our manager will contact you.";
 //   }
-//   console.log(message); // - якщо потрібно було б виводити на консоль
-//   // Change code above this line
+
+//   console.log(message); // - вивід на консоль
 //   return message;
 // }
 
-// // 2. Виклик
 // checkStorage(100, 50);
 // checkStorage(100, 130);
 // checkStorage(200, 20);
