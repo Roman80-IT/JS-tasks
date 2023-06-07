@@ -420,12 +420,12 @@
 // checkPassword("jqueryismyjam");
 
 //! =============================================
-// Task 20
+//? Task 20       СКЛАД ТОВАРІВ 2.0
+//?           if...else
 //! =============================================
 
 // function checkStorage(available, ordered) {
 //   let message;
-//   // Change code below this line
 //   if (ordered === 0) {
 //     message = "There are no products in the order!";
 //   } else if (ordered > available) {
@@ -434,11 +434,9 @@
 //     message = "The order is accepted, our manager will contact you";
 //   }
 //   console.log(message); // - якщо потрібно було б виводити на консоль
-//   // Change code above this line
 //   return message;
 // }
 
-// // 2. Виклик
 // checkStorage(100, 50);
 // checkStorage(100, 130);
 // checkStorage(70, 0);
@@ -447,22 +445,27 @@
 // checkStorage(150, 0);
 
 //! =============================================
-//*                    Логічні оператори
-//* Task 21
+//?                Логічні оператори   &&
+//? Task 21
+//*             Оператор && приводить всі операнди до буля і повертає значення одного з них.
+//*             Лівий операнд, якщо false, і правий - в ін. випадках.
 //! =============================================
 
-// function isNumberInRange(start, end, number) {
-//   const isInRange = number >= start && number <= end; // Change this line
+//* Ф-ція isNumberInRange(start, end, number) перевіряє, чи входить число у проміжок:
+//*        number - число, яке перевіряється
+//*        start - початок числового проміжку
+//*        end - кінець числового проміжку
 
+// function isNumberInRange(start, end, number) {
+//   const isInRange = number >= start && number <= end;
 //   console.log(isInRange);
 //   return isInRange;
 // }
 
-// // 2. Виклик
-// isNumberInRange(10, 30, 17);
-// isNumberInRange(10, 30, 5);
-// isNumberInRange(20, 50, 24);
-// isNumberInRange(20, 50, 76);
+// isNumberInRange(10, 30, 17); //  true
+// isNumberInRange(10, 30, 5);  //  false
+// isNumberInRange(20, 50, 24); //  true
+// isNumberInRange(20, 50, 76); //  false
 
 //! =============================================
 //                  логічне «АБО» запинається на істині і повертає те,
@@ -477,7 +480,6 @@
 //   return canAccessContent;
 // }
 
-// // 2. Виклик
 // checkIfCanAccessContent("pro");
 // checkIfCanAccessContent("starter");
 // checkIfCanAccessContent("vip");
@@ -553,11 +555,12 @@
 // getDiscount(50000); //  0.1
 
 //! =============================================
-//*          Тернарний оператор - коротша заміна інструкції 'if...else'
-//*            const age = 20;
-//* Task 25    const type = age >= 18 ? "adult" : "child";
-//*            console.log(type); // "adult"
-//*
+//?          Тернарний оператор   -   <умова> ? <істина> : <хибна>
+//*        коротша заміна інструкції 'if...else'   -   <умова> ? <вираз, якщо умова істинна> : <вираз, якщо хибна>
+//*               const age = 20;
+//* Task 25       const type = age >= 18 ? "adult" : "child";
+//*               console.log(type); // "adult"
+//?
 //! =============================================
 
 // function checkStorage(available, ordered) {
@@ -587,24 +590,24 @@
 // checkStorage(150, 180); //  "Not enough goods in stock!"
 
 //! =============================================
-//? Task 26   Тернарний оператор
+//?           Тернарний оператор     <умова> ? <істина> : <хибна>
+//?  Task 26          ПЕРЕВІРКА ПАРОЛЯ
+//?
 //! =============================================
-// Ф-ція checkPassword(password) порівнює переданий їй пароль зі збереженим паролем адміністратора (константа ADMIN_PASSWORD) і повертає рядок з повідомленням про результат.
-// Використовуючи тернарний оператор, доповни функцію таким чином, що:
-//     - Якщо значення password і ADMIN_PASSWORD збігаються, присвой змінній message рядок "Access is allowed".
-//     - В іншому випадку, присвой message рядок "Access denied, wrong password!".
+//* Ф-ція checkPassword(password) порівнює пароль з адміністраторським (ADMIN_PASSWORD) і повертає результат.
+//* Використовуючи тернарний оператор:
+//*     - Якщо значення password і ADMIN_PASSWORD збігаються, присвой message рядок "Access is allowed".
+//*     - інакше присвой message - "Access denied, wrong password!".
 
 // function checkPassword(password) {
 //   const ADMIN_PASSWORD = "jqueryismyjam";
 //   let message;
-//   // Change code below this line
 //   message =
 //     password === ADMIN_PASSWORD
 //       ? "Access is allowed"
 //       : "Access denied, wrong password!";
 
 //   console.log(message); // - якщо потрібно було б виводити на консоль
-//   // Change code above this line
 //   return message;
 // }
 
@@ -613,15 +616,15 @@
 // checkPassword("r3actsux"); //       "Access denied, wrong password!"
 
 //! =============================================
-//*           switch - заміна інструкції 'if...else'
-//*           switch (що порівнюють) {
-//*           case з чим порівнюють:
-//*  Task 27  інструкції;
-//!           break;          в алгоритмі використовується оператор строгої рівності ===
+//?           switch - заміна інструкції 'if...else'
+//*             switch (що порівнюють) {
 //*             case з чим порівнюють:
-//*             інструкції;
-//!          break;           Оператор break в кінці кожного блоку case необхідний, щоб перервати подальші перевірки
-//*          }                та одразу перейти до коду після switch, коли перевірка на рівність повернула true.
+//*  Task 27    інструкції;
+//!             break;          в алгоритмі використовується оператор строгої рівності ===
+//*               case з чим порівнюють:
+//*               інструкції;
+//!            break;           Оператор break в кінці кожного блоку case необхідний, щоб перервати подальші перевірки
+//*            }                та одразу перейти до коду після switch, коли перевірка на рівність повернула true.
 //! =============================================
 
 //* if (type === "starter") {
@@ -632,148 +635,133 @@
 //*   price = 50;
 //* }
 
-// Ф-ція getSubscriptionPrice(type) отримує рядок з типом передплати користувача (type), перевіряє її на збіг
-//    з 3 - ма типами щомісячної передплати та повертає ціну, що зберігається у змінній price.
-// Якщо значення параметра type - це рядок:
-//    "starter" - ціна передплати 0 кредитів.
-//    "professional" - ціна передплати 20 кредитів.
-//    "organization" - ціна передплати 50 кредитів.
+//* Ф-ція getSubscriptionPrice(type) отримує рядок з типом передплати користувача (type), перевіряє її
+//*    на збіг з 3-ма типами щомісячної передплати та повертає ціну (price).
+//* параметри (type):
+//*    "starter" - ціна передплати 0 кредитів.
+//*    "professional" -  20 кредитів.
+//*    "organization" -  50 кредитів.
 
 // function getSubscriptionPrice(type) {
 //   let price;
-//   // Change code below this line
 
 //   switch (
-//     type // Change this line
+//     type
 //   ) {
-//     case "starter": // Change this line
-//       price = 0; // Change this line
+//     case "starter":
+//       price = 0;
 //       break;
 
-//     case "professional": // Change this line
-//       price = 20; // Change this line
+//     case "professional":
+//       price = 20;
 //       break;
 
-//     case "organization": // Change this line
-//       price = 50; // Change this line
+//     case "organization":
+//       price = 50;
 //       break;
 //   }
-//   console.log(price); // - якщо потрібно було б виводити на консоль
-//   // Change code above this line
+//   console.log(price); // - альтернативний вивід на консоль
 //   return price;
 // }
 
-// // console.log(getSubscriptionPrice("professional")); // - альтернативне виведення на консоль
-// // console.log(getSubscriptionPrice("organization"));
-// // console.log(getSubscriptionPrice("starter"));
-
-// getSubscriptionPrice("professional"); //  20
-// getSubscriptionPrice("organization"); //  50
-// getSubscriptionPrice("starter"); //       0
+// console.log(getSubscriptionPrice("professional")); //  20
+// console.log(getSubscriptionPrice("organization")); //  50
+// console.log(getSubscriptionPrice("starter")); //       0
 
 //! =============================================
-//?          switch (значення) {
-//*           case значення:
-//*             інструкції;
-//!             break;     - НЕ ЗАБУВАЄМО!
-//* Task 28   case значення:
-//*             інструкції;
-//!             break;     - в алгоритмі використовується оператор строгої рівності ===
-//?           default:     - Якщо жодного збігу значень не відбулося
-//*              інструкції;
-//*          }            - break після блоку default не потрібен
+//?           switch (значення) {
+//*             case значення:
+//*               інструкції;
+//! Task 28            break;     - НЕ ЗАБУВАЄМО!   - в алгоритмі використовується оператор строгої рівності ===
+//?             default:     - Якщо жодного збігу значень не відбулося
+//*                інструкції;
+//*             }            - break після блоку default не потрібен
+//?          if...else  ≡ після case  + default
 //! =============================================
 
 // function checkPassword(password) {
 //   const ADMIN_PASSWORD = "jqueryismyjam";
 //   let message;
-//   // Change code below this line
 
-//   //   if (password === null) {
-//   //     message = "Canceled by user!";
-//   //   } else if (password === ADMIN_PASSWORD) {
-//   //     message = "Welcome!";
-//   //   } else {
-//   //     message = "Access denied, wrong password!";
-//   //   }
+//*      if (password === null) {
+//*        message = "Canceled by user!";
+//*      } else if (password === ADMIN_PASSWORD) {
+//*        message = "Welcome!";
+//*      } else {
+//*        message = "Access denied, wrong password!";
+//*      }
 
 //   switch (password) {
 //     case null:
 //       message = "Canceled by user!";
-//       console.log(message); // - якщо потрібно було б виводити на консоль
+//       // console.log(message); // - покроковий вивід на консоль
 //       break;
 //     case ADMIN_PASSWORD:
 //       message = "Welcome!";
-//       console.log(message); // - якщо потрібно було б виводити на консоль
 //       break;
 //     default:
 //       message = "Access denied, wrong password!";
-//       console.log(message); // - якщо потрібно було б виводити на консоль
 //   }
-//   // Change code above this line
 //   return message;
 // }
 
-// // console.log(checkPassword("mangohackzor")); // - ТУТ НЕ БУДЕ ПРАЦЮВАТИ (частково)
-// // console.log(checkPassword(null)); // - ТУТ НЕ БУДЕ ПРАЦЮВАТИ
-// // console.log(checkPassword("polyhax")); // - ТУТ НЕ БУДЕ ПРАЦЮВАТИ (частково)
-// // console.log(checkPassword("jqueryismyjam")); // - ТУТ НЕ БУДЕ ПРАЦЮВАТИ
-
-// checkPassword("mangohackzor"); //   "Access denied, wrong password!"
-// checkPassword(null); //             "Canceled by user!"
-// checkPassword("polyhax"); //        "Access denied, wrong password!"
-// checkPassword("jqueryismyjam"); //  "Welcome!"
+// console.log(checkPassword("mangohackzor")); // "Access denied, wrong password!"
+// console.log(checkPassword(null)); // "Canceled by user!"
+// console.log(checkPassword("polyhax")); // "Access denied, wrong password!"
+// console.log(checkPassword("jqueryismyjam")); // "Welcome!"
 
 //! =============================================
-//? Task 29   ДОСТАВКА ТОВАРУ    switch
+//?          switch            `Shipping ${country}`
+//? Task 29       ДОСТАВКА ТОВАРУ
+//?
 //! =============================================
 
-// перевірити можливість доставки товару в країну (country) і
-// повертати повідомлення про результат (message).
-//    China - 100 кредитів
-//    Chile - 250 кредитів
-//    Australia - 170 кредитів
-//    Jamaica - 120 кредитів
-// Формат рядка:  "Shipping to <country> will cost <price> credits", де замість <country> і <price>,
+//* перевірити можливість доставки товару в країну (country) і
+//* повертати повідомлення про результат (message):
+//* "Shipping to <country> will cost <price> credits", де замість <country> і <price>,
+//*    China - 100 кредитів
+//*    Chile - 250
+//*    Australia - 170
+//*    Jamaica - 120
 
-function getShippingCost(country) {
-  let message = "";
-  let price;
-  switch (country) {
-    case "China":
-      price = 100;
-      message = `Shipping to ${country} will cost ${price} credits`;
-      //   console.log(message); // - покроковий вивід на консоль (не потрібно)
-      break;
-    case "Chile":
-      price = 250;
-      message = `Shipping to ${country} will cost ${price} credits`;
-      //   console.log(message); // - покроковий вивід на консоль (не потрібно)
-      break;
-    case "Australia":
-      price = 170;
-      message = `Shipping to ${country} will cost ${price} credits`;
-      //   console.log(message); // - покроковий вивід на консоль (не потрібно)
-      break;
-    case "Jamaica":
-      price = 120;
-      message = `Shipping to ${country} will cost ${price} credits`;
-      //   console.log(message); // - покроковий вивід на консоль (не потрібно)
-      break;
-    default:
-      message = "Sorry, there is no delivery to your country";
-    //   console.log(message); // - покроковий вивід на консоль (не потрібно)
-  }
-  //   console.log(message); // - якщо потрібно було б виводити на консоль
-  return message;
-}
+// function getShippingCost(country) {
+//   let message = "";
+//   let price;
+//   switch (country) {
+//     case "China":
+//       price = 100;
+//       message = `Shipping to ${country} will cost ${price} credits`;
+//       //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+//       break;
+//     case "Chile":
+//       price = 250;
+//       message = `Shipping to ${country} will cost ${price} credits`;
+//       //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+//       break;
+//     case "Australia":
+//       price = 170;
+//       message = `Shipping to ${country} will cost ${price} credits`;
+//       //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+//       break;
+//     case "Jamaica":
+//       price = 120;
+//       message = `Shipping to ${country} will cost ${price} credits`;
+//       //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+//       break;
+//     default:
+//       message = "Sorry, there is no delivery to your country";
+//     //   console.log(message); // - покроковий вивід на консоль (не потрібно)
+//   }
+//   //   console.log(message); // - якщо потрібно було б виводити на консоль
+//   return message;
+// }
 
-console.log(getShippingCost("Australia")); //  "Shipping to Australia will cost 170 credits"
-console.log(getShippingCost("Germany")); //  "Sorry, there is no delivery to your country"
-console.log(getShippingCost("China")); //  "Shipping to China will cost 100 credits"
-console.log(getShippingCost("Chile")); //  "Shipping to Chile will cost 250 credits"
-console.log(getShippingCost("Jamaica")); //  "Shipping to Jamaica will cost 120 credits"
-console.log(getShippingCost("Sweden")); //  "Sorry, there is no delivery to your country"
+// console.log(getShippingCost("Australia")); //  "Shipping to Australia will cost 170 credits"
+// console.log(getShippingCost("Germany")); //  "Sorry, there is no delivery to your country"
+// console.log(getShippingCost("China")); //  "Shipping to China will cost 100 credits"
+// console.log(getShippingCost("Chile")); //  "Shipping to Chile will cost 250 credits"
+// console.log(getShippingCost("Jamaica")); //  "Shipping to Jamaica will cost 120 credits"
+// console.log(getShippingCost("Sweden")); //  "Sorry, there is no delivery to your country"
 
 //! =============================================
 //?        length      визначає довжину рядка
@@ -842,12 +830,12 @@ console.log(getShippingCost("Sweden")); //  "Sorry, there is no delivery to your
 //? Task 33         length        slice(startIndex, endIndex)        message.slice(0, maxLength) + "..."
 //! =============================================
 
-// Ф-ція formatMessage(message, maxLength) приймає і форматує рядок (message),
-//   якщо довжина > maxLength.
-//    довжина рядка (message):
-//      не перевищує maxLength - ф-ція повертає його в початковому вигляді.
-//      більша за maxLength, то функція обрізає рядок до maxLength символів і додає в кінець три крапки "...",
-//      після чого повертає скорочену версію.
+//* Ф-ція formatMessage(message, maxLength) приймає і форматує рядок (message),
+//*   якщо довжина > maxLength.
+//*    довжина рядка (message):
+//*      не перевищує maxLength - ф-ція повертає його в початковому вигляді.
+//*      більша за maxLength, то функція обрізає рядок до maxLength символів і додає в кінець три крапки "...",
+//*      після чого повертає скорочену версію.
 
 // function formatMessage(message, maxLength) {
 //   let result;
@@ -901,11 +889,11 @@ console.log(getShippingCost("Sweden")); //  "Sorry, there is no delivery to your
 //*                         console.log(productName.includes("Droid")); // false
 //! =============================================
 
-// Ф-ція checkForName(fullname, name) приймає два параметри та повертає буль true або false - результат перевірки входження підрядка name у рядок fullname.
-//    fullname - повне ім'я, що складається з двох слів (імені та прізвища), розділених пробілом.
-//    name - ім'я для перевірки входження в повне ім'я.
-// Присвой змінній result вираз перевірки входження імені (name), у повне ім'я (fullname).
-//    Нехай функція чітко розрізняє регістр літер, тобто «Петя» і «петя» - для неї різні імена.
+//* Ф-ція checkForName(fullname, name) приймає два параметри та повертає буль true або false - результат перевірки входження підрядка name у рядок fullname.
+//*    fullname - повне ім'я, що складається з двох слів (імені та прізвища), розділених пробілом.
+//*    name - ім'я для перевірки входження в повне ім'я.
+//* Присвой змінній result вираз перевірки входження імені (name), у повне ім'я (fullname).
+//*    Нехай функція чітко розрізняє регістр літер, тобто «Петя» і «петя» - для неї різні імена.
 
 // function checkForName(fullName, name) {
 //   const result = fullName.includes(name); // Change this line
@@ -928,10 +916,10 @@ console.log(getShippingCost("Sweden")); //  "Sorry, there is no delivery to your
 //*               const type = age >= 18 ? "adult" : "child";
 //! =============================================
 
-//   Ф-ція checkForSpam(message) приймає рядок (message), перевіряє його на вміст заборонених слів spam і sale,
-//     і повертає результат перевірки. Слова в рядку параметра message можуть бути у довільному регістрі (SPAM або sAlE).
-//   Якщо знайшли заборонене слово (spam або sale) то ф-ція повертає буль true.
-//   Якщо в рядку відсутні заборонені слова - ф-ція повертає буль false.
+//*   Ф-ція checkForSpam(message) приймає рядок (message), перевіряє його на вміст заборонених слів spam і sale,
+//*     і повертає результат перевірки. Слова в рядку параметра message можуть бути у довільному регістрі (SPAM або sAlE).
+//*   якщо знайшли заборонене слово (spam або sale) то ф-ція повертає буль true.
+//*   якщо в рядку відсутні заборонені слова - ф-ція повертає буль false.
 
 // function checkForSpam(message) {
 //   let result;
