@@ -925,21 +925,20 @@
 //* Task 27       ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ 2.0   цикл for..of
 //! =============================================
 
-// Виконай рефакторинг функції filterArray(numbers, value), замінивши цикл for на for...of.
+//* Виконай рефакторинг функції filterArray(numbers, value), замінивши цикл for на for...of.
+
+//* function filterArray(numbers, value) {
+//*   const filteredNumbers = [];
+//*   for (let i = 0; i < numbers.length; i += 1) {
+//*     const number = numbers[i];
+//*     if (number > value) {
+//*       filteredNumbers.push(number);
+//*     }
+//*   }
+//*   return filteredNumbers;
+//* }
 
 // function filterArray(numbers, value) {
-//   const filteredNumbers = [];
-//   for (let i = 0; i < numbers.length; i += 1) {
-//     const number = numbers[i];
-//     if (number > value) {
-//       filteredNumbers.push(number);
-//     }
-//   }
-//   return filteredNumbers;
-// }
-
-// function filterArray(numbers, value) {
-//   // Change code below this line
 //   const filteredNumbers = [];
 //   for (const item of numbers) {
 //     if (item > value) {
@@ -947,7 +946,6 @@
 //     }
 //   }
 //   return filteredNumbers;
-//   // Change code above this line
 // }
 
 // console.log(filterArray([1, 2, 3, 4, 5], 3)); //  [4, 5]
@@ -957,15 +955,63 @@
 // console.log(filterArray([12, 24, 8, 41, 76], 20)); //  [24, 41, 76]
 
 //! =============================================
-//* Task 28
+//?             %
+//?         повертає цілочисельну остачу від ділення
+//* Task 28    5 % 1 = 0;      5 % 5 = 0;
+//*            5, поділене на 1, дорівнює 5, а остача - 0
+//*            5 % 3 = 2;
+//*            5, поділене на 3, дорівнює 1, а остача - 5-3 = 2
+//! =============================================
+// Доповни вираз остачі від ділення таким чином, щоб код проходив тести.
+
+// Change code below this line
+// const a = 3 % 3;
+// const b = 4 % 3;
+// const c = 11 % 8;
+// const d = 12 % 7;
+// const e = 8 % 6;
+
+// console.log(a); //  0
+// console.log(b); //  1
+// console.log(c); //  3
+// console.log(d); //  5
+// console.log(e); //  2
+//! =============================================
+//? Task 29      ПАРНІ ЧИСЛА
+//*           ділиться на 2 без остачі (10 % 2 === 0)
 //! =============================================
 
-//! =============================================
-//* Task 29
-//! =============================================
+//* ф-ція getEvenNumbers(start, end), яка повертає масив усіх парних чисел від start до end.
+//* Парним вважається число, яке ділиться на 2 без остачі (10 % 2 === 0).
+
+// function getEvenNumbers(start, end) {
+//   const evenNumbers = [];
+//   for (let i = start; i <= end; i++) {
+//     if (i % 2 === 0) {
+//       evenNumbers.push(i);
+//     }
+//   }
+//   return evenNumbers;
+// }
+
+// console.log(getEvenNumbers(2, 5)); //  [2, 4]
+// console.log(getEvenNumbers(3, 11)); //  [4, 6, 8, 10]
+// console.log(getEvenNumbers(6, 12)); //  [6, 8, 10, 12]
+// console.log(getEvenNumbers(8, 8)); //  [8]
+// console.log(getEvenNumbers(7, 7)); //  []
 
 //! =============================================
-//* Task 30
+//?         break
+//* Task 30     оператор break повністю припиняє виконання циклу і передає управління на рядок за його тілом.
+//*              У прикладі шукаємо число 3. Щойно виконається умова if, цикл припинить своє виконання (буде перерваний).
+//*           for (let i = 0; i <= 5; i += 1) {
+//*              console.log(i);
+//*              if (i === 3) {
+//*            console.log("Знайшли число 3, перериваємо виконання циклу");
+//*            break;
+//*            }
+//*           }
+//*         console.log("Лог після циклу");
 //! =============================================
 
 //! =============================================
