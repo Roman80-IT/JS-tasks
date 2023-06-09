@@ -1032,7 +1032,7 @@
 
 //! =============================================
 //?           break          return
-//*           Якщо цикл знаходиться в тілі ф-ції, то оператор break не припиняє виконання лише циклу, а не ф-ції
+//*           оператор break припиняє виконання лише циклу, а не ф-ції
 //*           Для того щоб переривати виконання відразу циклу і ф-ції, є оператор return.
 //*             У прикладі шукаємо число 3. Щойно виконається умова if, робимо повернення, яке перерве виконання циклу і функції.
 //*                function fn() {
@@ -1053,24 +1053,69 @@
 //*              console.log(`Результат виконання функції ${result}`);
 //! =============================================
 
-function findNumber(start, end, divisor) {
-  // Change code below this line
-  let number;
+//* Виконай рефакторинг ф-ції, щоб вона:
+//*           повертала перше число від start до end, яке ділиться на divisor без остачі
+//*           не використала оператор break
+//*           не використала змінну number
 
-  for (let i = start; i < end; i += 1) {
-    if (i % divisor === 0) {
-      number = i;
-      break;
-    }
-  }
+//* function findNumber(start, end, divisor) {
+//*   let number;
+//*   for (let i = start; i < end; i += 1) {
+//*     if (i % divisor === 0) {
+//*       number = i;
+//*       break;
+//*     }
+//*   }
+//*   return number;
+//* }
 
-  return number;
-  // Change code above this line
-}
+// function findNumber(start, end, divisor) {
+//   for (let i = start; i < end; i += 1) {
+//     if (i % divisor === 0) {
+//       return i;
+//     }
+//   }
+// }
+
+// console.log(findNumber(2, 6, 5)); //      5
+// console.log(findNumber(8, 17, 3)); //     9
+// console.log(findNumber(6, 9, 4)); //      8
+// console.log(findNumber(16, 35, 7)); //    21
 
 //! =============================================
-//* Task 32
+//? Task 32      ФУНКЦІЯ INCLUDES()
+//*     Агалог    масив.includes(значення)
 //! =============================================
+
+//* Напиши ф-цію, яка робить те саме, що і метод масиву масив.includes(значення) - перевіряє, чи присутнє в масиві array значення value, повертаючи true, якщо присутнє, і false в іншому випадку.
+//* У ф-ції includes використовується for, return, але не метод масиву includes
+
+// ----- ВАРІАНТ 1 -----
+// function includes(array, value) {
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] === value) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+// ----- СКОРОЧЕНИЙ ЗАПИС -----
+// function includes(array, value) {
+//   for (let i = 0; i < array.length; i++) if (array[i] === value) return true;
+//   return false;
+// }
+
+// console.log(includes([1, 2, 3, 4, 5], 3)); //   true
+// console.log(includes([1, 2, 3, 4, 5], 17)); //   false
+// console.log(
+//   includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter")
+// ); //   true
+// console.log(
+//   includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus")
+// ); //   false
+// console.log(includes(["apple", "plum", "pear", "orange"], "plum")); //   true
+// console.log(includes(["apple", "plum", "pear", "orange"], "kiwi")); //   false
 
 //! =============================================
 //* Task 33
@@ -1099,20 +1144,20 @@ function findNumber(start, end, divisor) {
 // як це зробити через цикли?
 
 // --- ВАРІАНТ1 ---
-for (let i = 1; i <= 4; i++) {
-  console.log("*".repeat(i));
-}
+// for (let i = 1; i <= 4; i++) {
+//   console.log("*".repeat(i));
+// }
 
-for (let i = 4; i >= 1; i--) {
-  console.log("*".repeat(i));
-}
+// for (let i = 4; i >= 1; i--) {
+//   console.log("*".repeat(i));
+// }
 
 // --- ВАРІАНТ2 ---
-const n = 4; // Задайте бажану кількість рядків
-for (let i = 1; i < 2 * n; i++) {
-  if (i <= n) {
-    console.log("*".repeat(i));
-  } else {
-    console.log("*".repeat(2 * n - i));
-  }
-}
+// const n = 4; // Задайте бажану кількість рядків
+// for (let i = 1; i < 2 * n; i++) {
+//   if (i <= n) {
+//     console.log("*".repeat(i));
+//   } else {
+//     console.log("*".repeat(2 * n - i));
+//   }
+// }
