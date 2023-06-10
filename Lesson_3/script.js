@@ -125,7 +125,7 @@
 // console.log(aptTags);
 
 //! =============================================
-//?         «через крапку»    -      user.location.country:   -   «крапка» вказує наступну вкладеніст
+//?         «через крапку»    -      user.location.country:   -   «крапка» вказує наступну вкладеніст  -  apartment.tags[apartment.tags.length - 1]
 //*               const user = {
 //*                 name: "Jacques Gluke",
 //*                 tag: "jgluke",
@@ -139,22 +139,112 @@
 //*                   console.log(location); // Об'єкт location
 //*                   const country = user.location.country;
 //*                   console.log(country); // "Jamaica"
-//*           user.hobbies - звернення до масиву.
-//*           Далі отримуємо доступ до його елементів через квадратні дужки та індекс або використовувати властивості і методи.
+//?           user.hobbies - звернення до масиву.
+//?           Далі - доступ до його елементів через [i] та використання властивості і методи.
 //*              const hobbies = user.hobbies;
 //*              console.log(hobbies); // ["swiming", "music", "sci-fi"]
-//*                 const firstHobby = user.hobbies[0];
+//?                 const firstHobby = user.hobbies[0];
 //*                 console.log(firstHobby); // "swiming"
-//*              const numberOfHobbies = user.hobbies.length;
+//?              const numberOfHobbies = user.hobbies.length;
 //*              console.log(numberOfHobbies); // 3
 //! =============================================
+//* Доповни код, присвоївши оголошеним змінним вирази звернення до відповідних властивостей об'єкта 'apartment'
+//*          ownerName - ім'я власника;
+//*          ownerPhone - телефон;
+//*          ownerEmail - пошта;
+//*          numberOfTags - кількість елементів масиву у властивості tags;
+//*          firstTag - перший елемент масиву у властивості tags;
+//*          lastTag - останній елемент масиву у властивості tags.
+// const apartment = {
+//   imgUrl: "https://via.placeholder.com/640x480",
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+//   tags: ["premium", "promoted", "top"],
+//   owner: {
+//     name: "Henry",
+//     phone: "982-126-1588",
+//     email: "henry.carter@aptmail.com",
+//   },
+// };
+// const ownerName = apartment.owner.name;
+// const ownerPhone = apartment.owner.phone;
+// const ownerEmail = apartment.owner.email;
+// const numberOfTags = apartment.tags.length;
+// const firstTag = apartment.tags[0];
+// const lastTag = apartment.tags[apartment.tags.length - 1];
+
+// console.log(ownerName);
+// console.log(ownerPhone);
+// console.log(ownerEmail);
+// console.log(numberOfTags);
+// console.log(firstTag);
+// console.log(lastTag);
 
 //! =============================================
-//* Task 5
+//?        об'єкт["ключ_властивості"]        Синтаксис «квадратних дужок»
+//*               Другий спосіб отримати доступ до властивості об'єкта  -  Схоже на звернення до елемента масиву
+//*            з відмінністю в тому, що в дужках зазначається не індекс елемента, а ім'я властивості як рядок.
+//*            використовується значно рідше - коли ім'я властивості заздалегідь невідоме або воно зберігається у змінній (як значення параметра ф-ції, наприклад).
+//*               На місце звернення буде повернуто значення властивості з таким ім'ям.
+//*               Якщо в об'єкті відсутня властивість з таким ім'ям, на місце звернення повернеться undefined.
+//*                 const book = {
+//*                   title: "The Last Kingdom",
+//*                   author: "Bernard Cornwell",
+//* Task 5            genres: ["historical prose", "adventure"],
+//*                   public: true,
+//*                   rating: 8.38,
+//*                 };
+//?                 const bookTitle = book["title"];
+//*                 console.log(bookTitle); // "The Last Kingdom"
+//?                 const bookGenres = book["genres"];
+//*                 console.log(bookGenres); // ["historical prose", "adventure"]
+//*                 const propKey = "author";
+//?                 const bookAuthor = book[propKey];
+//*                 console.log(bookAuthor); // "Bernard Cornwell"
 //! =============================================
+//*  Доповни код, присвоївши змінним вирази звернення до властивостей об'єкта 'apartment', використовуючи синтаксис «квадратних дужок».
+//*           aptRating - рейтинг;
+//*           aptDescr - опис;
+//*           aptPrice - ціна;
+//*           aptTags - теги.
+
+const apartment = {
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+  tags: ["premium", "promoted", "top"],
+};
+const aptRating = apartment["rating"];
+const aptDescr = apartment["descr"];
+const aptPrice = apartment["price"];
+const aptTags = apartment["tags"];
+console.log(aptRating);
+console.log(aptDescr);
+console.log(aptPrice);
+console.log(aptTags);
 
 //! =============================================
-//* Task 6
+//?    зміна властивостей об'єкта
+//* Task 6       Після того як об'єкт створений, значення його властивостей можна змінити.
+// Для цього необхідно звернутися до них за ім'ям, наприклад, «через крапку», і присвоїти нове значення.
+
+const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  public: true,
+  rating: 8.38,
+};
+
+book.rating = 9;
+book.public = false;
+book.genres.push("drama");
+
+console.log(book.rating); // 9
+console.log(book.public); // false
+console.log(book.genres); // ["historical prose", "adventure", "drama"]
 //! =============================================
 
 //! =============================================
