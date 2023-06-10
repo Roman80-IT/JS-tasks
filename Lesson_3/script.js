@@ -309,22 +309,59 @@
 // };
 // apartment.area = 60;
 // apartment.rooms = 3;
-// // ----- ВАРІАНТ «через крапку» -----
+//? ----- ВАРІАНТ «через крапку» -----
 // apartment.location = {
 //   country: "Jamaica",
 //   city: "Kingston",
 // };
-// ----- ВАРІАНТ об'єкт["ключ_властивості"] -----
+//? ----- ВАРІАНТ об'єкт["ключ_властивості"] -----
 // apartment["location"] = {
 //   country: "Jamaica",
 //   city: "Kingston",
 // };
+//! ----- некоректний ВАРІАНТ об'єкт Object.create(apartment) -----
+// const location = Object.create(apartment); // Метод Object.create() створює новий об'єкт, використовуючи існуючий об'єкт як прототип
+// location.country = "Jamaica";
+// location.city = "Kingston";
 //! apartment.location = [(country = "Jamaica"), (city = "Kingston")]; // створить масив, але не обєкт!
 // console.log(apartment);
 
 //! =============================================
-//* Task 8
+//?          якщо властивість має таке ж ім'я як у змінної (або параметра ф-ції)
+//*             громіздкий синтаксис:  (дублювання ім'я властивості та ім'я змінної)
+//*                 const name = "Генрі Сибола";
+//*                 const age = 25;
+//*                 const user = {
+//*                   name: name,
+//*                   age: age,
+//*                 };
+//*                 console.log(user.name); // "Генрі Сибола"
+//* Task 8          console.log(user.age); // 25
+//?          Синтаксис коротких властивостей (shorthand properties) - використовує ім'я змінної як ім'я властивості, а її значення як значення властивості.
+//*                    const name = "Генрі Сибола";
+//*                    const age = 25;
+//*                    const user = {
+//*                      name,
+//*                      age,
+//*                    };
+//*                    console.log(user.name); // "Генрі Сибола"
+//*                    console.log(user.age); // 25
+//*          під час оголошення об'єкта достатньо вказати тільки ім'я властивості, а значення буде взято зі змінної з аналогічним ім'ям.
 //! =============================================
+
+//* Доповни код оголошення об'єкта, щоб у нього були властивості name, price, image і tags зі значеннями зі змінних з аналогічними іменами.
+//* Обов'язково використовуй синтаксис коротких властивостей.
+// const name = "Repair Droid";
+// const price = 2500;
+// const image = "https://via.placeholder.com/640x480";
+// const tags = ["on sale", "trending", "best buy"];
+// const product = {
+//   name,
+//   price,
+//   image,
+//   tags,
+// };
+// console.log(product);
 
 //! =============================================
 //* Task 9
