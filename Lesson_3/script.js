@@ -437,51 +437,83 @@
 // console.log(values);
 
 //! =============================================
-//* Task 11   Концепція власних і невласних властивостей об'єкта і правильне використання циклу for...in.
-const animal = {
-  legs: 4,
-};
-const dog = Object.create(animal);
-dog.name = "Mango";
-console.log(dog); // {name: 'Mango'}
-console.log(dog.name); // 'Mango'
-console.log(dog.legs); // 4
-//* Метод Object.create(animal) створює і повертає новий об'єкт, зв'язуючи його з об'єктом animal.
-//* Тому можна отримати значення властивості legs, звернувшись до неї як dog.legs, хоча вона відсутня в об'єкті dog - це невласна властивість з об'єкта animal.
+//?       Object.create(animal)            hasOwnProperty(key)
+//?        Концепція власних і невласних властивостей об'єкта і правильне використання циклу for...in.
+//*                      const animal = {
+//*                        legs: 4,
+//*                      };                                       console.log(dog); // {name: 'Mango'}
+//*                      const dog = Object.create(animal);       console.log(dog.name); // 'Mango'
+//*                      dog.name = "Mango";                      console.log(dog.legs); // 4
+//*                 Метод Object.create(animal) створює і повертає новий об'єкт, зв'язуючи його з об'єктом animal.
+//*                 dog.legs - отримаємо значення властивості legs, хоча вона відсутня в об'єкті dog - це невласна властивість з об'єкта animal.
+//*                 Оператор in, який використовується в циклі for...in, не розрізняє власні та невласні властивості об'єкта.
+//*                 Ця особливість заважає, оскільки ми завжди хочемо перебрати тільки власні властивості.
+//*                 метод hasOwnProperty(key) - перевіряє чи є в об'єкті власна властивість, чи немає,- повертає true або false.
+//                      ❌ Повертає true для всіх властивостей
+//                      console.log("name" in dog); // true
+//                      console.log("legs" in dog); // true
+//! Task 11             ✅ Повертає true тільки для власних властивостей
+//                      console.log(dog.hasOwnProperty("name")); // true
+//                      console.log(dog.hasOwnProperty("legs")); // false
+//*                  Тому під час перебору циклом for...in необхідно на кожній ітерації додати перевірку на власну властивість.
+//*                  Навіть якщо зараз ми впевнені у тому, що об'єкт не містить невласні властивості, це захистить від можливих помилок в майбутньому.
+//                      const book = {
+//                        title: "The Last Kingdom",
+//                        author: "Bernard Cornwell",
+//                        genres: ["historical prose", "adventure"],
+//                        rating: 8.38,
+//                      };
+//?                      for (const key in book) {
+//                      Якщо це власна властивість - виконуємо тіло if
+//?                        if (book.hasOwnProperty(key)) {
+//?                          console.log(key);
+//?                          console.log(book[key]);
+//?                        }
+//                      Якщо це невласна властивість - нічого не робимо
+//?                      }
+//! =============================================
 
-//* Оператор in, який використовується в циклі for...in, не розрізняє власні та невласні властивості об'єкта.
-//*  Ця особливість заважає, оскільки ми завжди хочемо перебрати тільки власні властивості.Для того щоб дізнатися, чи є в об'єкті власна властивість, чи немає, використовується метод hasOwnProperty(key), який повертає true або false.
-
-// ❌ Повертає true для всіх властивостей
-// console.log("name" in dog); // true
-// console.log("legs" in dog); // true
-
-// // ✅ Повертає true тільки для власних властивостей
-// console.log(dog.hasOwnProperty("name")); // true
-// console.log(dog.hasOwnProperty("legs")); // false
-// //* Тому під час перебору циклом for...in необхідно на кожній ітерації додати перевірку на власну властивість. Навіть якщо зараз ми впевнені у тому, що об'єкт не містить невласні властивості, це захистить від можливих помилок в майбутньому.
-
-// const book = {
-//   title: "The Last Kingdom",
-//   author: "Bernard Cornwell",
-//   genres: ["historical prose", "adventure"],
-//   rating: 8.38,
+//* Виконай рефакторинг рішення попереднього завдання, додавши в цикл for...in перевірку на власну властивість.
+// const keys = [];
+// const values = [];
+// const advert = {
+//   service: "apt",
 // };
-
-// for (const key in book) {
-//   // Якщо це власна властивість - виконуємо тіло if
-//   if (book.hasOwnProperty(key)) {
-//     console.log(key);
-//     console.log(book[key]);
+// const apartment = Object.create(advert);
+// apartment.descr = "Spacious apartment in the city center";
+// apartment.rating = 4;
+// apartment.price = 2153;
+// for (const key in apartment) {
+//   if (apartment.hasOwnProperty(key)) {
+//     keys.push(key);
+//     values.push(apartment[key]);
 //   }
-
-//   // Якщо це невласна властивість - нічого не робимо
 // }
-//! =============================================
+// console.log(keys);
+// console.log(values);
 
 //! =============================================
-//* Task 12
+//* Task 12      ПІДРАХУНОК ВЛАСТИВОСТЕЙ
 //! =============================================
+
+//* Напиши ф-цію countProps(object), яка рахує і повертає к-сть власних властивостей об'єкта в параметрі object.
+//* Використовуй змінну propCount для зберігання к-сті властивостей об'єкта.
+//* Функція підраховує тільки власні властивості об'єкта
+
+// function countProps(object) {
+//   let propCount = 0;
+//   // Change code below this line
+//   for (const key in object) {
+//     if (object.hasOwnProperty(key)) {
+//       propCount++;
+//     }
+//   }
+//   // Change code above this line
+//   return propCount;
+// }
+// console.log(countProps({})); //  0
+// console.log(countProps({ name: "Mango", age: 2 })); //  2
+// console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 })); //  3
 
 //! =============================================
 //* Task 13
