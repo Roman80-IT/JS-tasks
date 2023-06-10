@@ -1,4 +1,4 @@
-// node Lesson_3/script - запуск через термінал ≡
+//         node Lesson_3/script           -  запуск через термінал ≡
 
 //! =============================================
 //? Об'єкти
@@ -19,9 +19,9 @@
 //* Значенням властивості можуть бути любі типи: примітиви, масиви, об'єкти, булі, ф-ції.
 //* Властивості розділяються комою.
 
-//! =============================================
+//! ============================================================================
 //* Task 1        Оголошення  Об'єкту
-//! =============================================
+//! ============================================================================
 
 //* Присвой змінній apartment об'єкт, який описує квартиру з наступними характеристиками:
 //*      imgUrl - фотографія, значення "https://via.placeholder.com/640x480";
@@ -40,15 +40,15 @@
 
 // console.log(apartment);
 
-//! =============================================
+//! ============================================================================
 //*              Значенням властивості може бути інший об'єкт (для зберігання вкладених і згрупованих даних):
 //*                В майбутньому це можна буде використовувати для пошуку користувачів за країною, містом, min або max к-стю послідовників.
 //?                       const user = {
 //*                         name: "Jacques Gluke",
 //*                         tag: "jgluke",
-//? Task 2                  location: {            місце розташування (окремо країна і місто)
+//?                         location: {            місце розташування (окремо країна і місто)
 //*                           country: "Jamaica",
-//*                           city: "Ocho Rios",
+//* Task 2                    city: "Ocho Rios",
 //*                         },
 //?                         stats: {               в статистиці користувача соц. мережі (к-сть послідовників, переглядів і лайків)
 //*                           followers: 5603,
@@ -56,7 +56,7 @@
 //*                           likes: 1308,
 //*                         },
 //*                       };
-//! =============================================
+//! ============================================================================
 
 //* Доповни об'єкт квартири властивістю 'owner', значенням якого - об'єкт з інформацією про власника. Додай йому властивості:
 //*      name - ім'я власника, значення "Henry";
@@ -80,7 +80,7 @@
 
 // console.log(apartment);
 
-//! =============================================
+//! ============================================================================
 //?       book.title          об'єкт.ключ_властивості
 //*             Перший спосіб отримати доступ до властивості об'єкта - «через крапку» - це синтаксис об'єкт.ключ_властивості.
 //*               підходить коли ми заздалегідь знаємо ім'я (ключ) властивості.
@@ -99,7 +99,7 @@
 //?                     console.log(bookGenres); // ["historical prose", "adventure"]
 //*                       const bookPrice = book.price;
 //?                       console.log(bookPrice); // undefined
-//! =============================================
+//! ============================================================================
 
 //* Доповни код, присвоївши оголошеним змінним вирази звернення до відповідних властивостей об'єкта 'apartment'.
 //*    aptRating - рейтинг;
@@ -124,7 +124,7 @@
 // console.log(aptPrice);
 // console.log(aptTags);
 
-//! =============================================
+//! ============================================================================
 //?         «через крапку»    -      user.location.country:   -   «крапка» вказує наступну вкладеніст  -  apartment.tags[apartment.tags.length - 1]
 //*               const user = {
 //*                 name: "Jacques Gluke",
@@ -147,7 +147,8 @@
 //*                 console.log(firstHobby); // "swiming"
 //?              const numberOfHobbies = user.hobbies.length;
 //*              console.log(numberOfHobbies); // 3
-//! =============================================
+//! ============================================================================
+
 //* Доповни код, присвоївши оголошеним змінним вирази звернення до відповідних властивостей об'єкта 'apartment'
 //*          ownerName - ім'я власника;
 //*          ownerPhone - телефон;
@@ -181,7 +182,7 @@
 // console.log(firstTag);
 // console.log(lastTag);
 
-//! =============================================
+//! ============================================================================
 //?        об'єкт["ключ_властивості"]        Синтаксис «квадратних дужок»
 //*               Другий спосіб отримати доступ до властивості об'єкта  -  Схоже на звернення до елемента масиву
 //*            з відмінністю в тому, що в дужках зазначається не індекс елемента, а ім'я властивості як рядок.
@@ -202,33 +203,76 @@
 //*                 const propKey = "author";
 //?                 const bookAuthor = book[propKey];
 //*                 console.log(bookAuthor); // "Bernard Cornwell"
-//! =============================================
+//! ============================================================================
+
 //*  Доповни код, присвоївши змінним вирази звернення до властивостей об'єкта 'apartment', використовуючи синтаксис «квадратних дужок».
 //*           aptRating - рейтинг;
 //*           aptDescr - опис;
 //*           aptPrice - ціна;
 //*           aptTags - теги.
 
-const apartment = {
-  imgUrl: "https://via.placeholder.com/640x480",
-  descr: "Spacious apartment in the city center",
-  rating: 4,
-  price: 2153,
-  tags: ["premium", "promoted", "top"],
-};
-const aptRating = apartment["rating"];
-const aptDescr = apartment["descr"];
-const aptPrice = apartment["price"];
-const aptTags = apartment["tags"];
-console.log(aptRating);
-console.log(aptDescr);
-console.log(aptPrice);
-console.log(aptTags);
+// const apartment = {
+//   imgUrl: "https://via.placeholder.com/640x480",
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+//   tags: ["premium", "promoted", "top"],
+// };
+// const aptRating = apartment["rating"];
+// const aptDescr = apartment["descr"];
+// const aptPrice = apartment["price"];
+// const aptTags = apartment["tags"];
+// console.log(aptRating);
+// console.log(aptDescr);
+// console.log(aptPrice);
+// console.log(aptTags);
+
+//! ============================================================================
+//?    зміна властивостей об'єкта
+//*              Для цього необхідно звернутися до них за ім'ям («через крапку») і присвоїти нове значення:
+//*                  const book = {
+//*                    title: "The Last Kingdom",
+//*                    author: "Bernard Cornwell",
+//*                    genres: ["historical prose", "adventure"],
+//*                    public: true,
+//* Task 6             rating: 8.38,
+//*                  };
+//*                  book.rating = 9;
+//*                  book.public = false;
+//*                  book.genres.push("drama");
+//*                    console.log(book.rating); // 9
+//*                    console.log(book.public); // false
+//*                    console.log(book.genres); // ["historical prose", "adventure", "drama"]
+//! ============================================================================
+
+//*  Доповни код, оновивши значення властивостей об'єкта 'apartment':
+//*          ціну у властивості price на 5000;
+//*          рейтинг квартири у властивості rating на 4.7;
+//*          ім'я власника у вкладеній властивості name на "Henry Sibola";
+//*          масив тегів у властивості tags, додавши в кінець рядок "trusted".
+
+// const apartment = {
+//   imgUrl: "https://via.placeholder.com/640x480",
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+//   tags: ["premium", "promoted", "top"],
+//   owner: {
+//     name: "Henry",
+//     phone: "982-126-1588",
+//     email: "henry.carter@aptmail.com",
+//   },
+// };
+
+// apartment.price = 5000;
+// apartment.rating = 4.7;
+// apartment.owner.name = "Henry Sibola";
+// apartment.tags.push("trusted");
+
+// console.log(apartment);
 
 //! =============================================
-//?    зміна властивостей об'єкта
-//* Task 6       Після того як об'єкт створений, значення його властивостей можна змінити.
-// Для цього необхідно звернутися до них за ім'ям, наприклад, «через крапку», і присвоїти нове значення.
+//* Task 7   Операція додавання нової властивості після створення об'єкта нічим не відрізняється від зміни значення вже існуючої властивості. Якщо під час запису значення за ім'ям, така властивість відсутня в об'єкті, вона буде створена.
 
 const book = {
   title: "The Last Kingdom",
@@ -238,17 +282,13 @@ const book = {
   rating: 8.38,
 };
 
-book.rating = 9;
-book.public = false;
-book.genres.push("drama");
+book.pageCount = 836;
+book.originalLanguage = "en";
+book.translations = ["ua", "ru"];
 
-console.log(book.rating); // 9
-console.log(book.public); // false
-console.log(book.genres); // ["historical prose", "adventure", "drama"]
-//! =============================================
-
-//! =============================================
-//* Task 7
+console.log(book.pageCount); // 836
+console.log(book.originalLanguage); // "en"
+console.log(book.translations); // ["ua", "ru"]
 //! =============================================
 
 //! =============================================
