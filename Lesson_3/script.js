@@ -200,9 +200,9 @@
 //*                 console.log(bookTitle); // "The Last Kingdom"
 //?                 const bookGenres = book["genres"];
 //*                 console.log(bookGenres); // ["historical prose", "adventure"]
-//*                 const propKey = "author";
+//?                 const propKey = "author";
 //?                 const bookAuthor = book[propKey];
-//*                 console.log(bookAuthor); // "Bernard Cornwell"
+//?                 console.log(bookAuthor); // "Bernard Cornwell"
 //! ============================================================================
 
 //*  Доповни код, присвоївши змінним вирази звернення до властивостей об'єкта 'apartment', використовуючи синтаксис «квадратних дужок».
@@ -364,12 +364,78 @@
 // console.log(product);
 
 //! =============================================
-//* Task 9
+//?        Синтаксис обчислюваних властивостей (computed properties)
+//*            Бувають ситуації, коли під час оголошення об'єкта потрібно додати властивість з ім'ям, яке ми заздалегідь не знаємо,
+//*             тому що воно зберігається як значення змінної або як результат виконання функції.
+//*             Раніше для цього необхідно було спочатку створити об'єкт, а потім додавати властивості через квадратні дужки, що не зовсім зручно.
+//*                  const propName = "name";
+//*                  const user = {
+//*                    age: 25, };
+//* Task 9             user[propName] = "Генрі Сибола";
+//*                  console.log(user.name); // "Генрі Сибола"
+//*                (computed properties) допомагає уникнути зайвого коду (спростити його).
+//*            Значенням обчислюваної властивості може бути будь-який валідний вираз.
+//*                   const propName = "name";
+//*                   const user = {
+//*                     age: 25,
+//*                     [propName]: "Генрі Сибола",   // Ім'я цієї властивості буде взято зі значення змінної propName };
+//*                   console.log(user.name); // "Генрі Сибола"
 //! =============================================
 
+//*   Доповни код оголошення об'єкта credentials - щоб в результаті у нього були дві властивості:
+//*         email і password, імена яких - у змінних emailInputName і passwordInputName.
+//*   email = "henry.carter@aptmail.com",
+//*   password = "jqueryismyjam".
+
+// const emailInputName = "email";
+// const passwordInputName = "password";
+
+// const credentials = {
+//   [emailInputName]: "henry.carter@aptmail.com",
+//   [passwordInputName]: "jqueryismyjam",
+// };
+// console.log(credentials);
+
 //! =============================================
-//* Task 10
+//?         for (const key in book) {
+//*                 На відміну від масиву або рядка, об'єкт - це не ітерабельна сутність - його не можна перебрати циклами for або for...of.
+//*                    Для перебирання об'єктів використовується спеціальний цикл for...in, який перебирає ключі об'єкта object.
+//*                    for (key in object) {
+//                      інструкції
+//*                    }
+//?                    Змінна key доступна тільки в тілі циклу. На кожній ітерації в неї буде записано значення ключа(ім'я) властивості.
+//*                    Для отримання значення властивості ключа (ім'я) - синтаксис квадратних дужок [].
+//*                    const book = {
+//* Task 10              title: "The Last Kingdom",
+//*                      author: "Bernard Cornwell",
+//*                      genres: ["historical prose", "adventure"],
+//*                      rating: 8.38,
+//*                    };
+//?                    for (const key in book) {
+//                       Ключ
+//?                      console.log(key);
+//                       Значення властивості з таким ключем
+//?                      console.log(book[key]);
+//*                    }
 //! =============================================
+
+//* Перебери об'єкт 'apartment', використовуючи цикл for...in,
+//* і запиши в масив keys всі його ключі, а в масив values всі значення його властивостей.
+
+const apartment = {
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+};
+const keys = [];
+const values = [];
+// Change code below this line
+for (const key in apartment) {
+  keys.push(key);
+  values.push(apartment[key]);
+}
+console.log(keys);
+console.log(values);
 
 //! =============================================
 //* Task 11
