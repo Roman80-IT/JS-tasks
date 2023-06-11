@@ -1,6 +1,20 @@
 //         node Lesson_3/script           -  запуск через термінал ≡
 
 //! =============================================
+//? Ф-ції
+//! =============================================
+
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   for (const item of order) {
+//     total += item;
+//   }
+//   return total;
+// }
+
+// console.log(calculateTotalPrice([12, 85, 37, 4])); //  138
+
+//! =============================================
 //? Об'єкти
 //! =============================================
 
@@ -493,7 +507,8 @@
 // console.log(values);
 
 //! =============================================
-//* Task 12      ПІДРАХУНОК ВЛАСТИВОСТЕЙ
+//?           for...in
+//* Task 12         ПІДРАХУНОК ВЛАСТИВОСТЕЙ
 //! =============================================
 
 //* Напиши ф-цію countProps(object), яка рахує і повертає к-сть власних властивостей об'єкта в параметрі object.
@@ -517,7 +532,7 @@
 
 //! =============================================
 //?           Object.keys(obj)                   for...of
-//*               приймає об'єкт і повертає масив ключів його власних властивостей.
+//*               повертає масив ключів власних властивостей об'єкта.
 //*                   Якщо в об'єкті немає властивостей, метод поверне порожній масив.
 //*                        const book = {
 //*                          title: "The Last Kingdom",
@@ -547,32 +562,106 @@
 //*      Значення змінної keys отримане за допомогою методу Object.keys().
 //* Значення змінної keys - це масив ["descr", "rating", "price"].
 //* Значення змінної values - це масив ["Spacious apartment in the city center", 4, 2153].
-
-const apartment = {
-  descr: "Spacious apartment in the city center",
-  rating: 4,
-  price: 2153,
-};
-const values = [];
-// Change code below this line
-const keys = Object.keys(apartment);
-for (const key of keys) {
-  values.push(apartment[key]);
-  //   console.log(key);
-}
-console.log(keys); //      ["descr", "rating", "price"]
-console.log(values); //    ["Spacious apartment in the city center", 4, 2153]
-
-//! =============================================
-//* Task 14
-//! =============================================
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+// const values = [];
+// // Change code below this line
+// const keys = Object.keys(apartment);
+// for (const key of keys) {
+//   values.push(apartment[key]);
+//   //   console.log(key);
+// }
+// console.log(keys); //      ["descr", "rating", "price"]
+// console.log(values); //    ["Spacious apartment in the city center", 4, 2153]
 
 //! =============================================
-//* Task 15
+//?         Object.keys()              for...of
+//* Task 14          ПІДРАХУНОК ВЛАСТИВОСТЕЙ 2.0
 //! =============================================
 
+//* Виконай рефакторинг ф-ції countProps(object), використовуючи метод Object.keys() і, можливо, але не обов'язково, цикл for...of.
+//*       Ф-ція підраховує тільки власні властивості об'єкта
+//*       Ф-ція використовує метод Object.keys() і, можливо, цикл for...of
+//? архаїчний цикл       for...in
+//*              function countProps(object) {
+//*                let propCount = 0;
+//*                for (const key in object) {
+//*                  if (object.hasOwnProperty(key)) {
+//*                    propCount += 1;
+//*                  }
+//*                }
+//*                return propCount;
+//*              }
+
+//? Визначення довжини масиву (к-сті ключів)
+//* ----- Довгий запис -----
+// function countProps(object) {
+//   let propCount = 0; // let тому що змінемо далі
+//   const keys = Object.keys(object);
+//   propCount = keys.length;
+//   return propCount;
+// }
+//* ----- ОСНОВНИЙ короткий ЗАПИС, без перевірки на власні властивості об'єкта -----
+// function countProps(object) {
+//   return Object.keys(object).length;
+// }
+
+// console.log(countProps({})); // 0
+// console.log(countProps({ name: "Mango", age: 2 })); // 2
+// console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 })); // 3
+
+//* ----- Не ОСНОВНИЙ ЗАПИС з перевіркою -----
+// function countProps(object) {
+//   const keys = Object.keys(object);
+//   let propCount = 0;
+//   for (const key of keys) {
+//     if (object.hasOwnProperty(key)) {
+//       propCount += 1;
+//     }
+//   }
+//   return propCount;
+// }
+
 //! =============================================
-//* Task 16
+//?          Object.values(obj)           Object.keys(obj)
+//*          метод повертає масив значень його власних властивостей. Якщо в об'єкті відсутні властивості - поверне порожній масив.
+//*             метод Object.keys(obj) повертає масив ключів власних властивостей об'єкта
+//*                  const book = {
+//*                    title: "The Last Kingdom",
+//*                    author: "Bernard Cornwell",
+//* Task 15            rating: 8.38,
+//*                  };
+//                const keys = Object.keys(book);
+//                console.log(keys); // ["title", "author", "genres", "rating"]
+//                   const values = Object.values(book);
+//                   console.log(values); // ["The Last Kingdom", "Bernard Cornwell", 8.38]
+//*           Масив значень властивостей також можна перебрати циклом for...of, наприклад для отримання загальної суми числових значень.
+//! =============================================
+
+//* Запиши у змінну keys масив ключів власних властивостей об'єкта apartment,
+//* а у змінну values - масив всіх значень його властивостей.Використовуй методи Object.keys() і Object.values().
+//*      Для отримання масиву ключів об'єкта apartment використовується Object.keys()
+//*      Для отримання масиву значень об'єкта apartment використовується Object.values()
+// keys - це масив ["descr", "rating", "price"]
+// values - це масив ["Spacious apartment in the city center", 4, 2153]
+
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+
+// const keys = Object.keys(apartment);
+// const values = Object.values(apartment);
+
+// console.log(keys);
+// console.log(values);
+
+//! =============================================
+//* Task 16     ВИТРАТИ НА ЗАРПЛАТУ
 //! =============================================
 
 //! =============================================
