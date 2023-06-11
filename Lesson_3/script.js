@@ -441,9 +441,9 @@
 //?        Концепція власних і невласних властивостей об'єкта і правильне використання циклу for...in.
 //*                      const animal = {
 //*                        legs: 4,
-//*                      };                                       console.log(dog); // {name: 'Mango'}
-//*                      const dog = Object.create(animal);       console.log(dog.name); // 'Mango'
-//*                      dog.name = "Mango";                      console.log(dog.legs); // 4
+//*                      };                                         console.log(dog); // {name: 'Mango'}
+//*                      const dog = Object.create(animal);         console.log(dog.name); // 'Mango'
+//*                      dog.name = "Mango";                        console.log(dog.legs); // 4
 //*                 Метод Object.create(animal) створює і повертає новий об'єкт, зв'язуючи його з об'єктом animal.
 //*                 dog.legs - отримаємо значення властивості legs, хоча вона відсутня в об'єкті dog - це невласна властивість з об'єкта animal.
 //*                 Оператор in, який використовується в циклі for...in, не розрізняє власні та невласні властивості об'єкта.
@@ -498,7 +498,7 @@
 
 //* Напиши ф-цію countProps(object), яка рахує і повертає к-сть власних властивостей об'єкта в параметрі object.
 //* Використовуй змінну propCount для зберігання к-сті властивостей об'єкта.
-//* Функція підраховує тільки власні властивості об'єкта
+//* Ф-ція підраховує тільки власні властивості об'єкта
 
 // function countProps(object) {
 //   let propCount = 0;
@@ -516,8 +516,52 @@
 // console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 })); //  3
 
 //! =============================================
-//* Task 13
+//?           Object.keys(obj)                   for...of
+//*               приймає об'єкт і повертає масив ключів його власних властивостей.
+//*                   Якщо в об'єкті немає властивостей, метод поверне порожній масив.
+//*                        const book = {
+//*                          title: "The Last Kingdom",
+//*                          author: "Bernard Cornwell",
+//*                          genres: ["historical prose", "adventure"],
+//*                          rating: 8.38,
+//*                        };
+//*                        const keys = Object.keys(book);
+//*                        console.log(keys); // ['title', 'author', 'genres', 'rating']
+//? Task 13         Скомбінувавши результат Object.keys()   +   цикл for...of, можна зручно перебрати власні властивості об'єкта,
+//?                 не вдаючись до використання архаїчного циклу for...in з перевірками приналежності властивостей.
+//*                    const book = {
+//*                      author: "Bernard Cornwell",
+//*                      genres: ["historical prose", "adventure"],
+//*                      rating: 8.38,
+//*                    };
+//*                    const keys = Object.keys(book);
+//*                    for (const key of keys) {*
+//*                      console.log(key);*                 //  Ключ
+//*                      console.log(book[key]);            //  Значення властивості
+//*                    }
 //! =============================================
+
+//*   Перебери об'єкт 'apartment', використовуючи метод Object.keys() і цикл for...of.
+//*   Запиши у змінну keys масив ключів власних властивостей об'єкта apartment, і додай в масив values всі значення його властивостей.
+//*      Значення змінної values отримане за допомогою циклу for...of.
+//*      Значення змінної keys отримане за допомогою методу Object.keys().
+//* Значення змінної keys - це масив ["descr", "rating", "price"].
+//* Значення змінної values - це масив ["Spacious apartment in the city center", 4, 2153].
+
+const apartment = {
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+};
+const values = [];
+// Change code below this line
+const keys = Object.keys(apartment);
+for (const key of keys) {
+  values.push(apartment[key]);
+  //   console.log(key);
+}
+console.log(keys); //      ["descr", "rating", "price"]
+console.log(values); //    ["Spacious apartment in the city center", 4, 2153]
 
 //! =============================================
 //* Task 14
