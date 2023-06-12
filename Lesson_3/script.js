@@ -935,38 +935,139 @@
 //*                     console.log(coverImage); // "https://via.placeholder.com/640/480"
 //! ==================================================
 
-//* У прогнозі макс. т-тур також може бути необов'язкова властивість icon - іконка погоди.
+//*  У прогнозі макс. т-тур - необов'язкова властивість icon - іконка погоди.
 //*     Заміни оголошення змінних yesterday, today, tomorrow і icon однією операцією деструктуризації властивостей об'єкта highTemperatures.
 //*     Задай значення за замовчуванням для icon - рядок "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
 //*     Використовується деструктуризація об'єкта
 
-const highTemperatures = {
-  yesterday: 28,
-  today: 26,
-  tomorrow: 33,
-};
-// Change code below this line
-const {
-  yesterday,
-  today,
-  tomorrow,
-  icon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
-} = highTemperatures;
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+
+// const {
+//   yesterday,
+//   today,
+//   tomorrow,
+//   icon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+// } = highTemperatures;
 //* const yesterday = highTemperatures.yesterday;
 //* const today = highTemperatures.today;
 //* const tomorrow = highTemperatures.tomorrow;
 //* const icon = highTemperatures.icon;
 
-// Change code above this line
-const meanTemperature = (yesterday + today + tomorrow) / 3;
-console.log(meanTemperature); // 29
-//! =============================================
-//* Task 23
-//! =============================================
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+// console.log(meanTemperature); // 29
 
 //! =============================================
-//* Task 24
+//*            Під час деструктуризації можна змінити ім'я змінної, в яку розпаковується значення властивості.
+//*             Спочатку пишемо ім'я властивості, з якої отримуємо значення - після чого - двокрапка : та ім'я змінної,
+//*             в яку необхідно помістити значення цієї властивості.
+//*                       const firstBook = {
+//                         title: "Останнє королівство",
+//                         coverImage:
+//                           "https://images-na.ssl-images-amazon.com/images/I/51b5YG6Y1rL.jpg",
+//                       };
+//                      const {
+//                         title: firstTitle,
+//?                         coverImage: firstCoverImage = "https://via.placeholder.com/640/480",
+// Task 23                       } = firstBook;
+//                       console.log(firstTitle); // Останнє королівство
+//                       console.log(firstCoverImage); // https://images-na.ssl-images-amazon.com/images/I/51b5YG6Y1rL.jpg
+//*                       const secondBook = {
+//                         title: "Сон смішної людини",
+//                       };
+//                       const {
+//                         title: secondTitle,
+//?                         coverImage: secondCoverImage = "https://via.placeholder.com/640/480",
+//                       } = secondBook;
+//                       console.log(secondTitle); // Сон смішної людини
+//                       console.log(secondCoverImage); // https://via.placeholder.com/640/480
+//*                       Такий запис читається як «Створити змінну firstTitle, в яку помістити значення властивості title з об'єкта firstBook» тощо.
 //! =============================================
+
+//* Заміни оголошення змінних highYesterday, highToday, highTomorrow і highIcon однією операцією деструктуризації властивостей об'єкта highTemperatures.
+//*   значення за замовчуванням для highIcon - рядок "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
+//*   Значення змінної highIcon - це рядок "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"
+
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+//! Change code below this line
+// const {
+//   yesterday: highYesterday,
+//   today: highToday,
+//   tomorrow: highTomorrow,
+//   icon: highIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+// } = highTemperatures;
+//* const highYesterday = highTemperatures.yesterday;
+//* const highToday = highTemperatures.today;
+//* const highTomorrow = highTemperatures.tomorrow;
+//* const highIcon = highTemperatures.icon;
+//! Change code above this line
+// const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+// console.log(meanTemperature); // 29
+// console.log(highIcon); //
+// console.log(highTemperatures); //
+
+//! =============================================
+//?          for...of
+//*      Під час перебирання масиву об'єктів циклом for...of відбуваються багаторазові звернення до властивостей об'єкта.
+//                   const books = [
+//                     {
+//                       title: "The Last Kingdom",
+//                       author: "Bernard Cornwell",
+//                       rating: 8.38,
+//                     },
+//                     {
+//                       title: "Beside Still Waters",
+//                       author: "Robert Sheckley",
+//                       rating: 8.51,
+//                     },
+//                   ];
+//                   for (const book of books) {
+//                     console.log(book.title);
+//* Task 24            console.log(book.author);
+//                     console.log(book.rating);
+//                   }
+//*                   щоб скоротити к-сть повторень, можна деструктуризувати властивості об'єкта у локальні змінні в тілі циклу.
+//                   for (const book of books) {
+//                     const { title, author, rating } = book;
+//                     console.log(title);
+//                     console.log(author);
+//                     console.log(rating);
+//                   }
+//*                   Якщо об'єкт містить небагато властивостей, деструктуризація можна виконати безпосередньо в місці оголошення змінної book.
+//                   for (const { title, author, rating } of books) {
+//                     console.log(title);
+//                     console.log(author);
+//                     console.log(rating);
+//                   }
+//! =============================================
+
+//* Виконай рефакторинг циклу for...of таким чином, щоб в ньому використовувалася деструктуризація об'єкта.
+//*        colors - це масив
+//*        Значення змінної hexColors - це масив ["#f44336", "#2196f3", "#4caf50", "#ffeb3b"]
+//*        Значення змінної rgbColors - це масив ["244,67,54", "33,150,243", "76,175,80", "255,235,59"]
+//*        В циклі for...of використовується деструктуризація об'єкта
+// const colors = [
+//   { hex: "#f44336", rgb: "244,67,54" },
+//   { hex: "#2196f3", rgb: "33,150,243" },
+//   { hex: "#4caf50", rgb: "76,175,80" },
+//   { hex: "#ffeb3b", rgb: "255,235,59" },
+// ];
+// const hexColors = [];
+// const rgbColors = [];
+//! Change code below this line
+// for (const { hex, rgb } of colors) {
+//   hexColors.push(hex);
+//   rgbColors.push(rgb);
+// }
+// console.log(hexColors);
+// console.log(rgbColors);
 
 //! =============================================
 //* Task 25
