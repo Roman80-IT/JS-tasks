@@ -837,37 +837,95 @@
 // }
 
 //! =============================================
-//* Task 20      ЗАГАЛЬНА ВАРТІСТЬ ТОВАРУ
+//* Task 20         ЗАГАЛЬНА ВАРТІСТЬ ТОВАРУ
 //! =============================================
 
 // ф-ція calculateTotalPrice(productName) приймає один параметр productName - назва товару.
 // Ф-ція повинна повернути загальну вартість(ціна * к-сть) товару з таким ім'ям з масиву products.
 
-const products = [
-  { name: "Radar", price: 1300, quantity: 4 },
-  { name: "Scanner", price: 2700, quantity: 3 },
-  { name: "Droid", price: 400, quantity: 7 },
-  { name: "Grip", price: 1200, quantity: 9 },
-];
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
 
-function calculateTotalPrice(productName) {
-  let totalPrice = 0;
-  for (const product of products) {
-    if (product.name === productName)
-      totalPrice = product.price * product.quantity;
-  }
-  return totalPrice;
-}
+// function calculateTotalPrice(productName) {
+//   let totalPrice = 0;
+//   for (const product of products) {
+//     if (product.name === productName)
+//       totalPrice = product.price * product.quantity;
+//   }
+//   return totalPrice;
+// }
 
-console.log(calculateTotalPrice("Blaster")); //  0
-console.log(calculateTotalPrice("Radar")); //  5200
-console.log(calculateTotalPrice("Droid")); //  2800
-console.log(calculateTotalPrice("Grip")); //  10800
-console.log(calculateTotalPrice("Scanner")); //  8100
+// console.log(calculateTotalPrice("Blaster")); //  0
+// console.log(calculateTotalPrice("Radar")); //  5200
+// console.log(calculateTotalPrice("Droid")); //  2800
+// console.log(calculateTotalPrice("Grip")); //  10800
+// console.log(calculateTotalPrice("Scanner")); //  8100
 
 //! =============================================
-//* Task 21
+//?          Деструктуризація             const { title, author, public, rating, coverImage } = book
+//*      Складні дані завжди представлені об'єктом. Багаторазові звернення до властивостей об'єкта візуально забруднюють код.
+//                     const book = {
+//                       title: "The Last Kingdom",
+//                       author: "Bernard Cornwell",
+//                       genres: ["historical prose", "adventure"],
+//                       public: true,
+//                       rating: 8.38,
+//                     };
+//                          const accessType = book.public ? "публічному" : "закритому";
+//                          const message = `Книга ${book.title} автора ${book.author} з рейтингом ${book.rating} знаходиться в ${accessType} доступі.`;
+//?               Деструктуризація дозволяє «розпакувати» значення властивостей об'єкта у локальні змінні.
+//* Task 21           Це робить код в місці їх використання менш «шумним».
+//                     const book = {
+//                       title: "The Last Kingdom",
+//                       author: "Bernard Cornwell",
+//                       genres: ["historical prose", "adventure"],
+//                       public: true,
+//                       rating: 8.38,
+//                     };
+//?                     Деструктуризуємо
+//?                           const { title, author, public, rating, coverImage } = book;
+//                           console.log(coverImage); // undefined
+//                           const accessType = public ? "публічному" : "закритому";
+//                           const message = `Книга ${title} автора ${author} з рейтингом ${rating} знаходиться в ${accessType} доступі.`;
+//?                     Деструктуризація завжди знаходиться у лівій частині операції присвоєння.
+//*                     Змінним всередині фігурних дужок присвоюються значення властивостей об'єкта.
+//*                     Якщо ім'я змінної та ім'я властивості збігаються, то відбувається присвоювання - в іншому випадку їй буде присвоєно undefined.
+//*                     Порядок оголошення змінних у фігурних дужках не важливий.
 //! =============================================
+
+//* Надійшов триденний прогноз макс. т-тур і ми рахуємо середню температуру за три дні (meanTemperature).
+//* Заміни оголошення змінних yesterday, today і tomorrow однією операцією деструктуризації властивостей об'єкта highTemperatures.
+// highTemperatures - це об'єкт
+// Оголошена змінна yesterday за допомогою деструктуризації
+// Значення змінної yesterday - це число 28
+// Оголошена змінна today за допомогою деструктуризації
+// Значення змінної today - це число 26
+// Оголошена змінна tomorrow за допомогою деструктуризації
+// Значення змінної tomorrow - це число 33
+// Оголошена змінна meanTemperature
+// Значення змінної meanTemperature - це число 29
+// Використовується синтаксис деструктуризації об'єкта highTemperatures
+
+const highTemperatures = {
+  yesterday: 28,
+  today: 26,
+  tomorrow: 33,
+};
+// Change code below this line
+
+const { yesterday, today, tomorrow } = highTemperatures;
+// const yesterday = highTemperatures.yesterday;
+// const today = highTemperatures.today;
+// const tomorrow = highTemperatures.tomorrow;
+
+// Change code above this line
+const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+console.log(meanTemperature);
 
 //! =============================================
 //* Task 22
