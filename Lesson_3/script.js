@@ -899,16 +899,58 @@
 
 //* Надійшов триденний прогноз макс. т-тур і ми рахуємо середню температуру за три дні (meanTemperature).
 //* Заміни оголошення змінних yesterday, today і tomorrow однією операцією деструктуризації властивостей об'єкта highTemperatures.
-// highTemperatures - це об'єкт
-// Оголошена змінна yesterday за допомогою деструктуризації
-// Значення змінної yesterday - це число 28
-// Оголошена змінна today за допомогою деструктуризації
-// Значення змінної today - це число 26
-// Оголошена змінна tomorrow за допомогою деструктуризації
-// Значення змінної tomorrow - це число 33
-// Оголошена змінна meanTemperature
-// Значення змінної meanTemperature - це число 29
-// Використовується синтаксис деструктуризації об'єкта highTemperatures
+//*       Оголошена змінні yesterday today tomorrow за допомогою деструктуризації
+//*       Використовується синтаксис деструктуризації об'єкта highTemperatures
+
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+
+// const { yesterday, today, tomorrow } = highTemperatures;
+//* const yesterday = highTemperatures.yesterday;
+//* const today = highTemperatures.today;
+//* const tomorrow = highTemperatures.tomorrow;
+
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+// console.log(meanTemperature);  // 29
+
+//! ===================================================
+//?      Деструктуризація  - задати змінним значення за замовчуванням
+//*                 З метою уникнення присвоєння undefined під час деструктуризації неіснуючих властивостей,
+//*                 можна задати змінним значення за замовчуванням, які будуть присвоєні, коли в об'єкті відсутня властивість з таким ім'ям.
+//*                     const book = {
+//*                       title: "The Last Kingdom",
+//*                       author: "Bernard Cornwell",
+//*                     };
+//                  Додамо зображення обкладинки, якщо вона відсутня в об'єкті книги
+//? Task 22             const {
+//?                       title,
+//?                       coverImage = "https://via.placeholder.com/640/480",
+//?                       author,
+//?                     } = book;
+//*                     console.log(title); // "The Last Kingdom"
+//*                     console.log(author); // "Bernard Cornwell"
+//*                     console.log(coverImage); // "https://via.placeholder.com/640/480"
+//! ==================================================
+//* У прогнозі макс. т-тур також може бути необов'язкова властивість icon - іконка погоди. 
+//* Заміни оголошення змінних yesterday, today, tomorrow і icon однією операцією деструктуризації властивостей об'єкта highTemperatures.
+//*  Задай значення за замовчуванням для icon - рядок "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
+
+Оголошена змінна highTemperatures
+Значення змінної highTemperatures - це об'єкт
+Оголошена змінна highTemperatures
+Значення змінної highTemperatures - це об'єкт
+Оголошена змінна yesterday за допомогою деструктуризації
+Значення змінної yesterday - це число 28
+Оголошена змінна today за допомогою деструктуризації
+Значення змінної today - це число 26
+Оголошена змінна tomorrow за допомогою деструктуризації
+Значення змінної tomorrow - це число 33
+Оголошена змінна icon за допомогою деструктуризації
+Значення змінної icon - це рядок "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
+Використовується деструктуризація об'єкта
 
 const highTemperatures = {
   yesterday: 28,
@@ -917,19 +959,15 @@ const highTemperatures = {
 };
 // Change code below this line
 
-const { yesterday, today, tomorrow } = highTemperatures;
-// const yesterday = highTemperatures.yesterday;
-// const today = highTemperatures.today;
-// const tomorrow = highTemperatures.tomorrow;
+const yesterday = highTemperatures.yesterday;
+const today = highTemperatures.today;
+const tomorrow = highTemperatures.tomorrow;
+const icon = highTemperatures.icon;
 
 // Change code above this line
 const meanTemperature = (yesterday + today + tomorrow) / 3;
 
-console.log(meanTemperature);
 
-//! =============================================
-//* Task 22
-//! =============================================
 
 //! =============================================
 //* Task 23
