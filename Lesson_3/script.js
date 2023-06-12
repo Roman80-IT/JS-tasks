@@ -1,4 +1,5 @@
 //         node Lesson_3/script           -  запуск через термінал ≡
+//         console.trace();
 
 //! =============================================
 //? Ф-ції
@@ -32,17 +33,18 @@
 //* Ключ ще називають ім'ям властивості і це завжди рядок.
 //* Значенням властивості можуть бути любі типи: примітиви, масиви, об'єкти, булі, ф-ції.
 //* Властивості розділяються комою.
+//      { mango: 100, poly: 150, alfred: 80 }
 
 //! ============================================================================
 //* Task 1        Оголошення  Об'єкту
 //! ============================================================================
 
 //* Присвой змінній apartment об'єкт, який описує квартиру з наступними характеристиками:
-//*      imgUrl - фотографія, значення "https://via.placeholder.com/640x480";
-//*      descr - опис, значення "Spacious apartment in the city center";
-//*      rating - рейтинг, значення 4;
-//*      price - ціна, значення 2153;
-//*      tags - метаінформація, масив ["premium", "promoted", "top"].
+//*      imgUrl - фотографія = "https://via.placeholder.com/640x480";
+//*      descr - опис = "Spacious apartment in the city center";
+//*      rating - рейтинг = 4;
+//*      price - ціна = 2153;
+//*      tags - метаінформація - масив ["premium", "promoted", "top"].
 
 // const apartment = {
 //   imgUrl: "https://via.placeholder.com/640x480",
@@ -197,7 +199,7 @@
 // console.log(lastTag);
 
 //! ============================================================================
-//?        об'єкт["ключ_властивості"]        Синтаксис «квадратних дужок»
+//?        об'єкт["ключ_властивості"]        (cинтаксис «квадратних дужок»)
 //*               Другий спосіб отримати доступ до властивості об'єкта  -  Схоже на звернення до елемента масиву
 //*            з відмінністю в тому, що в дужках зазначається не індекс елемента, а ім'я властивості як рядок.
 //*            використовується значно рідше - коли ім'я властивості заздалегідь невідоме або воно зберігається у змінній (як значення параметра ф-ції, наприклад).
@@ -498,7 +500,7 @@
 // apartment.rating = 4;
 // apartment.price = 2153;
 // for (const key in apartment) {
-//   if (apartment.hasOwnProperty(key)) {
+//   if (apartment.hasOwnProperty(keys)) {
 //     keys.push(key);
 //     values.push(apartment[key]);
 //   }
@@ -661,7 +663,8 @@
 // console.log(values);
 
 //! =============================================
-//* Task 16     ВИТРАТИ НА ЗАРПЛАТУ
+//?        Object.values()         for...of       Сума:  totalSalary += salary
+//* Task 16        ВИТРАТИ НА ЗАРПЛАТУ
 //! =============================================
 
 //* ф-ція countTotalSalary(salaries) приймає об'єкт зарплат, де ім'я властивості - це ім'я співробітника, а значення властивості - це зарплата.
@@ -680,20 +683,161 @@
 // console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 })); // 330
 // console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 })); // 400
 
-//! =============================================
-//* Task 17
-//! =============================================
+//! =================================================================
+//?          for...of          «через крапку»
+//?           маніпуляція масивом однотипних об'єктів
+//*              всі об'єкти в масиві гарантовано матимуть однаковий набір властивостей, але з різними значеннями.
+//*                 const books = [
+//*                   {
+//*                     title: "The Last Kingdom",
+//*                     author: "Bernard Cornwell",
+//*                     rating: 8.38,
+//*                   },
+//*                   {
+//*                     title: "Beside Still Waters",
+//*                     author: "Robert Sheckley",
+//*                     rating: 8.51,
+//*                   },
+//*                   {
+//*                     title: "The Dream of a Ridiculous Man",
+//* Task 17             author: "Fyodor Dostoevsky",
+//*                     rating: 7.75,
+//*                   },
+//*                 ];
+//?           for...of - для перебирання масиву
+//?           синтаксис «через крапку» - отримуємо значення властивостей кожного об'єкта
+//?           (в кожному об'єкті набір властивостей та їх імена будуть однакові - відрізняються тільки значення)
+//*                for (const book of books) {
+//*                  // Об'єкт книги
+//*                  console.log(book);
+//*                  // Назва
+//*                  console.log(book.title);
+//*                  // Автор
+//*                  console.log(book.author);
+//*                  // Рейтинг
+//*                  console.log(book.rating);
+//*                }
+//! ================================================================
+
+//* Перебери масив об'єктів colors, використовуючи цикл for...of.
+//* Додай у масив hexColors значення властивостей hex, а в масив rgbColors - значення властивостей rgb з усіх об'єктів масиву colors.
+
+// const colors = [
+//   { hex: "#f44336", rgb: "244,67,54" },
+//   { hex: "#2196f3", rgb: "33,150,243" },
+//   { hex: "#4caf50", rgb: "76,175,80" },
+//   { hex: "#ffeb3b", rgb: "255,235,59" },
+// ];
+
+// const hexColors = [];
+// const rgbColors = [];
+// for (const color of colors) {
+//   hexColors.push(color.hex);
+//   rgbColors.push(color.rgb);
+// }
+
+// console.log(hexColors); // ["#f44336", "#2196f3", "#4caf50", "#ffeb3b"]
+// console.log(rgbColors); // ["244,67,54", "33,150,243", "76,175,80", "255,235,59"]
+
+//! =======================================================
+//? Task 18          ПОШУК ОБ'ЄКТА ЗА ЗНАЧЕННЯМ ВЛАСТИВОСТІ
+//! =======================================================
+
+//* ф-ція getProductPrice(productName) приймає один параметр productName - назва продукту.
+//* Ф-ція шукає об'єкт продукту з таким ім'ям (властивість name) в масиві products і повертає його ціну (властивість price).
+//* Якщо продукт з такою назвою не знайдений, функція повинна повертати null.
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getProductPrice(productName) {
+//   for (const product of products) {
+//     if (product.name === productName) {
+//       return product.price;
+//     }
+//   }
+//   return null;
+// }
+
+// console.log(getProductPrice("Radar")); // 1300
+// console.log(getProductPrice("Grip")); // 1200
+// console.log(getProductPrice("Scanner")); // 2700
+// console.log(getProductPrice("Droid")); // 400
+// console.log(getProductPrice("Engine")); // null
+
+//! ====================================================================
+//?        об'єкт["ключ_властивості"] (cинтаксис «квадратних дужок»)       for...of
+//?                  map()                    reduce()
+//* Task 19        КОЛЕКЦІЯ ЗНАЧЕНЬ ВЛАСТИВОСТІ
+//*
+//! ===================================================================
+
+//* ф-ція getAllPropValues(propName) приймає один параметр propName - ім'я (ключ) властивості.
+//* Ф-ція повинна повернути масив всіх значень властивості з таким ім'ям з кожного об'єкта в масиві products.
+//* Якщо в об'єктах відсутні властивості з таким ім'ям, ф-ція повинна повернути порожній масив.
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// //*  ----- Використання циклу for...of: -----
+// function getAllPropValues(propName) {
+//   const propValues = [];
+//   for (const value of products) {
+//!  ПЕРЕВІРКА  інакше будуть додаватись всі значення властивостей, навіть якщо вони є undefined або відсутні.
+//     if (value[propName]) {
+//       propValues.push(value[propName]);
+//     }
+//   }
+//   return propValues;
+// }
+
+// console.log(getAllPropValues("name")); // ["Radar", "Scanner", "Droid", "Grip"]
+// console.log(getAllPropValues("quantity")); // [4, 3, 7, 9]
+// console.log(getAllPropValues("price")); // [1300, 2700, 400, 1200]
+// console.log(getAllPropValues("category")); // []
+
+//* ----- Використання циклу for: -----
+// function getAllPropValues(propName) {
+//   var values = [];
+//   for (var i = 0; i < products.length; i++) {
+//     if (products[i][propName]) {
+//       values.push(products[i][propName]);
+//     }
+//   }
+//   return values;
+// }
+
+//* Використання методу map():
+// function getAllPropValues(propName) {
+//   return products
+//     .map(function (product) {
+//       return product[propName];
+//     })
+//     .filter(function (value) {
+//       return value !== undefined;
+//     });
+// }
+
+//* Використання методу reduce():
+// function getAllPropValues(propName) {
+//   return products.reduce(function (values, product) {
+//     if (product[propName]) {
+//       values.push(product[propName]);
+//     }
+//     return values;
+//   }, []);
+// }
 
 //! =============================================
-//* Task 18
-//! =============================================
-
-//! =============================================
-//* Task 19
-//! =============================================
-
-//! =============================================
-//* Task 20
+//* Task 20      ЗАГАЛЬНА ВАРТІСТЬ ТОВАРУ
 //! =============================================
 
 //! =============================================
