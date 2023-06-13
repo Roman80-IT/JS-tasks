@@ -1092,15 +1092,15 @@
 //*                     console.log(userLikes); // 1308
 //! =============================================
 
-// Ми отримали прогноз погоди на два дні, з мінімальними і максимальними температурами, а також необов'язковими іконками. Заміни оголошення всіх змінних однією операцією деструктуризації властивостей об'єкта forecast. Задай значення за замовчуванням для іконок, змінних todayIcon і tomorrowIcon - рядок "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
-// forecast - це об'єкт
-// highToday - це число 32
-// lowToday - це число 28
-// todayIcon - це рядок "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg"
-// highTomorrow - це число 31
-// lowTomorrow - це число 27
-// tomorrowIcon - це рядок "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"
-// Використовується синтаксис деструктуризації об'єкта highTemperatures
+//* Ми отримали прогноз погоди на два дні, з мінімальними і максимальними температурами, а також необов'язковими іконками. Заміни оголошення всіх змінних однією операцією деструктуризації властивостей об'єкта forecast. Задай значення за замовчуванням для іконок, змінних todayIcon і tomorrowIcon - рядок "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
+//*       forecast - це об'єкт
+//*       highToday - це число 32
+//*       lowToday - це число 28
+//*       todayIcon - це рядок "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg"
+//*       highTomorrow - це число 31
+//*       lowTomorrow - це число 27
+//*       tomorrowIcon - це рядок "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"
+//* Використовується синтаксис деструктуризації об'єкта highTemperatures
 
 // const forecast = {
 //   today: {
@@ -1135,76 +1135,112 @@
 // console.log(forecast);
 
 //! ===============================================================
-//*          Якщо ф-ція приймає більше 2-ох - 3-ох аргументів, легко заплутатися, в якій послідовності і що передавати.
-//*             В результаті виходить дуже неочевидний код у місці її виклику.
-//                    function doStuffWithBook(title, numberOfPages, downloads, rating, public) {
+//?         Патерн «Об'єкт налаштувань»
+//*          Якщо ф-ція приймає > 3-ох аргументів, легко заплутатися в послідовності і що передавати.
+//                     function doStuffWithBook(title, numberOfPages, downloads, rating, public) {
 //*                  // Робимо щось з параметрами
 //                      console.log(title);
-//                      console.log(numberOfPages);
-//*                  // І так далі
-//                    }
-//                    ❌ Що таке 736? Що таке 10283? Що таке true?
-//                     doStuffWithBook("Останнє королівство", 736, 10283, 8.38, true);
-//?              Патерн «Об'єкт налаштувань» вирішує це - замінює набір параметрів всього одним - об'єктом з іменованими властивостями.
-//                    function doStuffWithBook(book) {
-//*                  // Робимо щось з властивостями об'єкта
+//                      console.log(numberOfPages);    }
+//*                    ❌ Що таке 736? 10283? true?:
+//                Виклик:                 doStuffWithBook("Останнє королівство", 736, 10283, 8.38, true);
+//?                 Патерн «Об'єкт налаштувань» вирішує це - замінює набір параметрів всього одним - об'єктом з іменованими властивостями.
+//                Переписуємо ф-цію:      function doStuffWithBook(book) {
+//*                  // якісь дії з властивостями об'єкта
 //                    console.log(book.title);
-//                    console.log(book.numberOfPages);
-//*                  // І так далі
-//                    }
-//* Task 26        Тоді під час її виклику передаємо один об'єкт з необхідними властивостями.
-//*                  // ✅ Все зрозуміло
-//                    doStuffWithBook({
+//                    console.log(book.numberOfPages);   }
+//*               Тоді під час її виклику передаємо 1 об'єкт з необхідними властивостями.
+//* Task 26            ✅ Все зрозуміло:
+//                Виклик:                 doStuffWithBook({
 //                      title: "Останнє королівство",
 //                      numberOfPages: 736,
 //                      downloads: 10283,
 //                      rating: 8.38,
-//                      public: true,
-//                    });
-//*                  // Ще один плюс в тому, що можна деструктуризувати об'єкт в параметрі book.
-//*                  // Це можна зробити в тілі функції.
+//                      public: true,        });
+//?                +  Ще можна деструктуризувати об'єкт в параметрі book -      в тілі ф-ції:
 //                    function doStuffWithBook(book) {
-//                      const { title, numberOfPages, downloads, rating, public } = book;
+//?                     const { title, numberOfPages, downloads, rating, public } = book;
 //                      console.log(title);
-//                      console.log(numberOfPages);
-//*                  // І так далі
-//                    }
-//*                  // Або в сигнатурі (підписі), різниці немає.
+//                      console.log(numberOfPages);       }
+//?                   Або в сигнатурі (підписі), різниці немає.
 //                    function doStuffWithBook({ title, numberOfPages, downloads, rating, public }) {
 //                      console.log(title);
-//                      console.log(numberOfPages);
-//*                  // І так далі
-//                    }
+//                      console.log(numberOfPages);      }
 //! =============================================================
 
-//*  Функція calculateMeanTemperature(forecast) приймає один параметр forecast - об'єкт температур на два дні наступного формату.
+//*  Ф-ція calculateMeanTemperature(forecast) приймає один параметр forecast - об'єкт температур на два дні наступного формату.
 // {
 //   today: { low: 10, high: 20 },
 //   tomorrow: { low: 20, high: 30 }
 // }
 //*  Заміни оголошення змінних todayLow, todayHigh, tomorrowLow і tomorrowHigh однією операцією деструктуризації властивостей об'єкта forecast.
 //*  Оголошена функція calculateMeanTemperature(forecast)
-// В тілі функції використовується деструктуризація об'єкта
-// В тілі функції оголошена змінна todayHigh за допомогою деструктуризації
-// В тілі функції оголошена змінна todayLow за допомогою деструктуризації
-// В тілі функції оголошена змінна tomorrowLow за допомогою деструктуризації
-// В тілі функції оголошена змінна tomorrowHigh за допомогою деструктуризації
-//*  Виклик calculateMeanTemperature({ today: {low: 28, high: 32}, tomorrow: {low: 25, high: 29} }) повертає 28.5
-//*  Виклик calculateMeanTemperature({ today: {low: 37, high: 40}, tomorrow: {low: 33, high: 38} }) повертає 37
+//*        В тілі ф-ції використовується деструктуризація об'єкта
+//*        В тілі ф-ції оголошена змінна todayHigh за допомогою деструктуризації
+//*        В тілі ф-ції оголошена змінна todayLow за допомогою деструктуризації
+//*        В тілі ф-ції оголошена змінна tomorrowLow за допомогою деструктуризації
+//*        В тілі ф-ції оголошена змінна tomorrowHigh за допомогою деструктуризації
 
-// Change code below this line
+//! Change code below this line
+//* function calculateMeanTemperature(forecast) {
+//*   const todayLow = forecast.today.low;
+//*   const todayHigh = forecast.today.high;
+//*   const tomorrowLow = forecast.tomorrow.low;
+//*   const tomorrowHigh = forecast.tomorrow.high;
+//?  ------ ВАРІАНТ 1 ------
+// function calculateMeanTemperature({
+//   today: { low: todayLow, high: todayHigh },
+//   tomorrow: { low: tomorrowLow, high: tomorrowHigh },
+// }) {
+//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+// }
+
+//?  ------ ВАРІАНТ 2 ------
 function calculateMeanTemperature(forecast) {
-  const todayLow = forecast.today.low;
-  const todayHigh = forecast.today.high;
-  const tomorrowLow = forecast.tomorrow.low;
-  const tomorrowHigh = forecast.tomorrow.high;
+  const {
+    today: { low: todayLow, high: todayHigh },
+    tomorrow: { low: tomorrowLow, high: tomorrowHigh },
+  } = forecast;
 
-  // Change code above this line
   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
 }
 
+//! Change code above this line
+console.log(
+  calculateMeanTemperature({
+    today: { low: 28, high: 32 },
+    tomorrow: { low: 25, high: 29 },
+  })
+); // 28.5
+console.log(
+  calculateMeanTemperature({
+    today: { low: 37, high: 40 },
+    tomorrow: { low: 33, high: 38 },
+  })
+); // 37
+
 //! =============================================
-//* Task 27
+//?           Синтаксис ... (spread) 
+//* Task 27           дозволяє розподілити колекцію елементів (масив, рядок або об'єкт) в місце, в якому очікується набір окремих значень. 
+//*             Звичайно, існують деякі обмеження, наприклад, не можна розподілити масив в об'єкт і навпаки.
+//*             Можна навести аналогію з ящиком яблук. Поставивши ящик на підлогу, не виймаючи з нього яблука, отримаємо аналог масиву значень. 
+Якщо висипати яблука з ящика на підлогу, відбудеться розподіл - набір окремих значень.
+
+Відмінність лише одна - в JavaScript розподіл не змінює оригінальну колекцію, тобто створюється копія кожного елемента. Після розподілу залишиться і ящик повний яблук, і копія кожного яблука на підлозі.
+
+Наприклад, метод Math.max (аргументи) шукає і повертає найбільший з аргументів (чисел), тобто очікує не масив значень, а довільну кількість аргументів.
+
+const temps = [14, -4, 25, 8, 11];
+
+// В консолі буде масив
+console.log(temps);
+// ❌ Так не спрацює, тому що передаємо цілий масив
+console.log(Math.max(temps)); // NaN
+
+// В консолі буде набір окремих чисел
+console.log(...temps);
+// ✅ Розподілимо колекцію елементів у якості окремих аргументів
+console.log(Math.max(...temps)); // 25
+Тобто запис Math.max (... [14, -4, 25, 8, 11]), після інтерпретації перетворюється у Math.max (14, -4, 25, 8, 11) - синтаксис ... повертає розпакований масив, тобто розподіляє його елементи у якості окремих аргументів.
 //! =============================================
 
 //! =============================================
