@@ -1246,25 +1246,121 @@
 //*  Для передачі аргументів методу Math.max() використовується синтаксис ... на масиві scores
 //*  Для передачі аргументів методу Math.min() використовується синтаксис ... на масиві scores
 
-const scores = [89, 64, 42, 17, 93, 51, 26];
-// Change code below this line
-const bestScore = Math.max(...scores);
-const worstScore = Math.min(...scores);
+// const scores = [89, 64, 42, 17, 93, 51, 26];
+// const bestScore = Math.max(...scores);
+// const worstScore = Math.min(...scores);
 
-console.log(bestScore); // 93
-console.log(worstScore); // 17
-console.log(...scores); // 17
-
-//! =============================================
-//* Task 28
-//! =============================================
+// console.log(bestScore); // 93
+// console.log(worstScore); // 17
+// console.log(...scores); // 17
 
 //! =============================================
-//* Task 29
+//?         Операція '.spread'  (операція розподілу)      - аналог    slice() і concat()
+//*                 дозволяє створити копію масиву або «склеїти» довільну к-сть масивів в 1 новий.
+//*                    Раніше для цього використовували методи slice() і concat() - операція розподілу дозволяє зробити те саме у коротшій формі.
+//                          const temps = [14, -4, 25, 8, 11];
+//*                     // Це точна, але незалежна копія масиву temps
+//?                         const copyOfTemps = [...temps];
+//                          console.log(copyOfTemps); // [14, -4, 25, 8, 11]
+//*                   В наведеному вище прикладі у нас є ящик яблук temps і ми хочемо створити його точну копію.
+//* Task 28             Беремо порожній ящик і пересипаємо в нього яблука з вихідного ящика temps - розподіляємо його в іншу колекцію.
+//*                     За такої умови, ящик temps не зміниться, в ньому все ще будуть яблука, а в новому ящику - їх точні копії.
+
+//*                   Наступний приклад - зсипаємо яблука з 2-ох ящиків в 1
+//*                     Оригінальні ящики(масиви) не зміняться, а в новому будуть копії усіх їх яблук(елементів).
+//*                     Порядок розподілу важливий - він впливає на порядок елементів у новій колекції.
+//                       const lastWeekTemps = [14, 25, 11];
+//                       const currentWeekTemps = [23, 17, 18];
+//                       const allTemps = [...lastWeekTemps, ...currentWeekTemps];
+//                       console.log(allTemps); // [14, 25, 11, 23, 17, 18]
 //! =============================================
 
+//* У змінних firstGroupScores, secondGroupScores і thirdGroupScores зберігаються результати тестування окремих груп.
+//*  Використовуючи розподіл, доповни код:
+//*       У змінній allScores - зберігається масив від 1-ої до 3-ої групи.
+//*       bestScore - найвищий загальний бал.
+//*       worstScore - найнижчий загальний бал.
+//* Для присвоєння значення змінної allScores використовувався синтаксис ... для заповнення масиву
+//* Для передачі аргументів методу Math.max() використовується синтаксис ... на масиві allScores
+//* Для передачі аргументів методу Math.min() використовується синтаксис ... на масиві allScores
+// const firstGroupScores = [64, 42, 93];
+// const secondGroupScores = [89, 14, 51, 26];
+// const thirdGroupScores = [29, 47, 18, 97, 81];
+//! Change code below this line
+//* const allScores = [];
+//* const bestScore = allScores;
+//* const worstScore = allScores;
+// const allScores = [
+//   ...firstGroupScores,
+//   ...secondGroupScores,
+//   ...thirdGroupScores,
+// ];
+// const bestScore = Math.max(...allScores);
+// const worstScore = Math.min(...allScores);
+
+// console.log(allScores); // [64, 42, 93, 89, 14, 51, 26, 29, 47, 18, 97, 81]
+// console.log(bestScore); // 97
+// console.log(worstScore); // 14
+
 //! =============================================
-//* Task 30
+//?          Порядок і перезапис однакових значень при розподілі
+//*               Операція spread дозволяє розподілити властивості довільної к-сті об'єктів в один новий.
+//                  const first = { propA: 5, propB: 10 };
+//                  const second = { propC: 15 };
+//                  const third = { ...first, ...second };
+//                  console.log(third); //       { propA: 5, propB: 10, propC: 15 }
+//*               Порядок розподілу має значення.Імена властивостей об'єкта - унікальні,
+//*               тому властивості об'єкта, що розподіляється, можуть перезаписати значення вже існуючої властивості, якщо їх імена збігаються.
+//              const first = { propA: 5, propB: 10, propC: 50 };
+//              const second = { propC: 15, propD: 20 };
+//                   const third = { ...first, ...second };
+// Task 29           console.log(third); // { propA: 5, propB: 10, propC: 15, propD: 20 }
+//              const fourth = { ...second, ...first };
+//              console.log(fourth); // { propC: 50, propD: 20, propA: 5, propB: 10 }
+//*                в одному ящику не може бути 2-ох яблук з однаковими наліпками - пересипаючи 2-ий ящик, усі яблука, позначки яких будуть збігатися - замінять існуючі.
+//*                Під час розподілу можна додавати властивості у довільне місце.
+//*                - пам'ятай про унікальність імені властивості і, що її значення може бути перезаписане.
+//              const first = { propA: 5, propB: 10, propC: 50 };
+//              const second = { propC: 15 };
+//                  const third = { propB: 20, ...first, ...second };
+//                  console.log(third); // { propA: 5, propB: 10, propC: 15 }
+//              const fourth = { ...first, ...second, propB: 20 };
+//              console.log(fourth); // { propA: 5, propB: 20, propC: 15 }
+//                  const fifth = { ...first, propB: 20, ...second };
+//                  console.log(fifth); // { propA: 5, propB: 20, propC: 15 }
+//! =============================================
+
+//* В конструкторі можна створювати нові тести, для яких є налаштування за замовчуванням, які зберігаються у змінній defaultSettings.
+//*      Під час створення тесту, налаштування можна перевизначити, вони зберігаються у змінній overrideSettings.
+//* Для того щоб отримати фінальні налаштування тесту, необхідно взяти налаштування за замовчуванням і поверх них застосувати перевизначені налаштування.
+//*      Доповни код, щоб у змінній finalSettings утворився об'єкт фінальних налаштувань тесту.
+//*        змінна defaultSettings - це об'єкт
+//*        змінна overrideSettings - це об'єкт
+//*        змінна finalSettings - це об'єкт
+//*  Для присвоєння значення змінній finalSettings використовується синтаксис ...
+// const defaultSettings = {
+//   theme: "light",
+//   public: true,
+//   withPassword: false,
+//   minNumberOfQuestions: 10,
+//   timePerQuestion: 60,
+// };
+// const overrideSettings = {
+//   public: false,
+//   withPassword: true,
+//   timePerQuestion: 30,
+// };
+// //! Change code below this line
+// const finalSettings = { ...defaultSettings, ...overrideSettings };
+
+// console.log(finalSettings.theme); //  "light"
+// console.log(finalSettings.public); //  "false"
+// console.log(finalSettings.withPassword); //  "true"
+// console.log(finalSettings.minNumberOfQuestions); //  10
+// console.log(finalSettings.timePerQuestion); //  30
+
+//! =============================================
+//* Task 30          КАРТКИ ЗАВДАНЬ
 //! =============================================
 
 //! =============================================
