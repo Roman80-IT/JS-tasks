@@ -1519,8 +1519,71 @@
 // }
 
 //! ===============================================================
+//?         includes()     filter()     reduce()    {лінійна складність (O(n))}        Цикл в циклі  {складність (O(n^2))}
 //* Task 33        МАСИВ ЗБІГІВ
 //! ===============================================================
+
+//* Ф-ція findMatches() приймає довільну к-сть аргументів. Перший аргумент - масив чисел, а решта аргументів - просто числа.
+//* Доповни код ф-ції, щоб вона повертала новий масив matches, в якому будуть тільки ті аргументи, починаючи з другого, які є в масиві першого аргументу.
+//* Наприклад, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) повинна повернути масив [1, 2], тому що тільки вони є в масиві першого аргументу.
+// console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7)); //  [1, 2]
+// console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2)); //  [17, 89, 2]
+// console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41)); //  [24, 9, 41]
+// console.log(findMatches([63, 11, 8, 29], 4, 7, 16)); //  []
+//! Change code below this line
+//* function findMatches() {
+//*   const matches = []; // Don't change this line
+//! Change code above this line
+
+//?   ---- ВАРІАНТ includes() ----
+// function findMatches(massif, ...args) {
+//   const matches = [];
+//   for (let i = 0; i < args.length; i++) {
+//     if (massif.includes(args[i])) {
+//       matches.push(args[i]);
+//     }
+//   }
+//   return matches;
+// }
+
+//?   ---- ВАРІАНТ filter() та includes() ----
+//* args.filter(...) створює новий масив, який буде містити елементи, які проходять умову.
+//* (num) => massif.includes(num) - Це стрілочна функція, передана у метод filter(), яка приймає поточний елемент num з 'args'.
+//*    перевіряє, чи міститься 'num' у масиві 'massif', використовуючи метод 'includes()'.
+// function findMatches(massif, ...args) {
+//   return args.filter((num) => massif.includes(num));
+// }
+
+//?   ---- ВАРІАНТ reduce() та includes() ----
+//? args.filter(...) - викликає метод filter() на масиві args.
+//* метод reduce() - поступово створює новий масив  'matches', перебираючи елементи 'args' та перевіряючи їх присутність у масиві 'massif'.
+//*       args.reduce(...) - викликаємо метод 'reduce()' на масиві 'massif' - приймає 2 аргументи:
+//*            функцію-акумулятор і початкове значення (тут пустий масив[]).
+//?      (matches, num) => { ... } - функція-акумулятор, яка виконується для кожного елемента 'num' з 'args'.
+//*            перевіряє, чи міститься 'num' у масиві 'massif', використовуючи метод includes(). Якщо так, то він додає num до масиву matches.
+// function findMatches(massif, ...args) {
+//   return args.reduce((matches, num) => {
+//     if (massif.includes(num)) {
+//       matches.push(num);
+//     }
+//     return matches;
+//   }, []);
+// }
+
+//?   ---- ВАРІАНТ Цикл в циклі ----
+//* має лінійну складність (O(n^2))
+// function findMatches(massif, ...args) {
+//   const matches = [];
+//   const items = [...args];
+//   for (const i of items) {
+//     for (const j of massif) {
+//       if (j === i) {
+//         matches.push(j);
+//       }
+//     }
+//   }
+//   return matches;
+// }
 
 //! ===============================================================
 //* Task 34
