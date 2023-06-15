@@ -1729,34 +1729,54 @@
 //*   Значення змінної atTheOldToad - це об'єкт
 //*   Значення властивості atTheOldToad.potions - це масив []
 
-const atTheOldToad = {
-  potions: [],
-};
-// atTheOldToad.potions = []; // Додавання властивості potions з порожнім масивом
-console.log(atTheOldToad.potions);
+// const atTheOldToad = {
+//   potions: [],
+// };
+//* // atTheOldToad.potions = []; // Додавання властивості potions з порожнім масивом
+// console.log(atTheOldToad.potions);
 
 //! ===============================================================
 //* Task 37           ОТРИМУЄМО ВСЕ ЗІЛЛЯ
 //! ===============================================================
 
 //*  Додай об'єкту atTheOldToad метод getPotions(), який просто повертає значення властивості potions.
+//*      Змінна atTheOldToad - це об'єкт
+//*      Значення властивості atTheOldToad.potions - це масив ["Speed potion", "Dragon breath", "Stone skin"]
+//*      Значення властивості atTheOldToad.getPotions - це метод об'єкта
+//*      Виклик методу atTheOldToad.getPotions() повертає ["Speed potion", "Dragon breath", "Stone skin"]
 
-Змінна atTheOldToad - це об'єкт
-Значення властивості atTheOldToad.potions - це масив ["Speed potion", "Dragon breath", "Stone skin"]
-Значення властивості atTheOldToad.getPotions - це метод об'єкта
-Виклик методу atTheOldToad.getPotions() повертає ["Speed potion", "Dragon breath", "Stone skin"]
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   //! Change code below this line
+//   getPotions() {
+//     return this.potions;
+//   },
+//   //! Change code above this line
+// };
+// console.log(atTheOldToad.getPotions());
 
+//! ===============================================================
+//* Task 38      ДОДАЄМО НОВЕ ЗІЛЛЯ
+//! ===============================================================
+
+//* Доповни метод addPotion(potionName), щоб він додавав зілля potionName в кінець масиву зілля у властивості potions.
+//*   Значення змінної atTheOldToad - це об'єкт
+//*   Значення властивості atTheOldToad.potions - це масив ["Speed potion", "Dragon breath", "Stone skin"]
+//*   Значення властивості atTheOldToad.addPotion - це метод об'єкта
+//*   Після першого виклику методу atTheOldToad.addPotion("Invisibility"), у властивості potions буде масив ["Speed potion", "Dragon breath", "Stone skin", "Invisibility"]
+//*   Після другого виклику методу atTheOldToad.addPotion("Power potion"), у властивості potions буде масив ["Speed potion", "Dragon breath", "Stone skin", "Invisibility", "Power potion"]
 
 const atTheOldToad = {
   potions: ["Speed potion", "Dragon breath", "Stone skin"],
-  // Change code below this line
-
-  // Change code above this line
+  addPotion(potionName) {
+    // Change code below this line
+    this.potions.push(potionName);
+    return this.potions;
+    // Change code above this line
+  },
 };
-
-//! ===============================================================
-//* Task 38
-//! ===============================================================
+console.log(atTheOldToad.addPotion("Invisibility"));
+console.log(atTheOldToad.addPotion("Power potion"));
 
 //! ===============================================================
 //* Task 39
