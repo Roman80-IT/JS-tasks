@@ -36,23 +36,23 @@
 //      { mango: 100, poly: 150, alfred: 80 }
 
 //! ============================================================================
-//* Task 1        Оголошення  Об'єкту
+//? Task 1        Оголошення  Об'єкту
 //! ============================================================================
 
-//* Присвой змінній apartment об'єкт, який описує квартиру з наступними характеристиками:
+//* Присвой змінній 'apartment' об'єкт, який описує квартиру з наступними характеристиками:
 //*      imgUrl - фотографія = "https://via.placeholder.com/640x480";
 //*      descr - опис = "Spacious apartment in the city center";
 //*      rating - рейтинг = 4;
 //*      price - ціна = 2153;
 //*      tags - метаінформація - масив ["premium", "promoted", "top"].
 
-// const apartment = {
+//? const apartment = {
 //   imgUrl: "https://via.placeholder.com/640x480",
 //   descr: "Spacious apartment in the city center",
 //   rating: 4,
 //   price: 2153,
 //   tags: ["premium", "promoted", "top"],
-// };
+//? };
 
 // console.log(apartment);
 
@@ -87,18 +87,18 @@
 //   rating: 4,
 //   price: 2153,
 //   tags: ["premium", "promoted", "top"],
-//   owner: {
+//?   owner: {
 //     name: "Henry",
 //     phone: "982-126-1588",
 //     email: "henry.carter@aptmail.com",
-//   },
+//?   },
 // };
 
 // console.log(apartment);
 
 //! ============================================================================
 //?       book.title          об'єкт.ключ_властивості
-//*             Перший спосіб отримати доступ до властивості об'єкта - «через крапку» - це синтаксис об'єкт.ключ_властивості.
+//*             Перший спосіб отримати доступ до властивості об'єкта - «через крапку» - це синтаксис 'об'єкт.ключ_властивості'
 //*               підходить коли ми заздалегідь знаємо ім'я (ключ) властивості.
 //*             На місце звернення буде повернуте значення властивості з таким ім'ям.
 //*             Якщо властивість з таким ім'ям відсутня  -  повернеться 'undefined'.
@@ -129,19 +129,18 @@
 //   price: 2153,
 //   tags: ["premium", "promoted", "top"],
 // };
-
-// const aptRating = apartment.rating;
-// const aptDescr = apartment.descr;
-// const aptPrice = apartment.price;
-// const aptTags = apartment.tags;
-
+//? const aptRating = apartment.rating;
+//? const aptDescr = apartment.descr;
+//? const aptPrice = apartment.price;
+//? const aptTags = apartment.tags;
 // console.log(aptRating);
 // console.log(aptDescr);
 // console.log(aptPrice);
 // console.log(aptTags);
 
 //! ============================================================================
-//?         «через крапку»    -      user.location.country:   -   «крапка» вказує наступну вкладеніст  -  apartment.tags[apartment.tags.length - 1]
+//?          «через крапку»  вказує наступну вкладеність  -     user.location.country
+//?       user.hobbies[0]        apartment.tags[apartment.tags.length - 1]
 //*               const user = {
 //*                 name: "Jacques Gluke",
 //*                 tag: "jgluke",
@@ -184,13 +183,12 @@
 //     email: "henry.carter@aptmail.com",
 //   },
 // };
-// const ownerName = apartment.owner.name;
-// const ownerPhone = apartment.owner.phone;
-// const ownerEmail = apartment.owner.email;
-// const numberOfTags = apartment.tags.length;
-// const firstTag = apartment.tags[0];
-// const lastTag = apartment.tags[apartment.tags.length - 1];
-
+//? const ownerName = apartment.owner.name;
+//? const ownerPhone = apartment.owner.phone;
+//? const ownerEmail = apartment.owner.email;
+//? const numberOfTags = apartment.tags.length;
+//! const firstTag = apartment.tags[0];
+//! const lastTag = apartment.tags[apartment.tags.length - 1];
 // console.log(ownerName);
 // console.log(ownerPhone);
 // console.log(ownerEmail);
@@ -199,7 +197,7 @@
 // console.log(lastTag);
 
 //! ============================================================================
-//?        об'єкт["ключ_властивості"]        (cинтаксис «квадратних дужок»)
+//?        cинтаксис «квадратних дужок»:         об'єкт["ключ_властивості"]
 //*               Другий спосіб отримати доступ до властивості об'єкта  -  Схоже на звернення до елемента масиву
 //*            з відмінністю в тому, що в дужках зазначається не індекс елемента, а ім'я властивості як рядок.
 //*            використовується значно рідше - коли ім'я властивості заздалегідь невідоме або воно зберігається у змінній (як значення параметра ф-ції, наприклад).
@@ -234,17 +232,18 @@
 //   price: 2153,
 //   tags: ["premium", "promoted", "top"],
 // };
-// const aptRating = apartment["rating"];
-// const aptDescr = apartment["descr"];
-// const aptPrice = apartment["price"];
-// const aptTags = apartment["tags"];
+//? const aptRating = apartment["rating"];
+//? const aptDescr = apartment["descr"];
+//? const aptPrice = apartment["price"];
+//? const aptTags = apartment["tags"];
 // console.log(aptRating);
 // console.log(aptDescr);
 // console.log(aptPrice);
 // console.log(aptTags);
 
 //! ============================================================================
-//?    зміна властивостей об'єкта
+//?    зміна властивостей об'єкта         ["owner"].name      apartment["tags"].push("trusted")
+//?          «через крапку»      «квадратних дужок»  об'єкт["ключ_властивості"]
 //*              Для цього необхідно звернутися до них за ім'ям («через крапку») і присвоїти нове значення:
 //*                  const book = {
 //*                    title: "The Last Kingdom",
@@ -262,11 +261,10 @@
 //! ============================================================================
 
 //*  Доповни код, оновивши значення властивостей об'єкта 'apartment':
-//*          ціну у властивості price на 5000;
-//*          рейтинг квартири у властивості rating на 4.7;
-//*          ім'я власника у вкладеній властивості name на "Henry Sibola";
-//*          масив тегів у властивості tags, додавши в кінець рядок "trusted".
-
+//*          ціну у властивості 'price' на 5000;
+//*          рейтинг квартири у властивості 'rating' - на 4.7;
+//*          ім'я власника у вкладеній властивості 'name' - на "Henry Sibola";
+//*          масив тегів у властивості 'tags', додавши в кінець - рядок "trusted".
 // const apartment = {
 //   imgUrl: "https://via.placeholder.com/640x480",
 //   descr: "Spacious apartment in the city center",
@@ -279,15 +277,20 @@
 //     email: "henry.carter@aptmail.com",
 //   },
 // };
-
+//?          ---- ВАРІАНТ «через крапку» ----
 // apartment.price = 5000;
 // apartment.rating = 4.7;
 // apartment.owner.name = "Henry Sibola";
 // apartment.tags.push("trusted");
+//?          ---- ВАРІАНТ об'єкт["ключ_властивості"] ----
+// apartment["price"] = 5000;
+// apartment["rating"] = 4.7;
+//! apartment["owner"].name = "Henry Sibola";
+//! apartment["tags"].push("trusted");
 
 // console.log(apartment);
 
-//! =============================================
+//! ==============================================================
 //?         Операція додавання нової властивості
 //*             нічим не відрізняється від зміни значення вже існуючої властивості.
 //*             Якщо під час запису значення за ім'ям, така властивість відсутня в об'єкті,- вона буде створена.
@@ -302,7 +305,7 @@
 //*                 book.originalLanguage = "en";
 //*                 book.translations = ["ua", "ru"];
 //*                 console.log(book);
-//! =============================================
+//! ==============================================================
 
 //*  Додай об'єкту apartment кілька нових властивостей:
 //*         area - площа в квадратних метрах, число 60;
@@ -336,13 +339,13 @@
 //   city: "Kingston",
 // };
 //! ----- некоректний ВАРІАНТ об'єкт Object.create(apartment) -----
-// const location = Object.create(apartment); // Метод Object.create() створює новий об'єкт, використовуючи існуючий об'єкт як прототип
+// const location = Object.create(apartment); //*  Метод Object.create() створює новий об'єкт, використовуючи існуючий об'єкт як прототип
 // location.country = "Jamaica";
 // location.city = "Kingston";
 //! apartment.location = [(country = "Jamaica"), (city = "Kingston")]; // створить масив, але не обєкт!
 // console.log(apartment);
 
-//! =============================================
+//! ==============================================================
 //?          якщо властивість має таке ж ім'я як у змінної (або параметра ф-ції)
 //*             громіздкий синтаксис:  (дублювання ім'я властивості та ім'я змінної)
 //*                 const name = "Генрі Сибола";
@@ -363,7 +366,7 @@
 //*                    console.log(user.name); // "Генрі Сибола"
 //*                    console.log(user.age); // 25
 //*          під час оголошення об'єкта достатньо вказати тільки ім'я властивості, а значення буде взято зі змінної з аналогічним ім'ям.
-//! =============================================
+//! ==============================================================
 
 //* Доповни код оголошення об'єкта, щоб у нього були властивості name, price, image і tags зі значеннями зі змінних з аналогічними іменами.
 //* Обов'язково використовуй синтаксис коротких властивостей.
@@ -379,7 +382,7 @@
 // };
 // console.log(product);
 
-//! =============================================
+//! ==============================================================
 //?        Синтаксис обчислюваних властивостей (computed properties)
 //*            Бувають ситуації, коли під час оголошення об'єкта потрібно додати властивість з ім'ям, яке ми заздалегідь не знаємо,
 //*             тому що воно зберігається як значення змінної або як результат виконання функції.
@@ -387,16 +390,16 @@
 //*                  const propName = "name";
 //*                  const user = {
 //*                    age: 25, };
-//* Task 9             user[propName] = "Генрі Сибола";
+//? Task 9             user[propName] = "Генрі Сибола";
 //*                  console.log(user.name); // "Генрі Сибола"
-//*                (computed properties) допомагає уникнути зайвого коду (спростити його).
-//*            Значенням обчислюваної властивості може бути будь-який валідний вираз.
+//?                (computed properties) допомагає уникнути зайвого коду (спростити його).
+//?            Значенням обчислюваної властивості може бути будь-який валідний вираз.
 //*                   const propName = "name";
 //*                   const user = {
 //*                     age: 25,
-//*                     [propName]: "Генрі Сибола",   // Ім'я цієї властивості буде взято зі значення змінної propName };
+//?                     [propName]: "Генрі Сибола",   // Ім'я цієї властивості буде взято зі значення змінної propName        };
 //*                   console.log(user.name); // "Генрі Сибола"
-//! =============================================
+//! ==============================================================
 
 //*   Доповни код оголошення об'єкта credentials - щоб в результаті у нього були дві властивості:
 //*         email і password, імена яких - у змінних emailInputName і passwordInputName.
@@ -412,31 +415,28 @@
 // };
 // console.log(credentials);
 
-//! =============================================
-//?         for (const key in book) {
-//*                 На відміну від масиву або рядка, об'єкт - це не ітерабельна сутність - його не можна перебрати циклами for або for...of.
-//*                    Для перебирання об'єктів використовується спеціальний цикл for...in, який перебирає ключі об'єкта object.
+//! ==============================================================
+//?         for (const key in object) {
+//*                 об'єкт - це не ітерабельна сутність - його не можна перебрати циклами 'for' або 'for...of' на відміну від масиву або рядка,
+//*                    Для перебирання об'єктів використовується спеціальний цикл 'for...in', який перебирає ключі об'єкта 'object'.
 //*                    for (key in object) {
 //                      інструкції
 //*                    }
 //?                    Змінна key доступна тільки в тілі циклу. На кожній ітерації в неї буде записано значення ключа(ім'я) властивості.
 //*                    Для отримання значення властивості ключа (ім'я) - синтаксис квадратних дужок [].
-//*                    const book = {
-//* Task 10              title: "The Last Kingdom",
+//* Task 10            const book = {
+//*                      title: "The Last Kingdom",
 //*                      author: "Bernard Cornwell",
 //*                      genres: ["historical prose", "adventure"],
 //*                      rating: 8.38,
 //*                    };
 //?                    for (const key in book) {
-//                       Ключ
-//?                      console.log(key);
-//                       Значення властивості з таким ключем
-//?                      console.log(book[key]);
-//*                    }
-//! =============================================
+//                       console.log(key);                    //*  Ключ
+//                       console.log(book[key]);          }   //*  Значення властивості з таким ключем
+//! ==============================================================
 
-//* Перебери об'єкт 'apartment', використовуючи цикл for...in,
-//* і запиши в масив keys всі його ключі, а в масив values всі значення його властивостей.
+//* Перебери об'єкт 'apartment', використовуючи цикл 'for...in',
+//*  запиши в масив 'keys' всі його ключі, а в масив 'values' всі значення його властивостей.
 
 // const apartment = {
 //   descr: "Spacious apartment in the city center",
@@ -445,51 +445,48 @@
 // };
 // const keys = [];
 // const values = [];
-// for (const key in apartment) {
+//? for (const key in apartment) {
 //   keys.push(key);
 //   values.push(apartment[key]);
 // }
 // console.log(keys);
 // console.log(values);
 
-//! =============================================
-//?       Object.create(animal)            hasOwnProperty(key)
+//! ==============================================================
+//?       Object.create(animal)            hasOwnProperty(key)      властивість клуча: object[key]
 //?        Концепція власних і невласних властивостей об'єкта і правильне використання циклу for...in.
 //*                      const animal = {
 //*                        legs: 4,
 //*                      };                                         console.log(dog); // {name: 'Mango'}
 //*                      const dog = Object.create(animal);         console.log(dog.name); // 'Mango'
 //*                      dog.name = "Mango";                        console.log(dog.legs); // 4
-//*                 Метод Object.create(animal) створює і повертає новий об'єкт, зв'язуючи його з об'єктом animal.
+//?                 Метод Object.create(animal) створює і повертає новий об'єкт, зв'язуючи його з об'єктом animal.
 //*                 dog.legs - отримаємо значення властивості legs, хоча вона відсутня в об'єкті dog - це невласна властивість з об'єкта animal.
-//*                 Оператор in, який використовується в циклі for...in, не розрізняє власні та невласні властивості об'єкта.
+//*                 Оператор in (в циклі 'for...in'), не розрізняє власні та невласні властивості об'єкта.
 //*                 Ця особливість заважає, оскільки ми завжди хочемо перебрати тільки власні властивості.
-//*                 метод hasOwnProperty(key) - перевіряє чи є в об'єкті власна властивість, чи немає,- повертає true або false.
+//?                 метод hasOwnProperty(key) - перевіряє чи є в об'єкті власна властивість - повертає 'true' або 'false'
 //                      ❌ Повертає true для всіх властивостей
 //                      console.log("name" in dog); // true
 //                      console.log("legs" in dog); // true
 //! Task 11             ✅ Повертає true тільки для власних властивостей
 //                      console.log(dog.hasOwnProperty("name")); // true
 //                      console.log(dog.hasOwnProperty("legs")); // false
-//*                  Тому під час перебору циклом for...in необхідно на кожній ітерації додати перевірку на власну властивість.
-//*                  Навіть якщо зараз ми впевнені у тому, що об'єкт не містить невласні властивості, це захистить від можливих помилок в майбутньому.
+//*                  Тому під час перебору циклом 'for...in' необхідно на кожній ітерації додати перевірку на власну властивість.
+//*                  Навіть якщо впевнені у тому, що об'єкт не містить невласні властивості,- це захистить від можливих помилок в майбутньому.
 //                      const book = {
 //                        title: "The Last Kingdom",
 //                        author: "Bernard Cornwell",
 //                        genres: ["historical prose", "adventure"],
-//                        rating: 8.38,
-//                      };
+//                        rating: 8.38,          };
 //?                      for (const key in book) {
-//                      Якщо це власна властивість - виконуємо тіло if
-//?                        if (book.hasOwnProperty(key)) {
+//?                        if (book.hasOwnProperty(key)) {            //      Якщо це власна властивість - виконуємо тіло if
 //?                          console.log(key);
 //?                          console.log(book[key]);
 //?                        }
-//                      Якщо це невласна властивість - нічого не робимо
-//?                      }
-//! =============================================
+//                      Якщо це невласна властивість - нічого не робимо         //?      }
+//! ==============================================================
 
-//* Виконай рефакторинг рішення попереднього завдання, додавши в цикл for...in перевірку на власну властивість.
+//* Виконай рефакторинг рішення попереднього завдання, додавши в цикл 'for...in' перевірку на власну властивість.
 // const keys = [];
 // const values = [];
 // const advert = {
@@ -500,18 +497,19 @@
 // apartment.rating = 4;
 // apartment.price = 2153;
 // for (const key in apartment) {
-//   if (apartment.hasOwnProperty(keys)) {
-//     keys.push(key);
-//     values.push(apartment[key]);
+//?   if (apartment.hasOwnProperty(key)) {
+//?     keys.push(key);
+//?     values.push(apartment[key]);
 //   }
 // }
 // console.log(keys);
 // console.log(values);
 
-//! =============================================
+//! ==============================================================
 //?           for...in
 //* Task 12         ПІДРАХУНОК ВЛАСТИВОСТЕЙ
-//! =============================================
+//?
+//! ==============================================================
 
 //* Напиши ф-цію countProps(object), яка рахує і повертає к-сть власних властивостей об'єкта в параметрі object.
 //* Використовуй змінну propCount для зберігання к-сті властивостей об'єкта.
@@ -519,21 +517,21 @@
 
 // function countProps(object) {
 //   let propCount = 0;
-//   // Change code below this line
+//   //! Change code below this line
 //   for (const key in object) {
 //     if (object.hasOwnProperty(key)) {
 //       propCount++;
 //     }
 //   }
-//   // Change code above this line
+//   //! Change code above this line
 //   return propCount;
 // }
 // console.log(countProps({})); //  0
 // console.log(countProps({ name: "Mango", age: 2 })); //  2
 // console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 })); //  3
 
-//! =============================================
-//?           Object.keys(obj)                   for...of
+//! =============================================================
+//?           Object.keys(obj)                   'for...of'
 //*               повертає масив ключів власних властивостей об'єкта.
 //*                   Якщо в об'єкті немає властивостей, метод поверне порожній масив.
 //*                        const book = {
@@ -544,8 +542,8 @@
 //*                        };
 //*                        const keys = Object.keys(book);
 //*                        console.log(keys); // ['title', 'author', 'genres', 'rating']
-//? Task 13         Скомбінувавши результат Object.keys()   +   цикл for...of, можна зручно перебрати власні властивості об'єкта,
-//?                 не вдаючись до використання архаїчного циклу for...in з перевірками приналежності властивостей.
+//? Task 13         Скомбінувавши результат Object.keys()   +   цикл 'for...of'   перебираємо власні властивості об'єкта,
+//?                 не вдаючись до використання архаїчного циклу 'for...in' з перевірками приналежності властивостей.
 //*                    const book = {
 //*                      author: "Bernard Cornwell",
 //*                      genres: ["historical prose", "adventure"],
@@ -556,7 +554,7 @@
 //*                      console.log(key);*                 //  Ключ
 //*                      console.log(book[key]);            //  Значення властивості
 //*                    }
-//! =============================================
+//! ==============================================================
 
 //*   Перебери об'єкт 'apartment', використовуючи метод Object.keys() і цикл for...of.
 //*   Запиши у змінну keys масив ключів власних властивостей об'єкта apartment, і додай в масив values всі значення його властивостей.
@@ -570,19 +568,19 @@
 //   price: 2153,
 // };
 // const values = [];
-// // Change code below this line
-// const keys = Object.keys(apartment);
-// for (const key of keys) {
-//   values.push(apartment[key]);
-//   //   console.log(key);
+//    //! Change code below this line
+//? const keys = Object.keys(apartment);
+//? for (const key of keys) {
+//?   values.push(apartment[key]);
+//    //!  console.log(key);
 // }
 // console.log(keys); //      ["descr", "rating", "price"]
 // console.log(values); //    ["Spacious apartment in the city center", 4, 2153]
 
-//! =============================================
+//! ==============================================================
 //?         Object.keys()              for...of
 //* Task 14          ПІДРАХУНОК ВЛАСТИВОСТЕЙ 2.0
-//! =============================================
+//! ==============================================================
 
 //* Виконай рефакторинг ф-ції countProps(object), використовуючи метод Object.keys() і, можливо, але не обов'язково, цикл for...of.
 //*       Ф-ція підраховує тільки власні властивості об'єкта
@@ -598,10 +596,14 @@
 //*                return propCount;
 //*              }
 
+// console.log(countProps({})); // 0
+// console.log(countProps({ name: "Mango", age: 2 })); // 2
+// console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 })); // 3
+
 //? Визначення довжини масиву (к-сті ключів)
 //* ----- Довгий запис -----
 // function countProps(object) {
-//   let propCount = 0; // let тому що змінемо далі
+//   let propCount = 0; //     'let' - тому що змінемо далі
 //   const keys = Object.keys(object);
 //   propCount = keys.length;
 //   return propCount;
@@ -610,10 +612,6 @@
 // function countProps(object) {
 //   return Object.keys(object).length;
 // }
-
-// console.log(countProps({})); // 0
-// console.log(countProps({ name: "Mango", age: 2 })); // 2
-// console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 })); // 3
 
 //* ----- Не ОСНОВНИЙ ЗАПИС з перевіркою -----
 // function countProps(object) {
@@ -627,7 +625,7 @@
 //   return propCount;
 // }
 
-//! =============================================
+//! ==============================================================
 //?          Object.values(obj)           Object.keys(obj)
 //*          метод повертає масив значень його власних властивостей. Якщо в об'єкті відсутні властивості - поверне порожній масив.
 //*             метод Object.keys(obj) повертає масив ключів власних властивостей об'єкта
@@ -641,7 +639,7 @@
 //                   const values = Object.values(book);
 //                   console.log(values); // ["The Last Kingdom", "Bernard Cornwell", 8.38]
 //*           Масив значень властивостей також можна перебрати циклом for...of, наприклад для отримання загальної суми числових значень.
-//! =============================================
+//! ==============================================================
 
 //* Запиши у змінну keys масив ключів власних властивостей об'єкта apartment,
 //* а у змінну values - масив всіх значень його властивостей.Використовуй методи Object.keys() і Object.values().
@@ -662,10 +660,10 @@
 // console.log(keys);
 // console.log(values);
 
-//! =============================================
+//! ==============================================================
 //?        Object.values()         for...of       Сума:  totalSalary += salary
 //* Task 16        ВИТРАТИ НА ЗАРПЛАТУ
-//! =============================================
+//! ==============================================================
 
 //* ф-ція countTotalSalary(salaries) приймає об'єкт зарплат, де ім'я властивості - це ім'я співробітника, а значення властивості - це зарплата.
 //* повинна розрахувати загальну суму зарплат співробітників (змінна totalSalary) і повернути її.
@@ -1818,22 +1816,22 @@
 //*     Після 1-го виклику методу atTheOldToad.updatePotionName("Dragon breath", "Polymorth"), у властивості potions буде масив ["Speed potion", "Polymorth", "Stone skin"]
 //*     Після 2-го виклику методу atTheOldToad.updatePotionName("Stone skin", "Invisibility"), у властивості potions буде масив ["Speed potion", "Polymorth", "Invisibility"]
 
-const atTheOldToad = {
-  potions: ["Speed potion", "Dragon breath", "Stone skin"],
-  updatePotionName(oldName, newName) {
-    // Change code below this line
-    const position = this.potions.indexOf(oldName);
-    // Якщо елемент не знайдено, indexOf повертає -1.
-    if (position !== -1) {
-      this.potions.splice(position, 1, newName);
-    }
-    return this.potions;
-    // Change code above this line
-  },
-};
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   updatePotionName(oldName, newName) {
+//     //! Change code below this line
+//     const position = this.potions.indexOf(oldName);
+//     //? Якщо елемент не знайдено, indexOf повертає -1.
+//     if (position !== -1) {
+//       this.potions.splice(position, 1, newName);
+//     }
+//     return this.potions;
+//     //! Change code above this line
+//   },
+// };
 
-console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth")); //  ["Speed potion", "Polymorth", "Stone skin"]
-console.log(atTheOldToad.updatePotionName("Stone skin", "Invisibility")); //  ["Speed potion", "Polymorth", "Invisibility"]
+// console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth")); //  ["Speed potion", "Polymorth", "Stone skin"]
+// console.log(atTheOldToad.updatePotionName("Stone skin", "Invisibility")); //  ["Speed potion", "Polymorth", "Invisibility"]
 
 //! ===============================================================
 //* Task 41         РОЗШИРЮЄМО ІНВЕНТАР
@@ -1845,68 +1843,203 @@ console.log(atTheOldToad.updatePotionName("Stone skin", "Invisibility")); //  ["
 //*         price: 700
 //*       }
 //*   Виконай рефакторинг методів об'єкта atTheOldToad, щоб вони працювали не з масивом рядків, а з масивом об'єктів.
+//*       getPotions() - метод для отримання всього зілля. Повертає значення властивості potions.
+//*       addPotion(newPotion) - додає зілля newPotion (вже об'єкт) в масив у властивості potions, але тільки, якщо такого зілля ще немає в інвентарі. В іншому випадку повертається рядок.
+//*       removePotion(potionName) - видаляє об'єкт зілля з ім'ям potionName з масиву у властивості potions.
+//*       updatePotionName(oldName, newName) - оновлює властивість name об'єкта-зілля з назвою oldName на newName в масиві potions.
+//*  Значення змінної atTheOldToad - це об'єкт
+//*  Значення властивості    atTheOldToad.getPotions - це метод об'єкта
+// Виклик методу atTheOldToad.getPotions() для вихідного об'єкта повертає [ { name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 } ]
 
-getPotions() - метод для отримання всього зілля. Повертає значення властивості potions.
-addPotion(newPotion) - додає зілля newPotion (вже об'єкт) в масив у властивості potions, але тільки, якщо такого зілля ще немає в інвентарі. В іншому випадку повертається рядок.
-removePotion(potionName) - видаляє об'єкт зілля з ім'ям potionName з масиву у властивості potions.
-updatePotionName(oldName, newName) - оновлює властивість name об'єкта-зілля з назвою oldName на newName в масиві potions.
-Оголошена змінна atTheOldToad
-Значення змінної atTheOldToad - це об'єкт
-Значення властивості atTheOldToad.getPotions - це метод об'єкта
-Виклик методу atTheOldToad.getPotions() для вихідного об'єкта повертає [ { name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 } ]
-Значення властивості atTheOldToad.addPotion - це метод об'єкта.
-Для вихідного об'єкта після виклику методу atTheOldToad.addPotion({ name: "Invisibility", price: 620 }), в масиві potions останнім елементом буде цей об'єкт
-Для вихідного об'єкта після виклику методу atTheOldToad.addPotion({ name: "Power potion", price: 270 }), в масиві potions останнім елементом буде цей об'єкт
-Якщо зілля, що додається, вже є в масиві potions, метод addPotion повертає рядок з текстом з вихідного коду
-Якщо зілля, що додається, вже є в масиві potions, метод addPotion не додає в нього переданий об'єкт
-Для вихідного об'єкта після виклику atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }), масив potions не змінюється
-Для вихідного об'єкта після виклику atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), массив potions не змінюється
-Для вихідного об'єкта виклик atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }), повертає рядок "Error! Potion Dragon breath is already in your inventory!"
-Для вихідного об'єкта виклик atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), повертає рядок "Error! Potion Stone skin is already in your inventory!"
-Значення властивості atTheOldToad.removePotion - це метод об'єкта
-Для вихідного об'єкта після виклику методу atTheOldToad.removePotion("Dragon breath"), у властивості potions буде масив [ { name: "Speed potion", price: 460 }, { name: "Stone skin", price: 520 } ]
-Для вихідного об'єкта після виклику методу atTheOldToad.removePotion("Speed potion"), у властивості potions буде масив [ { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
-Значення властивості atTheOldToad.updatePotionName - це метод об'єкта
-Для вихідного об'єкта після виклику методу atTheOldToad.updatePotionName("Dragon breath", "Polymorth"), у властивості potions буде масив [{ name: "Speed potion", price: 460 }, { name: "Polymorth", price: 780 }, { name: "Stone skin", price: 520 } ]
-Для вихідного об'єкта після виклику методу atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"), у властивості potions буде масив [{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Invulnerability potion", price: 520 } ]
+//*                          atTheOldToad.addPotion - це метод об'єкта.
+// Для вихідного об'єкта після виклику методу atTheOldToad.addPotion({ name: "Invisibility", price: 620 }), в масиві potions останнім елементом буде цей об'єкт
+// Для вихідного об'єкта після виклику методу atTheOldToad.addPotion({ name: "Power potion", price: 270 }), в масиві potions останнім елементом буде цей об'єкт
+
+// Якщо зілля, що додається, вже є в масиві potions, метод addPotion повертає рядок з текстом з вихідного коду
+// Якщо зілля, що додається, вже є в масиві potions, метод addPotion не додає в нього переданий об'єкт
+// Для вихідного об'єкта після виклику atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }), масив potions не змінюється
+// Для вихідного об'єкта після виклику atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), массив potions не змінюється
+// Для вихідного об'єкта виклик atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }), повертає рядок "Error! Potion Dragon breath is already in your inventory!"
+// Для вихідного об'єкта виклик atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), повертає рядок "Error! Potion Stone skin is already in your inventory!"
+//*                          atTheOldToad.removePotion - це метод об'єкта
+// Для вихідного об'єкта після виклику методу atTheOldToad.removePotion("Dragon breath"), у властивості potions буде масив [ { name: "Speed potion", price: 460 }, { name: "Stone skin", price: 520 } ]
+// Для вихідного об'єкта після виклику методу atTheOldToad.removePotion("Speed potion"), у властивості potions буде масив [ { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
+//*                          atTheOldToad.updatePotionName - це метод об'єкта
+// Для вихідного об'єкта після виклику методу atTheOldToad.updatePotionName("Dragon breath", "Polymorth"), у властивості potions буде масив [{ name: "Speed potion", price: 460 }, { name: "Polymorth", price: 780 }, { name: "Stone skin", price: 520 } ]
+// Для вихідного об'єкта після виклику методу atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"), у властивості potions буде масив [{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Invulnerability potion", price: 520 } ]
+
 const atTheOldToad = {
   potions: [
     { name: "Speed potion", price: 460 },
     { name: "Dragon breath", price: 780 },
     { name: "Stone skin", price: 520 },
   ],
-  // Change code below this line
+
   getPotions() {
     return this.potions;
   },
+
   addPotion(newPotion) {
-    if (this.potions.includes(newPotion)) {
-      return `Error! Potion ${newPotion} is already in your inventory!`;
-    }
+    for (const i of this.potions)
+      if (i.name === newPotion.name) {
+        return `Error! Potion ${newPotion.name} is already in your inventory!`;
+      }
 
     this.potions.push(newPotion);
   },
+
+  //        ---- ВАРІАНТ for...of ----
   removePotion(potionName) {
-    const potionIndex = this.potions.indexOf(potionName);
-
-    if (potionIndex === -1) {
-      return `Potion ${potionName} is not in inventory!`;
+    for (const j of this.potions) {
+      if (j.name === potionName) {
+        const index = this.potions.indexOf(j);
+        this.potions.splice(index, 1);
+      } else {
+        if (index === -1) {
+          return `Potion ${potionName} is not in inventory!`;
+        }
+      }
+      return;
     }
-
-    this.potions.splice(potionIndex, 1);
   },
-  updatePotionName(oldName, newName) {
-    const potionIndex = this.potions.indexOf(oldName);
-
-    if (potionIndex === -1) {
-      return `Potion ${oldName} is not in inventory!`;
-    }
-
-    this.potions.splice(potionIndex, 1, newName);
-  },
-  // Change code above this line
+  // *     if (potionIndex === -1) {
+  // *       return `Potion ${potionName} is not in inventory!`;
+  // *     }
+  //*     this.potions.splice(potionIndex, 1);      },
 };
+//        ---- ВАРІАНТ for ----
+// removePotion(potionName) {
+//   for (let j = 0; j < this.potions.length; j++) {
+//     if (this.potions[j].name === potionName) {
+//       this.potions.splice(j, 1);
+//       return;
+//     }
+//   }
+// },
+// };
+
+removePotion(potionName) {
+  let index = -1;
+
+  for (let i = 0; i < this.potions.length; i++) {
+    if (this.potions[i].name === potionName) {
+      index = i;
+      break;
+    }
+  }
+
+  if (index !== -1) {
+    this.potions.splice(index, 1);
+  } else {
+    return `Potion ${potionName} is not in inventory!`;
+  }
+}
+
+
+//   updatePotionName(oldName, newName) {
+//     const potionIndex = this.potions.indexOf(oldName);
+
+//     if (potionIndex === -1) {
+//       return `Potion ${oldName} is not in inventory!`;
+//     }
+
+//     this.potions.splice(potionIndex, 1, newName);
+//   },
+
+console.log(atTheOldToad.addPotion({ name: "Invisibility", price: 620 })); //
+console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 })); //
+// console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 700 })); //
+console.log(atTheOldToad.removePotion("Dragon breath")); //
+console.log(atTheOldToad.getPotions()); //    [ { name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 } ]
+
+//   //! Change code below this line
+//*   getPotions() {
+//*     return this.potions;     },
+//*   addPotion(newPotion) {
+//*     if (this.potions.includes(newPotion)) {
+//*       return `Error! Potion ${newPotion} is already in your inventory!`;
+//*     }
+//*     this.potions.push(newPotion);     },
+
+//*   removePotion(potionName) {
+//*     const potionIndex = this.potions.indexOf(potionName);
+//*     if (potionIndex === -1) {
+//*       return `Potion ${potionName} is not in inventory!`;
+//*     }
+//*     this.potions.splice(potionIndex, 1);      },
+
+//*   updatePotionName(oldName, newName) {
+//*     const potionIndex = this.potions.indexOf(oldName);
+//*     if (potionIndex === -1) {
+//*       return `Potion ${oldName} is not in inventory!`;
+//*     }
+//*     this.potions.splice(potionIndex, 1, newName);     },
+//   //! Change code above this line
+
+//! ===============================================================
+//*  масив об'єктів на масив рядків
+//! ===============================================================
+// const atTheOldToad = {
+// potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Dragon breath", price: 780 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+
+//   potions: [
+//     "Speed potion",
+//     "Dragon breath",
+//     "Stone skin",
+//   ],
 
 //! ===============================================================
 //* Task
 //! ===============================================================
+
+//* Нижче наведений приклад рефакторингу методів об'єкта, щоб вони працювали з масивом об'єктів замість масиву рядків.
+//*    є об'єкт, який містить методи для роботи з масивом рядків:
+
+// const myObject = {
+//   data: ["apple", "banana", "orange"],
+
+//   // Метод для виводу всіх елементів масиву
+//   printData: function () {
+//     this.data.forEach(function (i) {
+//       console.log(i);
+//     });
+//   },
+
+//   // Метод для додавання нового елемента в масив
+//   addData: function (newItem) {
+//     this.data.push(newItem);
+//   },
+// };
+
+//* Виклик методів
+// myObject.printData(); // Виведе: apple banana orange
+// myObject.addData("grape");
+// myObject.printData(); // Виведе: apple banana orange grape
+
+//*  Тепер рефакторізуємо цей код для роботи з масивом об'єктів замість масиву рядків.
+//*   Масив об'єктів буде містити поля name, що відповідають рядкам:
+
+// const myObject = {
+//   data: [{ name: "apple" }, { name: "banana" }, { name: "orange" }],
+
+//   // Метод для виводу значень поля "name" всіх об'єктів масиву
+//   printData: function () {
+//     this.data.forEach(function (item) {
+//       console.log(item.name);
+//     });
+//   },
+
+//   // Метод для додавання нового об'єкта в масив
+//   addData: function (newItem) {
+//     this.data.push({ name: newItem });
+//   },
+// };
+
+//* Виклик методів
+// myObject.printData(); // Виведе: apple banana orange
+// myObject.addData("grape");
+// myObject.printData(); // Виведе: apple banana orange grape
