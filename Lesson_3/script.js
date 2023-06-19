@@ -1888,68 +1888,68 @@ const atTheOldToad = {
     this.potions.push(newPotion);
   },
 
-  //        ---- ВАРІАНТ for...of ----
+  //?        ---- ВАРІАНТ findIndex() , => ----
   removePotion(potionName) {
-    for (const j of this.potions) {
-      if (j.name === potionName) {
-        const index = this.potions.indexOf(j);
-        this.potions.splice(index, 1);
-      } else {
-        if (index === -1) {
-          return `Potion ${potionName} is not in inventory!`;
-        }
-      }
-      return;
+    const index = this.potions.findIndex(
+      (potion) => potion.name === potionName
+    );
+
+    if (index !== -1) {
+      this.potions.splice(index, 1);
+    } else {
+      return `Potion ${potionName} is not in inventory!`;
     }
   },
+
   // *     if (potionIndex === -1) {
   // *       return `Potion ${potionName} is not in inventory!`;
   // *     }
   //*     this.potions.splice(potionIndex, 1);      },
-};
-//        ---- ВАРІАНТ for ----
-// removePotion(potionName) {
-//   for (let j = 0; j < this.potions.length; j++) {
-//     if (this.potions[j].name === potionName) {
-//       this.potions.splice(j, 1);
-//       return;
-//     }
-//   }
-// },
-// };
 
-removePotion(potionName) {
-  let index = -1;
+  //?        ---- ВАРІАНТ for без повідомлення----
+  // removePotion(potionName) {
+  //   for (let j = 0; j < this.potions.length; j++) {
+  //     if (this.potions[j].name === potionName) {
+  //       this.potions.splice(j, 1);
+  //       return;
+  //     }
+  //   }
+  // },
+  // };
 
-  for (let i = 0; i < this.potions.length; i++) {
-    if (this.potions[i].name === potionName) {
-      index = i;
-      break;
+  //?         ---- ВАРІАНТ for ----
+  // removePotion(potionName) {
+  //   let index = -1;
+
+  //   for (let i = 0; i < this.potions.length; i++) {
+  //     if (this.potions[i].name === potionName) {
+  //       index = i;
+  //       break;
+  //     }
+  //   }
+
+  //   if (index !== -1) {
+  //     this.potions.splice(index, 1);
+  //   } else {
+  //     return `Potion ${potionName} is not in inventory!`;
+  //   }
+  // }
+
+  updatePotionName(oldName, newName) {
+    const potionIndex = this.potions.indexOf(oldName);
+
+    if (potionIndex === -1) {
+      return `Potion ${oldName} is not in inventory!`;
     }
-  }
 
-  if (index !== -1) {
-    this.potions.splice(index, 1);
-  } else {
-    return `Potion ${potionName} is not in inventory!`;
-  }
-}
-
-
-//   updatePotionName(oldName, newName) {
-//     const potionIndex = this.potions.indexOf(oldName);
-
-//     if (potionIndex === -1) {
-//       return `Potion ${oldName} is not in inventory!`;
-//     }
-
-//     this.potions.splice(potionIndex, 1, newName);
-//   },
-
+    this.potions.splice(potionIndex, 1, newName);
+  },
+};
 console.log(atTheOldToad.addPotion({ name: "Invisibility", price: 620 })); //
 console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 })); //
 // console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 700 })); //
-console.log(atTheOldToad.removePotion("Dragon breath")); //
+// console.log(atTheOldToad.removePotion("Dragon breath")); //
+console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"));
 console.log(atTheOldToad.getPotions()); //    [ { name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 } ]
 
 //   //! Change code below this line
