@@ -32,7 +32,6 @@
 
 // const result = makePizza();
 // const pointer = makePizza;
-
 // console.log(result);
 // console.log(pointer);
 
@@ -50,8 +49,33 @@
 //                    }
 //                   registerGuest("Mango", greet);
 //*                Ми передали посилання на ф-цію 'greet' як аргумент, тому вона буде присвоєна в параметр 'callback'
-//*                і викликана всередині ф-ції 'registerGuest' за допомогою круглих дужок. Ім'я параметра для колбека може бути довільним, головне пам'ятати, що значенням буде функція.
+//*                і викликана всередині ф-ції 'registerGuest' за допомогою круглих дужок.
+//*                Ім'я параметра для колбека може бути довільним, головне пам'ятати, що значенням буде ф-ція.
 //! ============================================================================
+
+//*  Доповни ф-цію makeMessage, щоб вона очікувала другим параметром (параметр callback) колбек-функцію і повертала її виклик.
+//*  Ф-ція 'deliverPizza' або 'makePizza' буде передаватися як колбек і очікувати аргументом ім'я готової піци, що доставляється.
+
+// Оголошена функція deliverPizza
+// Оголошена функція makePizza
+// Оголошена функція makeMessage
+// Функція makeMessage приймає два параметри, названі відповідно до завдання, pizzaName і callback
+// Виклик makeMessage("Royal Grand", makePizza) повертає рядок "Pizza Royal Grand is being prepared, please wait..."
+// Виклик makeMessage("Ultracheese", deliverPizza) повертає рядок "Delivering Ultracheese pizza."
+
+function deliverPizza(pizzaName) {
+  return `Delivering ${pizzaName} pizza.`;
+}
+
+function makePizza(pizzaName) {
+  return `Pizza ${pizzaName} is being prepared, please wait...`;
+}
+
+// Chande code below this line
+function makeMessage(pizzaName) {
+  return;
+}
+
 
 //! ============================================================================
 //* Task 3
