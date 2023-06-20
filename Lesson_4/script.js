@@ -229,8 +229,7 @@
 //* Ф-ція calculateTotalPrice(orderedItems) приймає параметр (orderedItems) - масив чисел,
 //*   і розраховує загальну суму його елементів, яка зберігається у змінній totalPrice і повертається як результат роботи ф-ції.
 //*       Виконай рефакторинг ф-ції, щоб замість циклу for, вона використовувала метод forEach.
-// Для перебирання масиву orderedItems використаний метод 'forEach'
-// Виклик ф-ції з випадковими, але валідними аргументами, повертає правильне значення
+//* Для перебирання масиву orderedItems використаний метод 'forEach'
 
 // function calculateTotalPrice(orderedItems) {
 //   let totalPrice = 0;
@@ -257,33 +256,63 @@
 //*  які більші за значення параметра value.
 //*    Виконай рефакторинг ф-ції, щоб замість циклу for, вона використовувала метод forEach.
 
-function filterArray(numbers, value) {
-  const filteredNumbers = [];
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//! Change code below this line
+//* for (let i = 0; i < numbers.length; i += 1) {
+//*   if (numbers[i] > value) {
+//*     filteredNumbers.push(numbers[i]);
+//*   }
+//* }
+// numbers.forEach(function (element) {
+//   if (element > value) {
+//     filteredNumbers.push(element);
+//   }
+// });
+//! Change code above this line
+//   return filteredNumbers;
+// }
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+
+//! ============================================================================
+//* Task 7         ЗАДАЧА. СПІЛЬНІ ЕЛЕМЕНТИ
+//! ============================================================================
+
+//* Ф-ція getCommonElements(firstArray, secondArray) приймає 2 масиви довільної довжини,
+//*  і повертає новий масив їхніх спільних елементів, тобто тих, які присутні в обох масивах.
+//* Виконай рефакторинг ф-ції таким чином, щоб замість циклу for, вона використовувала метод forEach.
+
+function getCommonElements(firstArray, secondArray) {
+  const commonElements = [];
   //! Change code below this line
-  //* for (let i = 0; i < numbers.length; i += 1) {
-  //*   if (numbers[i] > value) {
-  //*     filteredNumbers.push(numbers[i]);
+  //* for (let i = 0; i < firstArray.length; i += 1) {
+  //*   if (secondArray.includes(firstArray[i])) {
+  //*     commonElements.push(firstArray[i]);
   //*   }
   //* }
+  //* return commonElements;
 
-  for (let i = 0; i < numbers.length; i += 1) {
-    if (numbers[i] > value) {
-      filteredNumbers.push(numbers[i]);
+  firstArray.forEach(function (element) {
+    if (secondArray.includes(firstArray)) {
+      commonElements.push(firstArray);
     }
-  }
+  });
+
+  return commonElements;
+
   //! Change code above this line
-  return filteredNumbers;
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
-console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
-console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
-console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
-console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
-
-//! ============================================================================
-//* Task 7
-//! ============================================================================
+console.log(getCommonElements([1, 2, 3], [2, 4])); //  [2]
+console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); //  [1, 2]
+console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); //  [12, 27, 3]
+console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); //  [10, 30, 40]
+console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // []
 
 //! ============================================================================
 //* Task 8
