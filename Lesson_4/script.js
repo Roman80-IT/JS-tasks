@@ -340,16 +340,17 @@
 
 //* Виконай рефакторинг функції calculateTotalPrice() таким чином, щоб вона була оголошена як стрілочна.
 // Змінній calculateTotalPrice присвоєна стрілочна функція з параметрами (quantity, pricePerItem)
-console.log(calculateTotalPrice(5, 100)); // 500
-console.log(calculateTotalPrice(8, 60)); // 480
-console.log(calculateTotalPrice(3, 400)); // 1200
 
-// Change code below this line
+// //! Change code below this line
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//   //* function calculateTotalPrice(quantity, pricePerItem) {
+//   //! Change code above this line
+//   return quantity * pricePerItem;
+// };
 
-function calculateTotalPrice(quantity, pricePerItem) {
-  // Change code above this line
-  return quantity * pricePerItem;
-}
+// console.log(calculateTotalPrice(5, 100)); // 500
+// console.log(calculateTotalPrice(8, 60)); // 480
+// console.log(calculateTotalPrice(3, 400)); // 1200
 
 //! ============================================================================
 //* Task 9
