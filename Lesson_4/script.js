@@ -462,6 +462,36 @@
 //* Task 12      СПІЛЬНІ ЕЛЕМЕНТИ 2.0
 //! ============================================================================
 
+//* Заміни оголошення ф-ції getCommonElements() і колбек для методу forEach() на стрілочні ф-ції.
+//*    Змінній getCommonElements присвоєна стрілочна функція з параметрами (firstArray, secondArray)
+//*    Для перебирання масиву firstArray використаний метод forEach
+//*    Колбек для методу forEach - це стрілочна функція
+
+//! Change code below this line
+//* function getCommonElements(firstArray, secondArray) {
+//*   const commonElements = [];
+//*   firstArray.forEach(function (element) {
+//*     if (secondArray.includes(element)) {
+//*       commonElements.push(element);       }     });
+
+// const getCommonElements = (firstArray, secondArray) => {
+//   const commonElements = [];
+
+//   firstArray.forEach((element) => {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+//   //! Change code above this line
+//   return commonElements;
+// };
+
+// console.log(getCommonElements([1, 2, 3], [2, 4])); //  [2]
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); //  [1, 2]
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); //  [12, 27, 3]
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); //  [10, 30, 40]
+// console.log(getCommonElements([1, 2, 3], [10, 20, 30])); //  []
+
 //! ============================================================================
 //* Task 13
 //! ============================================================================
