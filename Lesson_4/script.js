@@ -530,10 +530,10 @@
 //*     Ф-ція changeEven не змінює значення параметра numbers
 
 // function changeEven(numbers, value) {
-//   //! Change code below this line
-//   //*   for (let i = 0; i < numbers.length; i += 1) {
-//   //*     if (numbers[i] % 2 === 0) {
-//   //*       numbers[i] = numbers[i] + value;       }     }
+  //! Change code below this line
+  //*   for (let i = 0; i < numbers.length; i += 1) {
+  //*     if (numbers[i] % 2 === 0) {
+  //*       numbers[i] = numbers[i] + value;       }     }
 //   const newArray = [];
 //   for (let i = 0; i < numbers.length; i += 1) {
 //     if (numbers[i] % 2 === 0) {
@@ -550,7 +550,30 @@
 // console.log(changeEven([44, 13, 81, 92, 36, 54], 100)); //   новий масив [144, 13, 81, 192, 136, 154]
 
 //! ============================================================================
-//* Task 14
+//* Task 14   Більшість перебираючих методів масиву - це чисті функції. Вони створюють новий масив, заповнюють його, застосовуючи до значення кожного елемента зазначену колбек-функцію, після чого повертають цей новий масив.
+
+Метод map(callback) використовується для трансформації масиву. Він викликає колбек-функцію для кожного елемента вихідного масиву, а результат її роботи записує у новий масив, який і буде результатом виконання методу.
+
+масив.map((element, index, array) => {
+  // Тіло колбек-функції
+});
+Поелементо перебирає оригінальний масив.
+Не змінює оригінальний масив.
+Результат роботи колбек-функції записується у новий масив.
+Повертає новий масив однакової довжини.
+Його можна використовувати для того, щоб змінити кожен елемент масиву. Оригінальний масив використовується як еталон, на основі якого можна зробити іншу колекцію.
+
+const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+
+const planetsInUpperCase = planets.map(planet => planet.toUpperCase());
+console.log(planetsInUpperCase); // ["EARTH", "MARS", "VENUS", "JUPITER"]
+
+const planetsInLowerCase = planets.map(planet => planet.toLowerCase());
+console.log(planetsInLowerCase); // ["earth", "mars", "venus", "jupiter"]
+
+// Оригінальний масив не змінився
+console.log(planets); // ["Earth", "Mars", "Venus", "Jupiter"]
+Використання анонімних стрілочних функцій з неявним поверненням суттєво скорочує «шум» оголошення колбек-функції, що робить код чистішим і простішим для сприйняття.
 //! ============================================================================
 
 //! ============================================================================
@@ -641,31 +664,4 @@
 //* Task 36
 //! ============================================================================
 
-const pizzaPalace = {
-  pizzas: ["Ultracheese", "Smoked", "Four meats"],
-  order(pizzaName, onSuccess, onError) {
-    if (!this.pizzas.includes(pizzaName)) {
-      return onError(
-        `There is no pizza with a name ${pizzaName} in the assortment.`
-      );
-    }
-    return onSuccess(pizzaName);
-  },
-};
-// Change code above this line
-
-// Callback for onSuccess
-function makePizza(pizzaName) {
-  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
-}
-
-// Callback for onError
-function onOrderError(error) {
-  return `Error! ${error}`;
-}
-
-// Method calls with callbacks
-console.log(pizzaPalace.order("Smoked", makePizza, onOrderError));
-pizzaPalace.order("Four meats", makePizza, onOrderError);
-pizzaPalace.order("Big Mike", makePizza, onOrderError);
-pizzaPalace.order("Vienna", makePizza, onOrderError);
+//            node Lesson_4/script           - запуск через термінал ≡
