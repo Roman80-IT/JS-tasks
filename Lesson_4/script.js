@@ -583,11 +583,65 @@
 // console.log(planetsLengths);
 
 //! ============================================================================
-//* Task 15
+//* Task 15              повсякденне завдання - маніпуляція масивом об'єктів. Наприклад, отримати масив значень властивості з усіх об'єктів.
+//*                  У нас є масив студентів, а потрібно отримати окремий масив їхніх імен.
+//                      const students = [
+//                        { name: "Mango", score: 83 },
+//                        { name: "Poly", score: 59 },
+//                        { name: "Ajax", score: 37 },
+//                        { name: "Kiwi", score: 94 },
+//                        { name: "Houston", score: 64 },      ];
+//                      const names = students.map(student => student.name);
+//                      console.log(names); // ["Mango", "Poly", "Ajax", "Kiwi", "Houston"]
+//*                  Використовуючи метод map(), ми можемо перебрати масив об'єктів, і в колбек-функції повернути значення властивості кожного з них.
 //! ============================================================================
 
+//* Використовуючи метод map(), зроби так, щоб у змінній titles вийшов масив назв книг (властивість title) з усіх об'єктів масиву books.
+//*    Значення змінної books - це масив
+//*    Значення змінної titles - це масив ["The Last Kingdom", "Beside Still Waters", "The Dream of a Ridiculous Man", "Redder Than Blood", "Enemy of God"]
+//*    Для перебирання масиву books використовується метод map() як чиста функція
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+// //! Change code below this line
+
+// const titles = books.map((book) => book.title);
+
+// console.log(titles);
+
 //! ============================================================================
-//* Task 16
+//* Task 16             Метод flatMap(callback) - аналогічний методу map(),
+//*               але застосовується у випадках, коли результат - це багатовимірний масив, який необхідно «розгладити».
+масив.flatMap((element, index, array) => {
+  // Тіло колбек-функції
+});
+//*              У масиві students зберігається список студентів зі списком предметів, які відвідує студент, у властивості courses. Кілька студентів можуть відвідувати один і той самий предмет. Необхідно скласти список всіх предметів, які відвідує ця група студентів, поки що, навіть повторюваних.
+const students = [
+  { name: "Mango", courses: ["mathematics", "physics"] },
+  { name: "Poly", courses: ["science", "mathematics"] },
+  { name: "Kiwi", courses: ["physics", "biology"] },
+];
+students.map((student) => student.courses);
+// [["mathematics", "physics"], ["science", "mathematics"], ["physics", "biology"]]
+students.flatMap((student) => student.courses);
+// ["mathematics", "physics", "science", "mathematics", "physics", "biology"];
+//*              Він викликає колбек-функцію для кожного елемента вихідного масиву, а результат її роботи записує у новий масив. Відмінність від map() у тому, що новий масив «розгладжується» на глибину, що дорівнює одиниці (одна вкладеність). Цей розгладжений масив і є результатом роботи flatMap().
 //! ============================================================================
 
 //! ============================================================================
