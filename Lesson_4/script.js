@@ -626,28 +626,140 @@
 // console.log(titles);
 
 //! ============================================================================
-//* Task 16             Метод flatMap(callback) - аналогічний методу map(),
+//?      flatMap()
+//*              Метод flatMap(callback) - аналогічний методу map(),
 //*               але застосовується у випадках, коли результат - це багатовимірний масив, який необхідно «розгладити».
-масив.flatMap((element, index, array) => {
-  // Тіло колбек-функції
-});
-//*              У масиві students зберігається список студентів зі списком предметів, які відвідує студент, у властивості courses. Кілька студентів можуть відвідувати один і той самий предмет. Необхідно скласти список всіх предметів, які відвідує ця група студентів, поки що, навіть повторюваних.
-const students = [
-  { name: "Mango", courses: ["mathematics", "physics"] },
-  { name: "Poly", courses: ["science", "mathematics"] },
-  { name: "Kiwi", courses: ["physics", "biology"] },
-];
-students.map((student) => student.courses);
-// [["mathematics", "physics"], ["science", "mathematics"], ["physics", "biology"]]
-students.flatMap((student) => student.courses);
-// ["mathematics", "physics", "science", "mathematics", "physics", "biology"];
+//                  масив.flatMap((element, index, array) => {
+//                    //! Тіло колбек-функції       });
+//*                У масиві students зберігається список студентів зі списком предметів, які відвідує студент, у властивості courses.
+//* Task 16         Кілька студентів можуть відвідувати один і той самий предмет.Необхідно скласти список всіх предметів, які відвідує ця група студентів, поки що, навіть повторюваних.
+//                  const students = [
+//                    { name: "Mango", courses: ["mathematics", "physics"] },
+//                    { name: "Poly", courses: ["science", "mathematics"] },
+//                    { name: "Kiwi", courses: ["physics", "biology"] },     ];
+//                  students.map((student) => student.courses);
+//                  //! [["mathematics", "physics"], ["science", "mathematics"], ["physics", "biology"]]
+//                  students.flatMap((student) => student.courses);
+//                  //! ["mathematics", "physics", "science", "mathematics", "physics", "biology"];
 //*              Він викликає колбек-функцію для кожного елемента вихідного масиву, а результат її роботи записує у новий масив. Відмінність від map() у тому, що новий масив «розгладжується» на глибину, що дорівнює одиниці (одна вкладеність). Цей розгладжений масив і є результатом роботи flatMap().
 //! ============================================================================
 
+//* Використовуючи метод flatMap(), зроби так, щоб у змінній genres вийшов масив усіх жанрів книг (властивість genres) з масиву книг books.
+//*   Значення змінної books - це масив об'єктів
+//*   Значення змінної genres - це масив [ "adventure", "history", "fiction", "horror", "mysticism" ]
+//*   Для перебирання масиву books використовується метод flatMap()
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism"],
+//   },
+// ];
+// //! Change code below this line
+
+// const genres = books.flatMap((book) => book.genres);
+// console.log(genres);
 //! ============================================================================
 //* Task 17
 //! ============================================================================
+//* Доповни функцію getUserNames(users) таким чином, щоб вона повертала масив імен користувачів (властивість name) з масиву об'єктів в параметрі users.
+// Змінній getUserNames присвоєна стрілочна функція з параметром (users).
+// Для перебирання параметра users використовується метод map()
+// Виклик функції із зазначеним масивом користувачів повертає масив ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
 
+const users = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    skills: ["ipsum", "lorem"],
+    gender: "male",
+    age: 37,
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+    gender: "female",
+    age: 34,
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+    gender: "male",
+    age: 24,
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    skills: ["adipisicing", "irure", "velit"],
+    gender: "female",
+    age: 21,
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    skills: ["ex", "culpa", "nostrud"],
+    gender: "male",
+    age: 27,
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    skills: ["non", "amet", "ipsum"],
+    gender: "male",
+    age: 38,
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    skills: ["lorem", "veniam", "culpa"],
+    gender: "female",
+    age: 39,
+  },
+];
+
+//! Change code below this line
+const getUserNames = (users) => {};
+//! Change code above this line
 //! ============================================================================
 //* Task 18
 //! ============================================================================
