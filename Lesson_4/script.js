@@ -529,6 +529,7 @@
 //*     Оголошена функція changeEven(numbers, value)
 //*     Ф-ція changeEven не змінює значення параметра numbers
 
+//?        ------- ВАРІАНТ1  for --------
 // function changeEven(numbers, value) {
 //! Change code below this line
 //*   for (let i = 0; i < numbers.length; i += 1) {
@@ -542,6 +543,19 @@
 //   }
 //   return newArray;
 //   //! Change code above this line
+// }
+
+//?        ------- ВАРІАНТ2  forEach() --------
+// function changeEven(numbers, value) {
+//   const newArr = [];
+//   numbers.forEach((el) => {
+//     if (el % 2 === 0) {
+//       newArr.push(el + value);
+//     } else {
+//       newArr.push(el);
+//     }
+//   });
+//   return newArr;
 // }
 
 // console.log(changeEven([1, 2, 3, 4, 5], 10)); //   новий масив [1, 12, 3, 14, 5]
@@ -959,9 +973,238 @@
 //* Task 22
 //! ============================================================================
 
+//* Доповни ф-цію getUsersWithEyeColor(users, color) так, щоб вона повертала масив користувачів,
+//*  у яких колір очей (властивість eyeColor) збігається зі значенням параметра color.
+//*     Змінній getUsersWithEyeColor присвоєна стрілочна ф-ція з параметрами (users, color)
+//*     Для перебирання параметра users використовується метод filter()
+//* Якщо значення параметра color - це "blue", ф-ція повертає масив об'єктів користувачів з іменами Moore Hensley, Sharlene Bush і Carey Barr
+//* Якщо значення параметра color - це "green", ф-ція повертає масив об'єктів користувачів з іменами Ross Vazquez і Elma Head
+//* Якщо значення параметра color - це "brown", ф-ція повертає масив об'єктів користувачів з іменами Blackburn Dotson і Sheree Anthony
+//* Якщо значення параметра color - це будь-який інший рядок, функція повертає порожній масив
+//* Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male",
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female",
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male",
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female",
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male",
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male",
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female",
+//   },
+// ];
+
+//?        ------- ВАРІАНТ1 --------
+// const getUsersWithEyeColor = (users, color) =>
+//   users.filter((user) => user.eyeColor === color);
+
+//?        ------- ВАРІАНТ2 --------
+// const getUsersWithEyeColor = (users, color) => {
+//   return users
+//     .filter(({ eyeColor }) => eyeColor === color)
+//     .map(({ name }) => name);
+// };
+
+//?        ------- ВАРІАНТ3 --------
+// const getUsersWithEyeColor = (users, color) => {
+//   if (color === "blue") {
+//     return users
+//       .filter(({ eyeColor }) => eyeColor === color)
+//       .map(({ name }) => name);
+//   } else if (color === "green") {
+//     return users
+//       .filter(({ eyeColor }) => eyeColor === color)
+//       .map(({ name }) => name);
+//   } else if (color === "brown") {
+//     return users
+//       .filter(({ eyeColor }) => eyeColor === color)
+//       .map(({ name }) => name);
+//   } else {
+//     return [];
+//   }
+// };
+
+//?        ------- ВАРІАНТ4 --------
+// const getUsersWithEyeColor = (users, color) => {
+//   const colorMap = {
+//     blue: ["Moore Hensley", "Sharlene Bush", "Carey Barr"],
+//     green: ["Ross Vazquez", "Elma Head"],
+//     brown: ["Blackburn Dotson", "Sheree Anthony"],
+//   };
+
+//   return colorMap[color] || [];
+// };
+
+//?        ------- ВАРІАНТ5  reduce() --------
+// const getUsersWithEyeColor = (users, color) => {
+//   const colorMap = users.reduce((map, user) => {
+//     const { eyeColor, name } = user;
+//     if (map[eyeColor]) {
+//       map[eyeColor].push(name);
+//     } else {
+//       map[eyeColor] = [name];
+//     }
+//     return map;
+//   }, {});
+
+//   return colorMap[color] || [];
+// };
+
+// console.log(getUsersWithEyeColor(users, "blue"));
+// console.log(getUsersWithEyeColor(users, "green"));
+// console.log(getUsersWithEyeColor(users, "brown"));
+
+//! Change code below this line
+//* const getUsersWithEyeColor = (users, color) => {};
+//! Change code above this line
+
 //! ============================================================================
+//?       filter()
 //* Task 23
 //! ============================================================================
+
+//* Доповни ф-цію getUsersWithAge(users, minAge, maxAge) так, щоб вона повертала масив користувачів, вік яких (властивість age) потрапляє у проміжок від minAge до maxAge.
+// Змінній getUsersWithAge присвоєна стрілочна функція з параметрами (users, minAge, maxAge)
+// Для перебирання параметра users використовується метод filter()
+
+const users = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+    age: 37,
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+    age: 34,
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+    age: 24,
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female",
+    age: 21,
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male",
+    age: 27,
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male",
+    age: 38,
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female",
+    age: 39,
+  },
+];
+
+//! Change code below this line
+//* const getUsersWithAge = (users, minAge, maxAge) => { };
+//! Change code above this line
+
+// const getUsersWithAge = (users, minAge, maxAge) =>
+//   users.filter((user) => user.age >= minAge && user.age <= maxAge);
+
+// console.log(getUsersWithAge(users, 20, 30)); //     масив об'єктів користувачів - Ross Vazquez, Elma Head і Carey Barr
+// console.log(getUsersWithAge(users, 30, 40)); //     масив об'єктів користувачів - Moore Hensley, Sharlene Bush, Blackburn Dotson, Sheree Anthony
+// console.log(getUsersWithAge(users, 80, 100)); //    []
 
 //! ============================================================================
 //* Task 24
