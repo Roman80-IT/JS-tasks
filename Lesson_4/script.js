@@ -806,6 +806,7 @@
 //*                  Тобто метод filter викликає колбек-функцію для кожного елемента вихідного масиву і, якщо результат її виконання - true,
 //*                    додає поточний елемент у новий масив.
 //! ============================================================================
+//? до речі, якщо первірка на тру то можна ще !(num % 2), тоді фолс буде num % 2
 
 //* Доповни код, щоб у змінній evenNumbers утворився масив парних чисел з масиву numbers,
 //*  а в змінній oddNumbers - масив непарних. Обов'язково використовуй метод filter().
@@ -890,32 +891,70 @@
 // console.log(uniqueGenres); //   ["adventure", "history", "fiction", "mysticism", "horror"]
 
 //! ============================================================================
-//* Task 21     Під час роботи з масивом об'єктів виконується фільтрація за значенням певної властивості. У підсумку, утворюється новий масив відфільтрованих об'єктів.
+//?            filter()      { score } (деструктуризація обєктів)     &&
+//*               Під час роботи з масивом об'єктів виконується фільтрація за значенням певної властивості.
+//*                У підсумку, утворюється новий масив відфільтрованих об'єктів.
+//*                   є масив студентів з балами за тест. Необхідно відфільтрувати кращих (бал вище 80), гірших (бал нижче 50) і середніх студентів (бал від 50 до 80):
+//                          const LOW_SCORE = 50;
+//                          const HIGH_SCORE = 80;
+//                          const students = [
+//                            { name: "Mango", score: 83 },
+//                            { name: "Poly", score: 59 },
+//  Task 21                   { name: "Ajax", score: 37 },
+//                            { name: "Kiwi", score: 94 },
+//                            { name: "Houston", score: 64 },       ];
+//                          const best = students.filter((student) => student.score >= HIGH_SCORE);
+//                          console.log(best); // Масив об'єктів з іменами Mango і Kiwi
+//                          const worst = students.filter((student) => student.score < LOW_SCORE);
+//                          console.log(worst); // Масив з одним об'єктом Ajax
+//                    //! В колбек-функції зручно деструктуризувати властивості об'єкта
+//                          const average = students.filter(
+//                            ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE         );
+//                          console.log(average);          //   Масив об'єктів з іменами Poly і Houston
+//! ============================================================================
 
-Наприклад, у нас є масив студентів з балами за тест. Необхідно відфільтрувати кращих (бал вище 80), гірших (бал нижче 50) і середніх студентів (бал від 50 до 80).
+//* Використовуючи метод filter(), доповни код таким чином, щоб:
 
-const LOW_SCORE = 50;
-const HIGH_SCORE = 80;
-const students = [
-  { name: "Mango", score: 83 },
-  { name: "Poly", score: 59 },
-  { name: "Ajax", score: 37 },
-  { name: "Kiwi", score: 94 },
-  { name: "Houston", score: 64 },
+// У змінній topRatedBooks утворився масив книг, рейтинг яких (властивість rating) більший за або дорівнює значенню змінної MIN_RATING.
+// У змінній booksByAuthor утворився масив книг, написаних автором з ім'ям (властивість author), яке збігається зі значенням у змінній AUTHOR.
+// Оголошена змінна books
+// Значення змінної books - це масив об'єктів
+// Оголошена змінна MIN_RATING
+// Значення змінної MIN_RATING - це число 8
+// Оголошена змінна AUTHOR
+// Значення змінної AUTHOR - це рядок "Bernard Cornwell"
+// Оголошена змінна topRatedBooks
+// Значення змінної topRatedBooks - це масив книг з рейтингом, вищим за 8
+// Оголошена змінна booksByAuthor
+// Значення змінної booksByAuthor - це масив книг, автор яких "Bernard Cornwell"
+// Для перебирання масиву books використаний метод filter()
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
 ];
 
-const best = students.filter(student => student.score >= HIGH_SCORE);
-console.log(best); // Масив об'єктів з іменами Mango і Kiwi
+const MIN_RATING = 8;
+const AUTHOR = "Bernard Cornwell";
+// Change code below this line
 
-const worst = students.filter(student => student.score < LOW_SCORE);
-console.log(worst); // Масив з одним об'єктом Ajax
-
-// В колбек-функції зручно деструктуризувати властивості об'єкта
-const average = students.filter(
-  ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
-);
-console.log(average); // Масив об'єктів з іменами Poly і Houston
-//! ============================================================================
+const topRatedBooks = books;
+const booksByAuthor = books;
 
 //! ============================================================================
 //* Task 22
