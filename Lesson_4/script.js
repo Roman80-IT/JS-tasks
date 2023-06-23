@@ -1122,78 +1122,78 @@
 // Змінній getUsersWithAge присвоєна стрілочна функція з параметрами (users, minAge, maxAge)
 // Для перебирання параметра users використовується метод filter()
 
-const users = [
-  {
-    name: "Moore Hensley",
-    email: "moorehensley@indexia.com",
-    eyeColor: "blue",
-    friends: ["Sharron Pace"],
-    isActive: false,
-    balance: 2811,
-    gender: "male",
-    age: 37,
-  },
-  {
-    name: "Sharlene Bush",
-    email: "sharlenebush@tubesys.com",
-    eyeColor: "blue",
-    friends: ["Briana Decker", "Sharron Pace"],
-    isActive: true,
-    balance: 3821,
-    gender: "female",
-    age: 34,
-  },
-  {
-    name: "Ross Vazquez",
-    email: "rossvazquez@xinware.com",
-    eyeColor: "green",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-    isActive: false,
-    balance: 3793,
-    gender: "male",
-    age: 24,
-  },
-  {
-    name: "Elma Head",
-    email: "elmahead@omatom.com",
-    eyeColor: "green",
-    friends: ["Goldie Gentry", "Aisha Tran"],
-    isActive: true,
-    balance: 2278,
-    gender: "female",
-    age: 21,
-  },
-  {
-    name: "Carey Barr",
-    email: "careybarr@nurali.com",
-    eyeColor: "blue",
-    friends: ["Jordan Sampson", "Eddie Strong"],
-    isActive: true,
-    balance: 3951,
-    gender: "male",
-    age: 27,
-  },
-  {
-    name: "Blackburn Dotson",
-    email: "blackburndotson@furnigeer.com",
-    eyeColor: "brown",
-    friends: ["Jacklyn Lucas", "Linda Chapman"],
-    isActive: false,
-    balance: 1498,
-    gender: "male",
-    age: 38,
-  },
-  {
-    name: "Sheree Anthony",
-    email: "shereeanthony@kog.com",
-    eyeColor: "brown",
-    friends: ["Goldie Gentry", "Briana Decker"],
-    isActive: true,
-    balance: 2764,
-    gender: "female",
-    age: 39,
-  },
-];
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male",
+//     age: 37,
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female",
+//     age: 34,
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male",
+//     age: 24,
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female",
+//     age: 21,
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male",
+//     age: 27,
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male",
+//     age: 38,
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female",
+//     age: 39,
+//   },
+// ];
 
 //! Change code below this line
 //* const getUsersWithAge = (users, minAge, maxAge) => { };
@@ -1207,8 +1207,40 @@ const users = [
 // console.log(getUsersWithAge(users, 80, 100)); //    []
 
 //! ============================================================================
+//?        filter()         includes()         flatMap()
 //* Task 24
 //! ============================================================================
+
+//* Доповни функцію getUsersWithFriend(users, friendName) так, щоб вона повертала масив користувачів, у яких є один з ім'ям в параметрі friendName.
+//*    Масив друзів користувача зберігається у властивості friends.
+//*    Змінній getUsersWithFriend присвоєна стрілочна функція з параметрами (users, friendName)
+//*    Для перебирання параметра users використовується метод filter()
+//! Change code below this line
+//* const getUsersWithFriend = (users, friendName) => {};
+//! Change code above this line
+
+//?        ------- ВАРІАНТ1 --------
+// const getUsersWithFriend = (users, friendName) =>
+//   users.filter((user) => user.friends.includes(friendName));
+
+//?        ------- ВАРІАНТ2  flatMap() --------
+// const getUsersWithFriend = (users, friendName) =>
+//   users.flatMap((user) => {
+//     const matchedFriends = user.friends.filter(
+//       (friend) => friend === friendName
+//     );
+//     return matchedFriends.map((friend) => user);
+//   });
+
+//?        ------- ВАРІАНТ2  flatMap() короткий --------
+// const getUsersWithFriend = (users, friendName) =>
+//   users.flatMap((user) =>
+//     user.friends.filter((friend) => friend === friendName).map((friend) => user)
+//   );
+
+// console.log(getUsersWithFriend(users, "Briana Decker")); //    -   масив об'єктів користувачів з іменами Sharlene Bush і Sheree Anthony
+// console.log(getUsersWithFriend(users, "Goldie Gentry")); //    -   масив об'єктів користувачів з іменами Elma Head і Sheree Anthony
+// console.log(getUsersWithFriend(users, "Adrian Cross")); //     -   []
 
 //! ============================================================================
 //* Task 25
