@@ -761,19 +761,131 @@
 // const getUserNames = (users) => users.map((user) => user.name);
 // //! Change code above this line
 
+//?        ------- ВАРІАНТ2  явне повернення --------
+// const getUserNames = (users) => {
+//   return users.map((user) => user.name);
+// };
+
 // console.log(getUserNames(users));
 
 //! ============================================================================
 //* Task 18
 //! ============================================================================
+//* Доповни ф-цію getUserEmails(users), щоб вона повертала масив поштових адрес користувачів (властивість email) з масиву об'єктів в параметрі users.
+//*     Змінній присвоєна стрілочна функція з параметром (users)
+//*     Для перебирання параметра users використовується метод map()
+
+//! Change code below this line
+//* const getUserEmails = users => {
+// const getUserEmails = (users) => users.map((user) => user.email);
+
+// console.log(getUserEmails(users)); // ["moorehensley@indexia.com", "sharlenebush@tubesys.com", "rossvazquez@xinware.com", "elmahead@omatom.com", "careybarr@nurali.com", "blackburndotson@furnigeer.com", "shereeanthony@kog.com"]
 
 //! ============================================================================
-//* Task 19
+//?           filter(callback)       операція a % b - [if (i % 2 === 0)]
+//*               filter(callback) використовується для - фільтрації масиву, коли потрібно вибрати > 1 елемента з колекції за певним критерієм.
+//                        масив.filter((element, index, array) => {
+//                          //! Тіло колбек-функції
+//                        });
+//?                     Не змінює оригінальний масив.
+//?                     Поелементо перебирає оригінальний масив.
+//?                     Повертає новий масив.
+//?                     Додає у масив, що повертається, елементи, які задовольняють умови колбек-функції.
+//?                        Якщо колбек повернув true, елемент додається у масив, що повертається.
+//?                        Якщо колбек повернув false, елемент не додається у масив, що повертається.
+//? Task 19             Якщо жоден елемент не задовольнив умову, повертає порожній масив.
+//                       const values = [51, -3, 27, 21, -68, 42, -37];
+//                         const positiveValues = values.filter((value) => value >= 0);
+//                         console.log(positiveValues); // [51, 27, 21, 42]
+//                       const negativeValues = values.filter((value) => value < 0);
+//                       console.log(negativeValues); // [-3, -68, -37]
+//                         const bigValues = values.filter((value) => value > 1000);
+//                         console.log(bigValues); // []
+//                        //! Оригінальний масив не змінився
+//                       console.log(values); // [51, -3, 27, 21, -68, 42, -37]
+//*                  Тобто метод filter викликає колбек-функцію для кожного елемента вихідного масиву і, якщо результат її виконання - true,
+//*                    додає поточний елемент у новий масив.
 //! ============================================================================
 
+//* Доповни код, щоб у змінній evenNumbers утворився масив парних чисел з масиву numbers,
+//*  а в змінній oddNumbers - масив непарних. Обов'язково використовуй метод filter().
+//*    const evenNumbers = numbers;  //  - парні   [24, 82, 36, 18, 52]
+//*    const oddNumbers = numbers;   //  - непарні   [17, 61, 47, 73]
+//*    Для перебирання масиву numbers використаний метод filter()
+
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// //! Change code below this line
+// const evenNumbers = numbers.filter((a) => a % 2 === 0);
+// const oddNumbers = numbers.filter((a) => a % 2 !== 0);
+
+//?        ------- ВАРІАНТ2  один масив --------
+// let evenNumbers = [];
+// let oddNumbers = [];
+// [evenNumbers, oddNumbers] = [
+//   numbers.filter((num) => num % 2 === 0),
+//   numbers.filter((num) => num % 2 !== 0),
+// ];
+
+// console.log("Масив парних чисел:", evenNumbers);
+// console.log("Масив непарних чисел:", oddNumbers);
+
 //! ============================================================================
-//* Task 20
+//?       flatMap()      filter()   +  indexOf()  -   фільтрація унікальних елементів
+//*                Використовуючи метод filter(), можна виконати фільтрацію масиву так, що у ньому залишаться тільки унікальні елементи.
+//*                     Цей прийом працює тільки з масивом примітивних значень - не об'єктів.
+//*                  Повернемося до групи студентів і масиву усіх відвідуваних предметів, які ми отримали методом flatMap().
+//                       const students = [
+//                         { name: "Mango", courses: ["mathematics", "physics"] },
+//                         { name: "Poly", courses: ["science", "mathematics"] },
+//                         { name: "Kiwi", courses: ["physics", "biology"] },          ];
+//                       const allCourses = students.flatMap(student => student.courses);   //      ["mathematics", "physics", "science", "mathematics", "physics", "biology"];
+//*                   У змінній allCourses зберігається масив усіх відвідуваних предметів, які можуть повторюватися.
+//*                   Завдання полягає у тому, щоб створити новий масив, в якому будуть тільки унікальні предмети, тобто без повторень.
+//                      const uniqueCourses = allCourses.filter(
+//                        (course, index, array) => array.indexOf(course) === index        );
+//* Task 20          Використовуючи array.indexOf(course), виконуємо пошук першого збігу поточного елемента course і отримуємо його індекс в оригінальному масиві усіх курсів.
+//*                    В параметрі index зберігається індекс поточного елемента course, перебираючи масив методом filter.
+//*                  Якщо результат indexOf() і значення index рівні - це унікальний елемент - таке значення зустрічається в масиві вперше,
+//*                    і на поточній ітерації фільтр обробляє саме його.
+//                     # Масив усіх курсів
+//                     ["mathematics", "physics", "science", "mathematics", "physics", "biology"];
+//*                     Для елемента "mathematics" під індексом 0:
+//*                         indexOf() поверне 0, тому що шукає перший збіг.
+//*                         Значення параметра index буде 0.
+//*                         Вони рівні, а отже, це унікальний елемент.
+//*                     Для елемента "mathematics" під індексом 3:
+//*                         indexOf() поверне 0, тому що шукає перший збіг.
+//*                         Значення параметра index буде 3.
+//*                         Вони не рівні, а отже, це повторюваний - не унікальний елемент.
 //! ============================================================================
+
+//* Доповни код таким чином, щоб у змінній allGenres був масив всіх жанрів книг (властивість genres) з масиву books, а у змінній uniqueGenres - масив унікальних жанрів, без повторень.
+//*      Значення змінної books - це масив об'єктів
+//*      Для змінної allGenders - використаний метод flatMap()
+//*      Для змінної uniqueGenres - використаний метод filter()
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    genres: ["adventure", "history"],
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    genres: ["fiction", "mysticism"],
+  },
+  {
+    title: "Redder Than Blood",
+    author: "Tanith Lee",
+    genres: ["horror", "mysticism", "adventure"],
+  },
+];
+//! Change code below this line
+const allGenres = books.flatMap((book) => book.genres);
+const uniqueGenres = allGenres;
+
+console.log(allGenres); //     ["adventure", "history", "fiction", "mysticism", "horror", "mysticism", "adventure"]
+console.log(uniqueGenres); //   ["adventure", "history", "fiction", "mysticism", "horror"]
 
 //! ============================================================================
 //* Task 21
