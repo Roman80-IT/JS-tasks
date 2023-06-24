@@ -1258,6 +1258,14 @@ const users = [
 //! Change code above this line
 
 //?        ------- ВАРІАНТ1 --------
+// const getFriends = (users) =>
+//   users
+//     .flatMap((user) => user.friends)
+//     .filter((friend, index, arr) => arr.indexOf(friend) === index);
+
+// console.log(getFriends(users));
+
+//?        ------- ВАРІАНТ2 --------
 // const getFriends = (users) => {
 //   const allFriends = users.flatMap((user) => user.friends);
 //   const uniqueFriends = allFriends.filter(
@@ -1267,16 +1275,30 @@ const users = [
 //   return uniqueFriends;
 // };
 
-//?        ------- ВАРІАНТ2 --------
+// console.log(getFriends(users));
+
+//?        ------- ВАРІАНТ3 без параметра --------
 // const getFriends = users
 //   .flatMap((user) => user.friends)
 //   .filter((friend, index, arr) => arr.indexOf(friend) === index);
 
-// console.log(getFriends(users));
+// console.log(getFriends);
 
 //! ============================================================================
+//?        filter()
 //* Task 26
 //! ============================================================================
+
+//* Доповни ф-цію getActiveUsers(users) так, щоб вона повертала масив активних користувачів, значення властивості isActive яких - true.
+//*    Змінній getActiveUsers присвоєна => з (users)
+//*    Для перебирання параметра users використовується метод filter()
+//*    Виклик функції із зазначеним масивом користувачів повертає масив об'єктів користувачів з іменами Sharlene Bush, Elma Head, Carey Barr і Sheree Anthony
+
+// Change code below this line
+const getActiveUsers = (users) =>
+  users.filter((user) => user.isActive === true);
+// Change code above this line
+console.log(getActiveUsers(users));
 
 //! ============================================================================
 //* Task 27
