@@ -1285,8 +1285,7 @@ const users = [
 // console.log(getFriends);
 
 //! ============================================================================
-//?        filter()
-//* Task 26
+//?  Task 26      filter()
 //! ============================================================================
 
 //* Доповни ф-цію getActiveUsers(users) так, щоб вона повертала масив активних користувачів, значення властивості isActive яких - true.
@@ -1294,15 +1293,25 @@ const users = [
 //*    Для перебирання параметра users використовується метод filter()
 //*    Виклик функції із зазначеним масивом користувачів повертає масив об'єктів користувачів з іменами Sharlene Bush, Elma Head, Carey Barr і Sheree Anthony
 
-// Change code below this line
-const getActiveUsers = (users) =>
-  users.filter((user) => user.isActive === true);
-// Change code above this line
-console.log(getActiveUsers(users));
+//! Change code below this line
+// const getActiveUsers = (users) =>
+//   users.filter((user) => user.isActive === true);
+//! Change code above this line
+// console.log(getActiveUsers(users));
 
 //! ============================================================================
-//* Task 27
+//? Task 27       filter()
 //! ============================================================================
+//* Доповни ф-цію getInactiveUsers(users) так, щоб вона повертала масив неактивних користувачів, значення властивості isActive яких - false.
+//*    Змінній getInactiveUsers присвоєна => з (users)
+//*    Для перебирання параметра users використовується метод filter()
+//*    Виклик ф-ції із зазначеним масивом користувачів повертає масив об'єктів користувачів з іменами Moore Hensley, Ross Vazquez і Blackburn Dotson
+
+//! Change code below this line
+// const getInactiveUsers = (users) =>
+//   users.filter((user) => user.isActive === false);
+//! Change code above this line
+// console.log(getInactiveUsers(users));
 
 //! ============================================================================
 //* Task 28
