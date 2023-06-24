@@ -1314,12 +1314,91 @@ const users = [
 // console.log(getInactiveUsers(users));
 
 //! ============================================================================
-//* Task 28
+//?          find()
+//*                 метод find(callback) - знаходить і повертає перший відповідний елемент, після чого перебирання масиву припиняється. Тобто він шукає до першого збігу.
+//*                 метод filter(callback) - для пошуку всіх елементів, що задовольняють умову, то
+//                     масив.find((element, index, array) => {
+//                 //! Тіло колбек-функції      });
+//*                  Не змінює оригінальний масив.
+//*                  Поелементо перебирає оригінальний масив.
+//*                  Повертає перший елемент, що задовольняє умову, тобто коли колбек повертає true.
+//*                  Якщо жоден елемент не задовольнив умову, тобто для всіх елементів колбек повернув false, метод повертає undefined.
+//* Task 28          Метод find() використовується для одного завдання - пошуку елемента за унікальним значенням властивості. Наприклад, пошук користувача за поштою, автомобіля - за серійним номером, книги - за назвою тощо.
+//                       const colorPickerOptions = [
+//                         { label: "red", color: "#F44336" },
+//                         { label: "green", color: "#4CAF50" },
+//                         { label: "blue", color: "#2196F3" },
+//                         { label: "pink", color: "#E91E63" },
+//                         { label: "indigo", color: "#3F51B5" },      ];
+//                       colorPickerOptions.find((option) => option.label === "blue"); // { label: "blue", color: "#2196F3" }
+//                       colorPickerOptions.find((option) => option.label === "pink"); // { label: "pink", color: "#E91E63" }
+//                       colorPickerOptions.find((option) => option.label === "white"); // undefined
 //! ============================================================================
 
+//* Використовуючи метод find(), доповни код таким чином, щоб:
+//*   в bookWithTitle - об'єкт книги, назва якої (властивість title) збігається зі значенням змінної BOOK_TITLE.
+//* У змінній bookByAuthor утворився об'єкт книги, автор якої (властивість author) збігається зі значенням змінної AUTHOR.
+//*    Значення змінної books - це масив
+//*                     BOOK_TITLE - це рядок "The Dream of a Ridiculous Man"
+//*                     AUTHOR - це рядок "Robert Sheckley"
+//*                     bookWithTitle - це об'єкт книги з назвою вище "The Dream of a Ridiculous Man"
+//*                     bookByAuthor - це об'єкт книги автора "Robert Sheckley"
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+// ];
+// const BOOK_TITLE = "The Dream of a Ridiculous Man";
+// const AUTHOR = "Robert Sheckley";
+//! Change code below this line
+//* const bookWithTitle = books;
+//* const bookByAuthor = books;
+
+//?        ------- ВАРІАНТ1  прямий підхід  --------
+// const bookWithTitle = books.find((book) => book.title === BOOK_TITLE);
+// const bookByAuthor = books.find((book) => book.author === AUTHOR);
+
+//?        ------- ВАРІАНТ1  виклик функції і передача їй масиву books   --------
+
+// const bookWithTitle = (books) =>
+//   books.find((book) => book.title === BOOK_TITLE);
+// const bookByAuthor = (books) => books.find((book) => book.author === AUTHOR);
+
+// console.log(bookWithTitle(books));
+// console.log(bookByAuthor(books));
+
 //! ============================================================================
-//* Task 29
+//* Task 29       find()
 //! ============================================================================
+//! Task 23
+//* Доповни ф-цію getUserWithEmail(users, email) так, щоб вона повертала об'єкт користувача, (email) якого  збігається зі значенням параметра email.
+//* Оголошена ф-ція getUserWithEmail(users, email)
+//*          використовується метод find()
+//*          Якщо  email - це "shereeanthony@kog.com", // об'єкт користувача з ім'ям Sheree Anthony
+//*          Якщо  email - це "elmahead@omatom.com", // об'єкт користувача з ім'ям Elma Head
+//*          Якщо  email - це "blackburndotson@furnigeer.com", // об'єкт користувача з ім'ям Blackburn Dotson
+//*          Якщо в масиві users відсутній користувач з поштою із параметра email, функція повертає undefined
+//! Change code below this line
+//* const getUserWithEmail = (users, email) => {};
+//! Change code above this line
+// const getUserWithEmail = (users, email) =>
+//   users.find((user) => user.email === email);
+
+// console.log(getUserWithEmail(users, "shereeanthony@kog.com"));
 
 //! ============================================================================
 //* Task 30
