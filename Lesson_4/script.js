@@ -1817,8 +1817,67 @@ const users = [
 // console.log(authorsInReversedOrder);
 
 //! ============================================================================
-//* Task 41
+//?         localeCompare()        sort()
+//*           Під час роботи з масивом об'єктів, сортування виконується за числовим або рядковим значенням певної властивості.
+//*                Наприклад, у нас є група студентів з балами за тест. Необхідно відсортувати масив об'єктів за зростанням і спаданням кількості балів, і за ім'ям студента.
+//                     const students = [
+//                       { name: "Mango", score: 83 },
+//                       { name: "Poly", score: 59 },
+// Task 41               { name: "Ajax", score: 37 },
+//                       { name: "Kiwi", score: 94 },      ];
+//                     const inAscendingScoreOrder = students.sort(
+//                       (firstStudent, secondStudent) => firstStudent.score - secondStudent.score     );
+//                     const inDescendingScoreOrder = students.sort(
+//                       (firstStudent, secondStudent) => secondStudent.score - firstStudent.score      );
+//                     const inAlphabeticalOrder = students.sort((firstStudent, secondStudent) =>
+//                       firstStudent.name.localeCompare(secondStudent.name)        );
 //! ============================================================================
+
+//* Доповни код таким чином, щоб:
+//* У змінній sortedByAuthorName вийшов масив книг, відсортований за ім'ям автора в алфавітному порядку.
+//* У змінній sortedByReversedAuthorName вийшов масив книг, відсортований за ім'ям автора у зворотному алфавітному порядку.
+//* У змінній sortedByAscendingRating вийшов масив книг, відсортований за зростанням рейтингу.
+//* У змінній sortedByDescentingRating вийшов масив книг, відсортований за спаданням рейтингу.
+
+//* Значення змінної books - це вихідний масив об'єктів книг
+//* Значення змінної sortedByAuthorName - це масив книг, відсортований за ім'ям автора в алфавітному порядку
+//* Значення змінної sortedByReversedAuthorName - це масив книг, відсортований за ім'ям автора у зворотному алфавітному порядку
+//* Значення змінної sortedByAscendingRating - це масив книг, відсортований за зростанням рейтингу
+//* Значення змінної sortedByDescentingRating - це масив книг, відсортований за спаданням рейтингу
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+//! Change code below this line
+// const sortedByAuthorName = [...books].sort((a, b) =>
+//   a.author.localeCompare(b.author)
+// );
+// const sortedByReversedAuthorName = [...books].sort((a, b) =>
+//   b.author.localeCompare(a.author)
+// );
+// const sortedByAscendingRating = [...books].sort((a, b) => a.rating - b.rating);
+// const sortedByDescentingRating = [...books].sort((a, b) => b.rating - a.rating);
+
+// console.log(sortedByAuthorName);
+// console.log(sortedByReversedAuthorName);
+// console.log(sortedByAscendingRating);
+// console.log(sortedByDescentingRating);
 
 //! ============================================================================
 //* Task 42
@@ -1847,4 +1906,4 @@ const users = [
 //! ============================================================================
 //* Task 48
 //! ============================================================================
-//            node Lesson_4/script           - запуск через термінал ≡
+//            node Lesson_4/script           - запуск через термінал
