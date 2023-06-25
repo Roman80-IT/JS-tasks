@@ -1461,12 +1461,78 @@ const users = [
 // console.log(eachElementInThirdIsEven); //   false
 // console.log(eachElementInThirdIsOdd); //   false
 //! ============================================================================
-//* Task 31
+//? Task 31       every()
 //! ============================================================================
+//!Task 23
+
+//* Доповни функцію isEveryUserActive(users) так, щоб вона перевіряла, чи всі користувачі зараз активні (властивість isActive) і повертала true або false.
+//*     Змінній isEveryUserActive присвоєна стрілочна функція з параметром (users)
+//*     Для перебирання параметра users використовується метод every()
+//*     Виклик функції із зазначеним масивом користувачів повертає false
+
+//! Change code below this line
+//* const isEveryUserActive = (users) => {};
+//! Change code above this line
+// const isEveryUserActive = (users) =>
+//   users.every((user) => user.isActive === true);
+
+// console.log(isEveryUserActive(users));
 
 //! ============================================================================
-//* Task 32
+//?        some()
+//*                   Метод some(callback) перевіряє, чи проходить хоча б один елемент масиву тест колбек-функції. Повертає true або false.
+//                        масив.some((element, index, array) => {
+//                         //! Callback function body       });
+//*                       - Не змінює оригінальний масив.
+//*                       - Поелементо перебирає оригінальний масив.
+//*                       - Повертає true, якщо хоча б один елемент масиву задовольняє умову.
+//*                       - Повертає false, якщо жоден елемент масиву не задовольняє умову.
+//* Task 32               - Перебирання масиву припиняється, якщо колбек повертає true.
+//*                       - Чи є хоча б один елемент, що більший або дорівнює нулю? - так
+//                        [1, 2, 3, 4, 5].some(value => value >= 0); // true
+//                        //! Чи є хоча б один елемент, що більший або дорівнює нулю? - так
+//                        [-7, -20, 3, -10, -14].some(value => value >= 0); // true
+//                        //! Чи є хоча б один елемент, що менший нуля? - ні
+//                        [1, 2, 3, 4, 5].some(value => value < 0); // false
+//                        //! Чи є хоча б один елемент, що менший нуля? - так
+//                        [1, 2, 3, -10, 4, 5].some(value => value < 0); // true
 //! ============================================================================
+//* Використовуючи метод some(), доповни код так, щоб:
+//*       У змінній anyElementInFirstIsEven був результат перевірки наявності парних елементів в масиві firstArray.
+//*       У змінній anyElementInFirstIsOdd був результат перевірки наявності непарних елементів в масиві firstArray.
+//*       У змінній anyElementInSecondIsEven був результат перевірки наявності парних елементів в масиві secondArray.
+//*       У змінній anyElementInSecondIsOdd був результат перевірки наявності непарних елементів в масиві secondArray.
+//*       У змінній anyElementInThirdIsEven був результат перевірки наявності парних елементів в масиві thirdArray.
+//*       У змінній anyElementInThirdIsOdd був результат перевірки наявності непарних елементів в масиві thirdArray.
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+//! Change below this line
+//* const anyElementInFirstIsEven = firstArray;
+//* const anyElementInFirstIsOdd = firstArray;
+//* const anyElementInSecondIsEven = secondArray;
+//* const anyElementInSecondIsOdd = secondArray;
+//* const anyElementInThirdIsEven = thirdArray;
+//* const anyElementInThirdIsOdd = thirdArray;
+
+// const anyElementInFirstIsEven = firstArray.some((element) => element % 2 === 0);
+// const anyElementInFirstIsOdd = firstArray.some((element) => element % 2 !== 0);
+// const anyElementInSecondIsEven = secondArray.some(
+//   (element) => element % 2 === 0
+// );
+// const anyElementInSecondIsOdd = secondArray.some(
+//   (element) => !(element % 2 === 0)
+// );
+// const anyElementInThirdIsEven = thirdArray.some((element) => element % 2 === 0);
+// const anyElementInThirdIsOdd = thirdArray.some((element) => element % 2 !== 0);
+
+// console.log(anyElementInFirstIsEven); //     true
+// console.log(anyElementInFirstIsOdd); //     false
+// console.log(anyElementInSecondIsEven); //     false
+// console.log(anyElementInSecondIsOdd); //     true
+// console.log(anyElementInThirdIsEven); //     true
+// console.log(anyElementInThirdIsOdd); //     true
 
 //! ============================================================================
 //* Task 33
