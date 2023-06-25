@@ -1535,8 +1535,21 @@ const users = [
 // console.log(anyElementInThirdIsOdd); //     true
 
 //! ============================================================================
-//* Task 33
+//? Task 33       some()
 //! ============================================================================
+//!Task 23
+
+//* Доповни ф-цію isAnyUserActive(users) так, щоб вона перевіряла наявність активних користувачів (властивість isActive) і повертала true або false.
+//*       Оголошена ф-ція isAnyUserActive(users)
+//*       Для перебирання параметра users використовується метод some()
+//*       Виклик ф-ції із зазначеним масивом користувачів повертає true
+
+//! Change code below this line
+//* const isAnyUserActive = (users) => {};
+//! Change code above this line
+
+// const isAnyUserActive = (users) => users.some((user) => user.isActive === true);
+// console.log(isAnyUserActive(users));
 
 //! ============================================================================
 //* Task 34
