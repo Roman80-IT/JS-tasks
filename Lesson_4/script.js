@@ -1665,14 +1665,31 @@ const users = [
 //* const calculateTotalBalance = (users) => {};
 //! Change code above this line
 
-const calculateTotalBalance = (users) =>
-  users.reduce((total, baks) => total + baks.balance, 0);
+// const calculateTotalBalance = (users) =>
+//   users.reduce((total, baks) => total + baks.balance, 0);
 
-console.log(calculateTotalBalance(users));
+// console.log(calculateTotalBalance(users));
 
 //! ============================================================================
-//* Task 37
+//? Task 37      reduce()
 //! ============================================================================
+
+//* Доповни ф-цію getTotalFriendCount(users) так, щоб вона рахувала і повертала загальну к-сть друзів (властивість friends) усіх користувачів з масиву users.
+//*         Змінній getTotalFriendCount присвоєна => з параметром (users)
+//*         Для перебирання параметра users використовується метод reduce()
+//*         Виклик ф-ції із зазначеним масивом користувачів повертає число 14
+//*         Виклик ф-ції з випадковими, але валідними аргументами, повертає правильне значення
+
+//! Change code below this line
+//* const getTotalFriendCount = (users) => {};
+//! Change code above this line
+
+// const getTotalFriendCount = (users) =>
+//   users.reduce((total, friend) => {
+//     return total + friend.friends.length;
+//   }, 0);
+
+// console.log(getTotalFriendCount(users));
 
 //! ============================================================================
 //* Task 38
