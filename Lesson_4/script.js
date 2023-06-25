@@ -1744,12 +1744,77 @@ const users = [
 // console.log(alphabeticalAuthors);
 
 //! ============================================================================
-//* Task 39
+//?         sort()
+//*            Для зазначення свого порядку сортування методу sort(compareFunction) потрібно передати колбек-функцію з двома параметрами.
+//*                Це ф-ція порівняння(compare function), порядок сортування залежить від її результату. Метод sort() буде викликати її для двох довільних елементів.
+//?                     масив.sort((a, b) => {
+//                      //! Callback function body       });
+//                     a - перший елемент для порівняння.
+//                     b - другий елемент для порівняння.
+//* Task 39          Якщо виклик compareFunction(a, b) повертає будь-яке від'ємне значення, тобто a менше b, сортування поставить a перед b. Це сортування за зростанням.
+//                     const scores = [61, 19, 74, 35, 92, 56];
+//?                     const ascendingScores = [...scores].sort((a, b) => a - b);        - сортування за зростанням
+//                     console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+//*                  Якщо виклик compareFunction(a, b) повертає будь-яке додатне значення більше нуля, тобто b більше a, сортування поставить b перед a. Це сортування за спаданням.
+//                     const scores = [61, 19, 74, 35, 92, 56];
+//?                     const descendingScores = [...scores].sort((a, b) => b - a);       - сортування за спаданням
+//                     console.log(descendingScores); // [92, 74, 61, 56, 35, 19]
+//*                  Якщо виклик compareFunction(a, b) поверне 0, сортування залишить a і b незмінними по відношенню один до одного, але відсортує їх по відношенню до всіх інших елементів. Але взагалі неважливо, що повертати, якщо їх взаємний порядок не має значення.
 //! ============================================================================
 
+//* Онлайн бібіліотеці необхідно відображати книги, відсортовані за датою видання, за її зростанням або спаданням.
+//* Доповни код так, щоб у змінній ascendingReleaseDates вийшла копія масиву releaseDates, відсортована за зростанням, а у змінній descendingReleaseDates - копія, відсортована за спаданням.
+//*    Змінна releaseDates - це масив [2016, 1967, 2008, 1984, 1973, 2012, 1997]
+//*    Змінна ascendingReleaseDates - це масив [1967, 1973, 1984, 1997, 2008, 2012, 2016]
+//*    Значення змінної descendingReleaseDates - це масив [2016, 2012, 2008, 1997, 1984, 1973, 1967]
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+//! Change code below this line
+// const ascendingReleaseDates = [...releaseDates].sort((a, b) => a - b);
+// const descendingReleaseDates = [...releaseDates].sort((a, b) => b - a);
+
+// console.log(ascendingReleaseDates);
+// console.log(descendingReleaseDates);
+
 //! ============================================================================
-//* Task 40
+//?         localeCompare()        sort()
+//*               Для сортування рядків в алфавітному порядку, за зростанням або спаданням, використовується метод рядків localeCompare().
+//                 firstString.localeCompare(secondString)
+//*                 Він викликається на рядку, який потрібно порівняти (firstString) з тим, що був переданий йому як аргумент (secondString).
+//                 "a".localeCompare("b"); // -1
+//                 "b".localeCompare("a"); // 1
+//                 "a".localeCompare("a"); // 0
+//                 "b".localeCompare("b"); // 0
+//* Task 40                Повертає від'ємне значення, якщо firstString повинен бути перед secondString.
+//*                 Повертає додатне значення більше нуля, якщо firstString повинен бути після secondString.
+//*                 Якщо рядки однакові, повертається нуль.
+//*                 Це зручно використовувати для сортування рядків, оскільки метод sort() очікує такі самі значення від колбек-функції.
+//                 const students = ["Jacob", "Artemis", "Solomon", "Adrian", "Kai", "Ganymede"];
+//                    const inAlphabetOrder = [...students].sort((a, b) => a.localeCompare(b));
+//                    console.log(inAlphabetOrder); // [ "Adrian", "Artemis", "Ganymede", "Jacob", "Kai", "Solomon" ]
+//                 const inReversedOrder = [...students].sort((a, b) => b.localeCompare(a));
+//                 console.log(inReversedOrder); // [ "Solomon", "Kai", "Jacob", "Ganymede", "Artemis", "Adrian" ]
 //! ============================================================================
+
+//* Онлайн бібіліотеці необхідно відображати книги, відсортовані за автором, в алфавітному і зворотному алфавітному порядку.
+//* Доповни код так, щоб у змінній authorsInAlphabetOrder вийшла копія масиву authors, відсортована за алфавітом,
+//* а у змінній authorsInReversedOrder - копія, відсортована у зворотному алфавітному порядку.
+// *     Значення змінної authors - це масив ["Tanith Lee", "Bernard Cornwell", "Robert Sheckley", "Fyodor Dostoevsky", "Howard Lovecraft"]
+// *     Значення змінної authorsInAlphabetOrder - це масив ["Bernard Cornwell", "Fyodor Dostoevsky", "Howard Lovecraft", "Robert Sheckley", "Tanith Lee"]
+// *     Значення змінної authorsInReversedOrder - це масив ["Tanith Lee", "Robert Sheckley", "Howard Lovecraft", "Fyodor Dostoevsky", "Bernard Cornwell"]
+
+// const authors = [
+//   "Tanith Lee",
+//   "Bernard Cornwell",
+//   "Robert Sheckley",
+//   "Fyodor Dostoevsky",
+//   "Howard Lovecraft",
+// ];
+// //! Change code below this line
+// const authorsInAlphabetOrder = [...authors].sort((a, b) => a.localeCompare(b));
+// const authorsInReversedOrder = [...authors].sort((a, b) => b.localeCompare(a));
+
+// console.log(authorsInAlphabetOrder);
+// console.log(authorsInReversedOrder);
 
 //! ============================================================================
 //* Task 41
@@ -1765,5 +1830,21 @@ const users = [
 
 //! ============================================================================
 //* Task 44
+//! ============================================================================
+
+//! ============================================================================
+//* Task 45
+//! ============================================================================
+
+//! ============================================================================
+//* Task 46
+//! ============================================================================
+
+//! ============================================================================
+//* Task 47
+//! ============================================================================
+
+//! ============================================================================
+//* Task 48
 //! ============================================================================
 //            node Lesson_4/script           - запуск через термінал ≡
