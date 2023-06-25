@@ -1404,20 +1404,62 @@ const users = [
 //?      every()
 //*                         Метод every(callback) перевіряє, чи проходять всі елементи масиву тест колбек-функції. Повертає true або false.
 //                        масив.every((element, index, array) => {
-//                          //! Тіло колбек-функції
-//                        });
+//                          //! Тіло колбек-функції         });
 //*                    - Не змінює оригінальний масив.
 //*                    - Поелементо перебирає оригінальний масив.
 //* Task 30            - Повертає true, якщо всі елементи масиву задовольняють умову.
 //*                    - Повертає false, якщо хоча б один елемент масиву не задовольняє умову.
 //*                    - Перебирання масиву припиняється, якщо колбек повертає false.
 //                     //! Усі елементи більші або дорівнюють нулю? - так
-//                        [1, 2, 3, 4, 5].every((value) => value >= 0); // true
+//                        [1, 2, 3, 4, 5].every((value) => value >= 0); // true         //    перевіряється значення якоїсь їх властивості
 //                     //! Усі елементи більші або дорівнюють нулю? - ні
 //                        [1, 2, 3, -10, 4, 5].every((value) => value >= 0); // false
-//*                     При роботі з масивом об'єктів перевіряється значення якоїсь їх властивості.
 //! ============================================================================
 
+//* Використовуючи метод every(), доповни код так, щоб:
+//*       У змінній eachElementInFirstIsEven був результат перевірки всіх елементів масиву firstArray на парність.
+//*       У змінній eachElementInFirstIsOdd був результат перевірки всіх елементів масиву firstArray на непарність.
+//*       У змінній eachElementInSecondIsEven був результат перевірки всіх елементів масиву secondArray на парність.
+//*       У змінній eachElementInSecondIsOdd був результат перевірки всіх елементів масиву secondArray на непарність.
+//*       У змінній eachElementInThirdIsEven був результат перевірки всіх елементів масиву thirdArray на парність.
+//*       У змінній eachElementInThirdIsOdd був результат перевірки всіх елементів масиву thirdArray на непарність.
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+//! Change code below this line
+//* const eachElementInFirstIsEven = firstArray;
+//* const eachElementInFirstIsOdd = firstArray;
+//* const eachElementInSecondIsEven = secondArray;
+//* const eachElementInSecondIsOdd = secondArray;
+//* const eachElementInThirdIsEven = thirdArray;
+//* const eachElementInThirdIsOdd = thirdArray;
+
+// const eachElementInFirstIsEven = firstArray.every(
+//   (element) => element % 2 === 0
+// );
+// const eachElementInFirstIsOdd = firstArray.every(
+//   (element) => element % 2 !== 0
+// );
+// const eachElementInSecondIsEven = secondArray.every(
+//   (element) => element % 2 === 0
+// );
+// const eachElementInSecondIsOdd = secondArray.every(
+//   (element) => !(element % 2 === 0)
+// );
+// const eachElementInThirdIsEven = thirdArray.every(
+//   (element) => element % 2 === 0
+// );
+// const eachElementInThirdIsOdd = thirdArray.every(
+//   (element) => element % 2 !== 0
+// );
+
+// console.log(eachElementInFirstIsEven); //   true
+// console.log(eachElementInFirstIsOdd); //   false
+// console.log(eachElementInSecondIsEven); //   false
+// console.log(eachElementInSecondIsOdd); //   true
+// console.log(eachElementInThirdIsEven); //   false
+// console.log(eachElementInThirdIsOdd); //   false
 //! ============================================================================
 //* Task 31
 //! ============================================================================
