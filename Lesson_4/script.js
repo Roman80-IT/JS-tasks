@@ -1655,8 +1655,20 @@ const users = [
 // };
 
 //! ============================================================================
-//* Task 36
+//? Task 36       reduce()
 //! ============================================================================
+//* Доповни ф-цію calculateTotalBalance(users) так, щоб вона рахувала і повертала суму всіх коштів (властивість balance), які зберігають користувачі з масиву users.
+//*     Змінній calculateTotalBalance присвоєна стрілочна ф-ція з параметром (users)
+//*     Для перебирання параметра users використовується метод reduce()
+//*     Виклик ф-ції із зазначеним масивом користувачів повертає число 20916
+//! Change code below this line
+//* const calculateTotalBalance = (users) => {};
+//! Change code above this line
+
+const calculateTotalBalance = (users) =>
+  users.reduce((total, baks) => total + baks.balance, 0);
+
+console.log(calculateTotalBalance(users));
 
 //! ============================================================================
 //* Task 37
