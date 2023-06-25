@@ -1593,31 +1593,85 @@ const users = [
 //*       Змінна totalPlayTime - число 2692
 //*       Для перебирання масиву playtimes використовується метод reduce()
 //*       Значення змінної averagePlayTime - це число 673
-const players = {
-  mango: 1270,
-  poly: 468,
-  ajax: 710,
-  kiwi: 244,
-};
-const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244,
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
 //! Change code below this line
 //* const totalPlayTime = playtimes;
 //! Change code above this line
-const totalPlayTime = playtimes.reduce((total, element) => total + element, 0);
+// const totalPlayTime = playtimes.reduce((total, element) => total + element, 0);
+// const averagePlayTime = totalPlayTime / playtimes.length;
 
-const averagePlayTime = totalPlayTime / playtimes.length;
-
-console.log(players);
-console.log(playtimes);
-console.log(totalPlayTime);
-console.log(averagePlayTime);
+// console.log(players);
+// console.log(playtimes);
+// console.log(totalPlayTime);
+// console.log(averagePlayTime);
 
 //! ============================================================================
-//* Task 35
+//?         reduce()
+//*                 Під час роботи з масивом об'єктів виконується редукування за значенням певної властивості.
+//*                      Наприклад, у нас є масив студентів з балами за тест. Необхідно отримати середній бал.
+//                      const students = [
+//                        { name: "Mango", score: 83 },
+//                        { name: "Poly", score: 59 },
+// Task 35                { name: "Ajax", score: 37 },
+//                        { name: "Kiwi", score: 94 },
+//                        { name: "Houston", score: 64 },        ];
+//                      //! Назва акумулятора може бути довільною, це просто параметр функції
+//                      const totalScore = students.reduce((total, student) => {
+//                        return total + student.score;       }, 0);
+//                      const averageScore = totalScore / students.length;
 //! ============================================================================
+
+//* Сервісу необхідно розрахувати середній час, проведений в одній грі для кожного гравця, і отримати загальну суму цих значень часу.
+//* Розрахувати час для кожного з гравців можна, розділивши його час(властивість playtime) на кількість ігор(властивість gamesPlayed).
+//*    Значення змінної players - це масив об'єктів гравців
+//*    Змінна totalAveragePlaytimePerGame - це число 1023
+// const players = [
+//   { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+//! Change code below this line
+//?        ------- ВАРІАНТ1 --------
+
+// const totalAveragePlaytimePerGame = players.reduce((total, player) => {
+//   const averagePlaytimePerGame = player.playtime / player.gamesPlayed;
+//   return total + averagePlaytimePerGame;
+// }, 0);
+
+// console.log(totalAveragePlaytimePerGame);
+
+//?        ------- ВАРІАНТ2 (інше завдання) --------
+// const totalAveragePlaytimePerGame = (players) => {
+//   allPlaytime = players.reduce((total, player) => total + player.playtime, 0);
+//   allGames = players.reduce((total, game) => total + game.gamesPlayed, 0);
+//   return allPlaytime / allGames;
+// };
 
 //! ============================================================================
 //* Task 36
+//! ============================================================================
+
+//! ============================================================================
+//* Task 37
+//! ============================================================================
+
+//! ============================================================================
+//* Task 38
+//! ============================================================================
+
+//! ============================================================================
+//* Task 39
+//! ============================================================================
+
+//! ============================================================================
+//* Task 40
 //! ============================================================================
 
 //            node Lesson_4/script           - запуск через термінал ≡
