@@ -1917,18 +1917,20 @@ const users = [
 // console.log(sortByDescendingFriendCount(users));
 
 //! ============================================================================
-//?  Task 44           sort()    =>
+//?  Task 44           sort()      localeCompare()      =>
 //! ============================================================================
+//!Task 23
 
 //* Доповни ф-цію sortByName(users) так, щоб вона повертала масив користувачів, відсортований за їх ім'ям (властивість name) в алфавітному порядку.
 //*      Змінній sortByName присвоєна => з параметром (users)
 //*      Значення параметра users не змінюється
 //*      Виклик ф-ції повертає новий масив користувачів, відсортований за ім'ям в алфавітному порядку
-//!Task 23
 
 //! Change code below this line
-const sortByName = (users) => {};
-//! Change code above this line
+// const sortByName = (users) =>
+//   [...users].sort((a, b) => a.name.localeCompare(b.name));
+// //! Change code above this line
+// console.log(sortByName(users));
 
 //! ============================================================================
 //* Task 45
