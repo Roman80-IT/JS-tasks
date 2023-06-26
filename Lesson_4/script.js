@@ -1970,7 +1970,7 @@ const users = [
 //*                      1) перебираючі методи використовуються для порівняно простих операцій над колекцією.
 //*                      2) виклик кожного наступного методу - це додаткове перебирання масиву, що за великої кількості, може позначитися на продуктивності.
 //! ============================================================================
-//?          filter()        map()         sort()         localeCompare()
+//?          filter()        map()         sort()         localeCompare()        =>
 
 //* Доповни код так, щоб у змінній names вийшов масив імен авторів в алфавітному порядку, рейтинг книг яких більший за значення змінної MIN_BOOK_RATING.
 //*       Змінна books - це вихідний масив об'єктів
@@ -2010,17 +2010,22 @@ const users = [
 // console.log(names); // ["Bernard Cornwell", "Howard Lovecraft", "Robert Sheckley"]
 
 //! ============================================================================
-//* Task 46
+//? Task 46         filter()        map()        sort()        localeCompare()       =>
 //! ============================================================================
 
-Доповни функцію getNamesSortedByFriendCount(users) таким чином, щоб вона повертала масив імен користувачів, відсортований за зростанням кількості їхніх друзів (властивість friends).
+//* Ф-ція getNamesSortedByFriendCount(users) повертає масив імен користувачів, відсортований за зростанням к-сті їхніх друзів (властивість friends).
+//*    Змінній getNamesSortedByFriendCount присвоєна  => з параметром (users)
+//*    У тілі ф-ції використовується ланцюжок методів
+//*    Значення параметра users не змінюється
+//*    Виклик функції із зазначеним масивом користувачів повертає масив ["Moore Hensley", "Sharlene Bush", "Elma Head", "Sheree Anthony", "Ross Vazquez", "Carey Barr", "Blackburn Dotson"]
 
-Оголошена змінна getNamesSortedByFriendCount
-Змінній getNamesSortedByFriendCount присвоєна стрілочна функція з параметром (users)
-У тілі функції використовується ланцюжок методів
-Значення параметра users не змінюється
-Виклик функції із зазначеним масивом користувачів повертає масив ["Moore Hensley", "Sharlene Bush", "Elma Head", "Sheree Anthony", "Ross Vazquez", "Carey Barr", "Blackburn Dotson"]
-Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+//! Change code below this line
+// const getNamesSortedByFriendCount = (users) =>
+//   [...users]
+//     .sort((a, b) => a.friends.length - b.friends.length)
+//     .map((friend) => friend.name);
+// //! Change code above this line
+// console.log(getNamesSortedByFriendCount(users));
 
 //! ============================================================================
 //* Task 47
