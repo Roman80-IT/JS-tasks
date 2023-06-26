@@ -1666,7 +1666,7 @@ const users = [
 //! Change code above this line
 
 // const calculateTotalBalance = (users) =>
-//   users.reduce((total, baks) => total + baks.balance, 0);
+//?   users.reduce((total, baks) => total + baks.balance, 0);
 
 // console.log(calculateTotalBalance(users));
 
@@ -2046,20 +2046,23 @@ const users = [
 // console.log(getSortedFriends(users));
 
 //! ============================================================================
-//* Task 48
+//?                filter()         reduce()            =>       *parseFloat()
+//* Task 48           вбудована функція в JS, яка призначена для перетворення рядкового значення на числове значення з плаваючою точкою (дробове число).
+//*                   Вона використовується для парсингу числових значень з рядків.
 //! ============================================================================
 
 //* Ф-ція getTotalBalanceByGender(users, gender) повертає загальний баланс користувачів (властивість balance), стать яких (властивість gender) збігається зі значенням параметра gender.
-//*      Оголошена змінна getTotalBalanceByGender
-//*      Змінній getTotalBalanceByGender присвоєна стрілочна функція з параметрами (users, gender)
-//*      У тілі функції використовується ланцюжок методів в правильному порядку
+//*      Змінній getTotalBalanceByGender присвоєна => з параметрами (users, gender)
+//*      У тілі ф-ції використовується ланцюжок методів в правильному порядку
 //*      Значення параметра users не змінюється
-//*      Якщо значення параметра gender - це рядок "male", функція повертає число 12053
-//*      Якщо значення параметра gender - це рядок "female", функція повертає число 8863
-//*      Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
 
 //! Change code below this line
-const getTotalBalanceByGender = (users, gender) => {};
+// const getTotalBalanceByGender = (users, gender) =>
+//   [...users]
+//     .filter((user) => user.gender === gender)
+//     .reduce((total, baks) => total + parseFloat(baks.balance), 0);
 //! Change code above this line
+// console.log(getTotalBalanceByGender(users, "male")); //  12053
+// console.log(getTotalBalanceByGender(users, "female")); //  8863
 
 //            node Lesson_4/script           - запуск через термінал
