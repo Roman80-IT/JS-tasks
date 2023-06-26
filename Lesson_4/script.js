@@ -2010,7 +2010,7 @@ const users = [
 // console.log(names); // ["Bernard Cornwell", "Howard Lovecraft", "Robert Sheckley"]
 
 //! ============================================================================
-//? Task 46         filter()        map()        sort()        localeCompare()       =>
+//? Task 46               map()        sort()         =>
 //! ============================================================================
 
 //* Ф-ція getNamesSortedByFriendCount(users) повертає масив імен користувачів, відсортований за зростанням к-сті їхніх друзів (властивість friends).
@@ -2028,10 +2028,38 @@ const users = [
 // console.log(getNamesSortedByFriendCount(users));
 
 //! ============================================================================
-//* Task 47
+//? Task 47             flatMap()      filter()        sort()         =>     .indexOf       .localeCompare()
 //! ============================================================================
+//* Ф-ція getSortedFriends(users) повертає масив унікальних імен друзів (властивість friends), відсортований за алфавітом.
+//*      Змінній getSortedFriends присвоєна стрілочна функція з параметром (users)
+//*      У тілі функції використовується ланцюжок методів в правильному порядку
+//*      Значення параметра users не змінюється
+//*      Виклик функції із зазначеним масивом користувачів повертає масив ["Adrian Cross", "Aisha Tran", "Briana Decker", "Eddie Strong", "Goldie Gentry", "Jacklyn Lucas", "Jordan Sampson", "Linda Chapman", "Marilyn Mcintosh", "Naomi Buckner", "Padilla Garrison", "Sharron Pace", "Solomon Fokes"]
+
+//! Change code below this line
+// const getSortedFriends = (users) =>
+//   [...users]
+//     .flatMap((friend) => friend.friends)
+//     .filter((frie, index, arr) => arr.indexOf(frie) === index)
+//     .sort((a, b) => a.localeCompare(b));
+// //! Change code above this line
+// console.log(getSortedFriends(users));
 
 //! ============================================================================
 //* Task 48
 //! ============================================================================
+
+//* Ф-ція getTotalBalanceByGender(users, gender) повертає загальний баланс користувачів (властивість balance), стать яких (властивість gender) збігається зі значенням параметра gender.
+//*      Оголошена змінна getTotalBalanceByGender
+//*      Змінній getTotalBalanceByGender присвоєна стрілочна функція з параметрами (users, gender)
+//*      У тілі функції використовується ланцюжок методів в правильному порядку
+//*      Значення параметра users не змінюється
+//*      Якщо значення параметра gender - це рядок "male", функція повертає число 12053
+//*      Якщо значення параметра gender - це рядок "female", функція повертає число 8863
+//*      Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+//! Change code below this line
+const getTotalBalanceByGender = (users, gender) => {};
+//! Change code above this line
+
 //            node Lesson_4/script           - запуск через термінал
