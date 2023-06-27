@@ -63,47 +63,6 @@
 //* Task 2
 //! ============================================================================
 
-function splitString(str) {
-  const result = [];
-
-  for (let i = 0; i < str.length; i += 2) {
-    if (str.length % 2 !== 0) {
-      result.push(str[i] + "_");
-    } else {
-      result.push(str.slice(i, i + 2));
-    }
-  }
-
-  return result;
-}
-
-const inputString = "авбрвапар";
-const outputArray = splitString(inputString);
-console.log(outputArray);
-console.log(splitString("авбрвапар"));
-
-//
-//
-//
-
-function splitString(str) {
-  const result = [];
-
-  for (let i = 0; i < str.length; i += 2) {
-    if (str.length % 2 !== 0) {
-      result.push(str[i] + "_");
-    } else {
-      result.push(str.slice(i, i + 2));
-    }
-  }
-
-  return result;
-}
-
-const inputString = "авбрвапар";
-const outputArray = splitString(inputString);
-console.log(outputArray);
-console.log(splitString("авбрвапар"));
 //! ============================================================================
 //* Task 3
 //! ============================================================================
