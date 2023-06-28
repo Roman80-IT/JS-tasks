@@ -60,7 +60,7 @@
 //! ============================================================================
 //* Task 2      АКАУНТ КОРИСТУВАЧА
 //! ============================================================================
-
+//?           this
 //* Перед звільненням розробник зламав вихідний код управління акаунтами користувачів нашого сервісу доставки їжі.
 //* Виконай рефакторинг методів об'єкта customer, розставивши відсутні 'this' під час звернення до властивостей об'єкта.
 //*      Після оголошення об'єкта ми додали виклики методів у тій послідовності, в якій твій код перевірятимуть тести. Будь ласка, нічого там не змінюй.
@@ -124,8 +124,59 @@
 // console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
 
 //! ============================================================================
-//* Task 3
+//* Task 3       ІСТОРІЯ ЗАМОВЛЕНЬ
 //! ============================================================================
+//?           this.
+//* Тестувальники знайшли баги в коді сервісу зберігання історії замовлень їжі.
+//* Необхідно виправити їх, правильно розставивши this в методах об'єкта historyService, щоб методи почали працювати правильно.
+//*      Змінна historyService - це об'єкт з вихідними властивостями та методами
+
+//*      Метод getOrdersLog об'єкта historyService використовує this
+//*      Метод getEmails об'єкта historyService використовує this
+//*      Метод getOrdersByEmail об'єкта historyService використовує this
+
+// const historyService = {
+//   orders: [
+//     { email: "jacob@hotmail.com", dish: "Burrito" },
+//     { email: "solomon@topmail.net", dish: "Burger" },
+//     { email: "artemis@coldmail.net", dish: "Pizza" },
+//     { email: "solomon@topmail.net", dish: "Apple pie" },
+//     { email: "jacob@hotmail.com", dish: "Taco" },
+//   ],
+//! Change code below this line
+//*   getOrdersLog() {
+//*     return orders
+//*       .map((order) => `email: ${order.email} dish: ${order.dish}`)
+//*       .join(" - ");
+//*   },
+//*   getEmails() {
+//*     const emails = orders.map((order) => order.email);
+//*     const uniqueEmails = new Set(emails);
+//*     return [...uniqueEmails];
+//*   },
+//*   getOrdersByEmail(email) {
+//*     return orders.filter((order) => order.email === email);
+//*   },
+//! Change code above this line
+//   getOrdersLog() {
+//     return this.orders
+//       .map((order) => `email: ${order.email} dish: ${order.dish}`)
+//       .join(" - ");
+//   },
+//   getEmails() {
+//     const emails = this.orders.map((order) => order.email);
+//     const uniqueEmails = new Set(emails);
+//     return [...uniqueEmails];
+//   },
+//   getOrdersByEmail(email) {
+//     return this.orders.filter((order) => order.email === email);
+//   },
+// };
+
+// console.log(historyService.getOrdersLog()); //               рядок з переліком даних всіх замовлень з властивості orders
+// console.log(historyService.getEmails()); //               масив всіх унікальних поштових адрес з властивості orders
+// console.log(historyService.getOrdersByEmail("solomon@topmail.net")); //    [{ email: "solomon@topmail.net", dish: "Burger" }, { email: "solomon@topmail.net", dish: "Apple pie" }]
+// console.log(historyService.getOrdersByEmail("artemis@coldmail.net")); //    [{ email: "artemis@coldmail.net", dish: "Pizza" }]
 
 //! ============================================================================
 //* Task 4
