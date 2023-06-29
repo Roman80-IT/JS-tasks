@@ -339,11 +339,60 @@
 // console.log(new Car("Nissan", "Murano", 31700)); //               { brand: "Nissan", model: "Murano", price: 31700 }
 
 //! ============================================================================
-//* Task 8
+//?      constructor({})
+//*         Клас може приймати велику к-сть вхідних даних для властивостей майбутнього об'єкта.
+//*                   Якщо параметрів багато(більше 2 - х), то застосовують патерн «Об'єкт параметрів».
+//*                  Ідея цього патерну у тому, щоб передавати як параметр 1 об'єкт з логічно іменованими властивостями. Значення властивостей такого об'єкта замінять набір аргументів.
+//                      class User {
+//                        //! Деструктуризуємо об'єкт
+//                        constructor({ name, email }) {
+//                          this.name = name;
+//                          this.email = email;      }         }
+// Task 8               const mango = new User({
+//                        name: "Mango",
+//                        email: "mango@mail.com",
+//                      });
+//                      console.log(mango); // { name: "Mango", email: "mango@mail.com" }
+//                          const poly = new User({
+//                            name: "Poly",
+//                            email: "poly@mail.com",
+//                          });
+//                          console.log(poly); // { name: "Poly", email: "poly@mail.com" }
 //! ============================================================================
+//* Виконай рефакторинг класу Car таким чином, щоб він приймав один параметр - об'єкт з властивостями brand, model і price.
+//* Деструктуризуй об'єкт в сигнатурі (підписі) конструктора.
+//*     Клас Car має метод constructor
+// class Car {
+//   //! Change code below this line
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   //! Change code above this line
+// }
+
+// console.log(new Car({ brand: "Audi", model: "Q3", price: 36000 })); //      об'єкт { brand: "Audi", model: "Q3", price: 36000 }
+// console.log(new Car({ brand: "BMW", model: "X5", price: 58900 })); //      об'єкт { brand: "BMW", model: "X5", price: 58900 }
+// console.log(new Car({ brand: "Nissan", model: "Murano", price: 31700 })); //      об'єкт { brand: "Nissan", model: "Murano", price: 31700 }
 
 //! ============================================================================
-//* Task 9
+//* Task 9            Для роботи з властивостями майбутнього екземпляра використовуються методи класу. Методи - це просто ф-ції, але з однією відмінністю - вони доступні екземпляру класу.
+
+class User {
+  constructor({ name, email }) {
+    this.name = name;
+    this.email = email;
+  }
+  //! Метод getEmail
+  getEmail() {
+    return this.email;
+  }
+  //! Метод changeEmail
+  changeEmail(newEmail) {
+    this.email = newEmail;
+  }
+}
 //! ============================================================================
 
 //! ============================================================================
