@@ -236,23 +236,22 @@
 //! ============================================================================
 
 //* Зміни код, побудувавши ланцюжок прототипів таким чином, щоб об'єкт ancestor був прототипом для parent, а той, своєю чергою, був прототипом для child.
-// Змінні    ancestor   parent  child   - це об'єкти
-
-const ancestor = {
-  name: "Paul",
-  age: 83,
-  surname: "Dawson",
-  heritage: "Irish",
+//* Змінні    ancestor   parent  child   - це об'єкти
+// const ancestor = {
+//   name: "Paul",
+//   age: 83,
+//   surname: "Dawson",
+//   heritage: "Irish",
 };
 //! Change code below this line
-const parent = Object.create(ancestor);
-parent.name = "Stacey";
-parent.surname = "Moore";
-parent.age = 54;
+// const parent = Object.create(ancestor);
+// parent.name = "Stacey";
+// parent.surname = "Moore";
+// parent.age = 54;
 
-const child = Object.create(parent);
-child.name = "Jason";
-child.age = 27;
+// const child = Object.create(parent);
+// child.name = "Jason";
+// child.age = 27;
 //! Change code above this line
 
 //* const parent = {};
@@ -264,20 +263,20 @@ child.age = 27;
 //* child.name = "Jason";
 //* child.age = 27;
 
-console.log(ancestor.isPrototypeOf("parent")); // true
-console.log(parent.isPrototypeOf("child")); // true
-console.log(ancestor.hasOwnProperty("surname")); // true
-console.log(ancestor.surname); //           "Dawson"
-console.log(parent.hasOwnProperty("surname")); // true
-console.log(parent.surname); //             "Moore"
-console.log(child.hasOwnProperty("surname")); // false
-console.log(child.surname); //              "Moore"
-console.log(ancestor.hasOwnProperty("heritage")); // true
-console.log(ancestor.heritage); //          "Irish"
-console.log(parent.hasOwnProperty("heritage")); // false
-console.log(parent.heritage); //            "Irish"
-console.log(child.hasOwnProperty("heritage")); // false
-console.log(child.heritage); //             "Irish"
+// console.log(ancestor.isPrototypeOf(parent)); // true
+// console.log(parent.isPrototypeOf(child)); // true
+// console.log(ancestor.hasOwnProperty("surname")); // true
+// console.log(ancestor.surname); //           "Dawson"
+// console.log(parent.hasOwnProperty("surname")); // true
+// console.log(parent.surname); //             "Moore"
+// console.log(child.hasOwnProperty("surname")); // false
+// console.log(child.surname); //              "Moore"
+// console.log(ancestor.hasOwnProperty("heritage")); // true
+// console.log(ancestor.heritage); //          "Irish"
+// console.log(parent.hasOwnProperty("heritage")); // false
+// console.log(parent.heritage); //            "Irish"
+// console.log(child.hasOwnProperty("heritage")); // false
+// console.log(child.heritage); //             "Irish"
 
 //! ============================================================================
 //* Task 6
