@@ -691,12 +691,184 @@
 // console.log(builder.getValue()); // "=^.^="
 
 //! ============================================================================
-//* Task 15
+//?             Гетери та сетери
+//*                   — це коротший синтаксис оголошення методів для взаємодії з властивостями.
+//*                       Геттер і сетер імітують звичайну публічну властивість класу, але дозволяють змінювати інші властивості зручнішим способом.
+//*                      Геттер виконується при спробі отримати значення властивості, а сетер - при спробі його змінити.
+//*                         Гетери та сетери доречно використовувати для простих операцій читання і зміни значення властивостей, особливо приватних, як їх публічний інтерфейс.
+//*                         Для роботи з властивістю, яка зберігає масив або об'єкт, вони не підійдуть.
+//                     class User {
+//                       #email;
+//                       constructor({ name, email }) {
+// Task 15                 this.name = name;
+//                         this.#email = email;
+//                       }
+//                       //! Геттер email
+//                       get email() {
+//                         return this.#email;
+//                       }
+//                       //! Сеттер email
+//                       set email(newEmail) {
+//                         this.#email = newEmail;
+//                       }
+//                     }
 //! ============================================================================
+
+//* Виконай рефакторинг класу Car. Зроби властивості model і price приватними, а також #brand.
+//*   Стандартизуй публічний інтерфейс класу, замінивши вже оголошені методи на гетери та сетери brand, model і price, для взаємодії з приватними властивостями.
+// Оголошений клас Car
+// В класі Car оголошена приватна властивість brand     model    price
+// Конструктор класу приймає об'єкт з властивостями brand, model і price
+// В класі Car оголошений гетер brand
+// В класі Car оголошений сетер brand
+// В класі Car оголошений гетер model
+// В класі Car оголошений сетер model
+// В класі Car оголошений гетер price
+// В класі Car оголошений сетер price
+
+// class Car {
+//   //! Change code below this line
+//   #brand;
+//   #model;
+//   #price;
+
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.#model = model;
+//     this.#price = price;
+//   }
+
+//   get brand() {
+//     return this.#brand;
+//   }
+
+//   set brand(newBrand) {
+//     this.#brand = newBrand;
+//   }
+
+//   get model() {
+//     return this.#model;
+//   }
+
+//   set model(newModel) {
+//     this.#model = newModel;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     this.#price = newPrice;
+//   }
+//   //! Change code above this line
+// }
+
+//* getBrand() {
+//*     return this.#brand;
+//*   }
+
+//*   changeBrand(newBrand) {
+//*     this.#brand = newBrand;
+//*   }
+
+//*   getModel() {
+//*     return this.model;
+//*   }
+
+//*   updateModel(newModel) {
+// *    this.model = newModel;
+// *  }
+
+//*   getPrice() {
+//*     return this.price;
+//*   }
+
+// *  setPrice(newPrice) {
+// *    this.price = newPrice;
+// *  }
 
 //! ============================================================================
 //* Task 16
+// class User {
+//   //! Оголошення та ініціалізація статичної властивості
+//   static Roles = {
+//     ADMIN: "admin",
+//     EDITOR: "editor",
+//   };
+
+//   #email;
+//   #role;
+
+//   constructor({ email, role }) {
+//     this.#email = email;
+//     this.#role = role;
+//   }
+
+//   get role() {
+//     return this.#role;
+//   }
+
+//   set role(newRole) {
+//     this.#role = newRole;
+//   }
+// }
+
+// const mango = new User({
+//   email: "mango@mail.com",
+//   role: User.Roles.ADMIN,
+// });
+
+// console.log(mango.Roles); // undefined
+// console.log(User.Roles); // { ADMIN: "admin", EDITOR: "editor" }
+
+// console.log(mango.role); // "admin"
+// mango.role = User.Roles.EDITOR;
+// console.log(mango.role); // "editor"
 //! ============================================================================
+
+//* Виконай рефакторинг класу Car. Додай публічну статичну властивість MAX_PRICE зі значенням 50000 - максимально допустима ціна автомобіля.
+//* Додай сетеру price перевірку значення параметра newPrice, що передається. Якщо воно більше за MAX_PRICE, сеттер нічого не робить, а якщо менше або дорівнює,
+//*    то перезаписує ціну автомобіля.
+//* Оголошений клас Car
+//* Клас Car містить статичну властивість MAX_PRICE
+//* Значення статичної властивості MAX_PRICE - це число 50000
+//* Екземпляр не містить властивості MAX_PRICE
+//* В класі Car оголошений гетер price
+//* В класі Car оголошений сетер price
+//* Виклик сетера price в екземпляра класу, зі значенням аргументу меншим за значення MAX_PRICE, змінює властивість #price
+//* Виклик сетера price в екземпляра класу, зі значенням аргументу більшим за значення MAX_PRICE, не змінює властивість #price
+
+// class Car {
+//   //! Change code below this line
+//   static MAX_PRICE = 50000;
+
+//   #price;
+
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     if (newPrice <= Car.MAX_PRICE) {
+//       this.#price = newPrice;
+//     }
+//   }
+//   //! Change code above this line
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
 
 //! ============================================================================
 //* Task 17
@@ -713,6 +885,8 @@
 //! ============================================================================
 //* Task 20
 //! ============================================================================
+
+//            node Lesson_5/script        - запуск через термінал ≡
 
 //! ============================================================================
 //* Task 21
