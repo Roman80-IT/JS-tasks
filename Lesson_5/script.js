@@ -517,7 +517,7 @@
 // console.log(builder.getValue()); // "=^.^="
 
 //! ============================================================================
-//*                  Інкапсуляція — це концепція, що дозволяє приховати те, як влаштований клас. Користувач класу повинен отримувати доступ тільки до публічного інтерфейсу -
+//*                  #Інкапсуляція — це концепція, що дозволяє приховати те, як влаштований клас. Користувач класу повинен отримувати доступ тільки до публічного інтерфейсу -
 //*                     набору публічних властивостей і методів класу. Решта методів і властивостей (не публічних) повинні бути недоступні.
 //*                     В класах інкапсуляція реалізується приватними властивостями, доступ до яких можна отримати тільки всередині класу.
 //*                          Припустимо, що пошта користувача повинна бути недоступною для прямої зміни зовні, тобто - приватною. Додаючи до імені властивості символ #,
@@ -591,8 +591,47 @@
 // console.log(car1.getBrand()); // Output: "Honda"
 
 //! ============================================================================
-//* Task 13
+//?    removeItem(itemToRemove) {
+//?     this.items = this.items.filter((item) => item !== itemToRemove);      }
+//* Task 13        СКЛАД 2.0
 //! ============================================================================
+//* Виконай рефакторинг класу Storage, зробивши властивість items приватною.
+//* Під коментарем ми додали ініціалізацію екземпляра і виклики методів у тій послідовності, в якій твій код перевірятимуть тести. Нічого там не змінюй.
+// Оголошений клас Storage
+//* Об'єкт storage не містить властивості items
+//* Властивість items в класі Storage оголошена приватною
+//* Конструктор класу приймає властивість items
+//* В результаті виклику new Storage(["Nanitoids", "Prolonger", "Antigravitator"]) значення змінної storage - це об'єкт
+//* Перший виклик storage.getItems(), відразу після ініціалізації екземпляра, повертає масив ["Nanitoids", "Prolonger", "Antigravitator"]
+//* Другий виклик, storage.getItems(), після виклику storage.addItem("Droid"), повертає масив ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+//* Третій виклик storage.getItems(), після виклику storage.removeItem("Prolonger"), повертає масив["Nanitoids", "Antigravitator", "Droid"]
+
+// class Storage {
+//   //! Change code below this line
+//   #items;
+//   constructor(items) {
+//     this.#items = items;
+//   }
+
+//   getItems() {
+//     return this.#items;
+//   }
+
+//   addItem(newItem) {
+//     this.#items.push(newItem);
+//   }
+
+//   removeItem(itemToRemove) {
+//     this.#items = this.#items.filter((item) => item !== itemToRemove);
+//   }
+// }
+// //! Change code above this line
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
 
 //! ============================================================================
 //* Task 14
