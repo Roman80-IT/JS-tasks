@@ -33,14 +33,12 @@
 //*                  const socialProfileTag = "@gluck";
 //*                  const totalWorkerSalary = 4052;
 //! =============================================
-// // Оголоси дві змінні, productName для назви товару, і pricePerItem для зберігання ціни за штуку.
+//* Оголоси дві змінні, productName для назви товару, і pricePerItem для зберігання ціни за штуку.
 
-// const productName = 'Droid'
-// // console.log(productName);
-// // 'Droid'
-// const pricePerItem = 2000
-// // console.log(pricePerItem);
-// // 2000
+// const productName = "Droid";
+// console.log(productName); //   'Droid'
+// const pricePerItem = 2000;
+// console.log(pricePerItem); //   2000
 
 //! =============================================
 //?      let
