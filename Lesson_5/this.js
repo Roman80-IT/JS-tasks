@@ -85,7 +85,7 @@
 //   name: 'Василь',
 //   greet: function() {
 //     const arrowGreet = () => {
-//       console.log('Привіт, ' + this.name);
+//       console.log('Привіт, ' + this.name); //   аналогічно -  person.name
 //     };
 //     arrowGreet();
 //   }
