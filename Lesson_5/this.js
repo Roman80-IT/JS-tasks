@@ -1,5 +1,7 @@
 //            node Lesson_5/this        - запуск через термінал ≡
 
+// !===========================================================================================
+//?        Порівняння
 //* коли порівнюєте об'єкти або функції за допомогою ===, ви порівнюєте посилання на об'єкти, а не їхні зовнішній вигляд або структуру:
 // console.log("[] === []: ", [] === []);  //  [] === []:  false
 // console.log("{} === {}: ", {} === {});   //   {} === {}:  false
@@ -8,6 +10,8 @@
 //   function () {} === function () {}
 // );
 
+// !===========================================================================================
+//?         this
 /*
  * Контекст (this)
  *    - Где и как была объявлена функция НЕ ИМЕЕТ НИКАКОГО ВЛИЯНИЯ на контекст.
@@ -96,7 +100,7 @@
 //* Це основна різниця між стрілковими функціями та звичайними функціями щодо визначення значення this.
 
 // !===========================================================================================
-//?            Set
+//?       Set
 
 //* Коли створюється новий об'єкт Set з масиву emails, всі дублікати видаляються автоматично.
 //* Set - це тип даних у JS, який зберігає унікальні значення. Він зберігає лише унікальні елементи і відкидає будь - які дублікати.
@@ -105,3 +109,118 @@
 //*  але зберігає лише унікальні значення.Якщо в масиві були дублікати email - адрес, то після створення об'єкта Set вони будуть автоматично видалені,
 //*  залишивши лише унікальні значення.
 // !===========================================================================================
+//?   Замикання в JavaScript
+
+//! Що таке замикання?
+//* Замикання - це ф-ція, яка має доступ до області видимості, сформованої зовнішньої стосовно неї ф-ції навіть після того, як ця зовнішня ф-ція завершила роботу.
+//*   Це означає, що у замиканні можуть зберігатися змінні, оголошені зовнішньої функції і передані їй аргументи.
+//*   Перш ніж ми перейдемо власне до замикань, розберемося з поняттям «лексичне оточення».
+
+//! Що таке лексичне оточення?
+//* Поняття «лексичне оточення» або «статичне оточення» у JS відноситься до можливості доступу до змінних,
+//*   ф-цій та об'єктів на основі їх фізичного розташування у вихідному коді. Приклад:
+
+// let a = "global";
+// function outer() {
+//   let b = "outer";
+//   function inner() {
+//     let c = "inner";
+//     console.log(c); // 'inner'
+//     console.log(b); // 'outer'
+//     console.log(a); // 'global'
+//   }
+//   console.log(a); // 'global'
+//   console.log(b); // 'outer'
+//   inner();
+// }
+// outer();
+// console.log(a); // 'global'
+//?=================================================================================================================================
+
+// function counter() {
+//   let count = 0;
+
+//   function increment() {
+//     count++;
+//     console.log("Incremented: " + count);
+//   }
+
+//   function decrement() {
+//     count--;
+//     console.log("Decremented: " + count);
+//   }
+
+//   return {
+//     increment: increment,
+//     decrement: decrement,
+//   };
+// }
+
+// // Створюємо екземпляр лічильника
+// var myCounter = counter();
+
+// // Викликаємо методи для збільшення та зменшення лічильника
+// myCounter.increment(); // Виведе "Incremented: 1"
+// myCounter.increment(); // Виведе "Incremented: 2"
+// myCounter.decrement(); // Виведе "Decremented: 1"
+//?=================================================================================================================================
+
+// function count() {
+//   let number = 0;
+//   return function () {
+//     number++;
+//     console.log(number);
+//   };
+// }
+
+// let counter1 = count();
+// let counter2 = count();
+// counter1(); // 1
+// counter1(); // 2
+// counter2(); // 1
+// counter1(); // 3
+// counter1(); // 4
+//?=================================================================================================================================
+
+function createCalculator() {
+  let result = 0;
+
+  function add(number) {
+    result += number;
+    console.log("Added: " + number + "  Result: " + result);
+  }
+
+  function subtract(number) {
+    result -= number;
+    console.log("Subtracted: " + number + "  Result: " + result);
+  }
+
+  function multiply(number) {
+    result *= number;
+    console.log("Multiplied by: " + number + "  Result: " + result);
+  }
+
+  function divide(number) {
+    result /= number;
+    console.log("Divided by: " + number + "  Result: " + result);
+  }
+
+  function getResult() {
+    console.log("Current result: " + result);
+  }
+
+  return {
+    add: add,
+    subtract: subtract,
+    multiply: multiply,
+    divide: divide,
+    getResult: getResult,
+  };
+}
+
+var calculator = createCalculator();
+calculator.add(5); // Виведе "Added: 5  Result: 5"
+calculator.subtract(2); // Виведе "Subtracted: 2  Result: 3"
+calculator.multiply(3); // Виведе "Multiplied by: 3  Result: 9"
+calculator.divide(2); // Виведе "Divided by: 2  Result: 4.5"
+calculator.getResult(); // Виведе "Current result: 4.5"
