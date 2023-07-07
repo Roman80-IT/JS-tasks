@@ -182,45 +182,45 @@
 // counter1(); // 4
 //?=================================================================================================================================
 
-function createCalculator() {
-  let result = 0;
+// function createCalculator() {
+//   let result = 0;
 
-  function add(number) {
-    result += number;
-    console.log("Added: " + number + "  Result: " + result);
-  }
+//   function add(number) {
+//     result += number;
+//     console.log("Added: " + number + "  Result: " + result);
+//   }
 
-  function subtract(number) {
-    result -= number;
-    console.log("Subtracted: " + number + "  Result: " + result);
-  }
+//   function subtract(number) {
+//     result -= number;
+//     console.log("Subtracted: " + number + "  Result: " + result);
+//   }
 
-  function multiply(number) {
-    result *= number;
-    console.log("Multiplied by: " + number + "  Result: " + result);
-  }
+//   function multiply(number) {
+//     result *= number;
+//     console.log("Multiplied by: " + number + "  Result: " + result);
+//   }
 
-  function divide(number) {
-    result /= number;
-    console.log("Divided by: " + number + "  Result: " + result);
-  }
+//   function divide(number) {
+//     result /= number;
+//     console.log("Divided by: " + number + "  Result: " + result);
+//   }
 
-  function getResult() {
-    console.log("Current result: " + result);
-  }
+//   function getResult() {
+//     console.log("Current result: " + result);
+//   }
 
-  return {
-    add: add,
-    subtract: subtract,
-    multiply: multiply,
-    divide: divide,
-    getResult: getResult,
-  };
-}
+//   return {
+//     add: add,
+//     subtract: subtract,
+//     multiply: multiply,
+//     divide: divide,
+//     getResult: getResult,
+//   };
+// }
 
-var calculator = createCalculator();
-calculator.add(5); // Виведе "Added: 5  Result: 5"
-calculator.subtract(2); // Виведе "Subtracted: 2  Result: 3"
-calculator.multiply(3); // Виведе "Multiplied by: 3  Result: 9"
-calculator.divide(2); // Виведе "Divided by: 2  Result: 4.5"
-calculator.getResult(); // Виведе "Current result: 4.5"
+// var calculator = createCalculator();
+// calculator.add(5); // Виведе "Added: 5  Result: 5"
+// calculator.subtract(2); // Виведе "Subtracted: 2  Result: 3"
+// calculator.multiply(3); // Виведе "Multiplied by: 3  Result: 9"
+// calculator.divide(2); // Виведе "Divided by: 2  Result: 4.5"
+// calculator.getResult(); // Виведе "Current result: 4.5"
