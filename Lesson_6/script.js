@@ -1,4 +1,5 @@
-// const title = document.querySelector(".js-title");
+//* отримуємо доступ до елемента HTML:
+// const title = document.querySelector(".js-title");    //* - тут до класу, - ще можна до тегу('h1'), - id
 // const list = document.querySelector(".js-list");
 // console.dir(list.children);
 // console.log([...list.children]);
