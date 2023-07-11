@@ -25,12 +25,6 @@ console.dir(title); // - виводить об'єкт (та властивост
 // console.log([...list.children]);
 
 //!------------------------------------------------------------------------------------------------
-//? dataset  - data-атребут  (напр. data-id, data-goods)  // значення виводиться без слова 'data'
-console.dir(title.dataset.goods);
-//*   id - для знаходження HTML-елемента (в CSS)
-//*   data-id - для передачі якоїсь інформації
-
-//!------------------------------------------------------------------------------------------------
 //? classList
 // title.classList.add("title-color");     //?   метод 'add' - додає клас
 // title.classList.remove("title-color");  //?   метод 'remove' - видаляє клас
@@ -43,13 +37,31 @@ console.dir(title.dataset.goods);
 // title.style.color = "green";
 
 //!------------------------------------------------------------------------------------------------
-// title.hidden = false;
+//? dataset  - data-атрибут  (напр. data-id, data-goods)  // значення виводиться без слова 'data'
+console.dir(title.dataset.goods);
+//*   id - для знаходження HTML-елемента (в CSS)
+//*   data-id - для передачі якоїсь інформації
+
+//* Системні атрибути - 'hidden', 'id' - в них вже є своя влативість, а в data-атрибутутах потрібно присвоювати
+
+// title.hidden = false; //* змінюємо с-мні атрибути
 // title.hidden = true;
-// title.hidden = false;
-// console.dir(title.getAttribute('data-goods'));
+
+//!------------------------------------------------------------------------------------------------
+//?  Методи для роботи з атрибутами
+//?  getAttribute - отримання атрибуту:
+// console.dir(title.getAttribute('hidden'));      //* повертається в консоль 'пустеньким' - така його особливість
+// console.dir(title.getAttribute('data-goods'));  //* обовязково вказуємо приставку 'дата' (крім методу 'dataset')
+
 // title.removeAttribute('hidden')
+
+//? Встановлення атрибуту:
+//* можна додати як властивість:
+// title.hidden = false;
+//* можна додати за жопомогою методу 'setAttribute':
 // title.setAttribute('hidden', 'false')
 
+//!------------------------------------------------------------------------------------------------
 // const li = document.createElement("li");
 // li.textContent = list.children.length + 1;
 // li.classList.add("title-color");
