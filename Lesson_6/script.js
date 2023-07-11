@@ -1,23 +1,39 @@
+//              node Lesson_6/script
+
 //* отримуємо доступ до елемента HTML:
-// const title = document.querySelector(".js-title");    //* - тут до класу, - ще можна до тегу('h1'), - id
+//?   querySelector    - повертає перший HTML-елемент, який знайде
+const title = document.querySelector(".js-title"); //* - тут до класу, - ще можна до тегу(селектор) ('h1') - але так не роблять бо їх може бути багато, - по id ('#test') можливо, але не зручно
+//* js-title   - класи для JS
+//! Якщо звернутися до неіснуючого класу - поверне 'null'
+console.log(title); // - виводить HTML-елемент
+console.dir(title); // - виводить об'єкт (та властивості)
+
+//* HTML-елементи є 2-х типів - input & text (тип для комунікацій (інпути, форми, радіокнопки) та текстовий тип);
+//*      вміст текстового ел. через 'textContent':
+console.dir(title.textContent);
+
+//*      перевизначаємо: (обов'язково в лапках)
+title.textContent = "Hello JS";
+
+//* властивість classList (в консолі браузера)- вся інфа про класи вибраного HTML-елемента
+//*    можна добавляти класи або видаляти (заходячи з JS)  - використовується для зміни кольору меню, після кліка користувача, перевірка валідації інпута - наприклад ввод пароля і інпут стає червоного/зеленого кольору
+
 // const list = document.querySelector(".js-list");
 // console.dir(list.children);
 // console.log([...list.children]);
-// console.dir(title.textContent);
-// title.textContent = "Hello JS";
 
 // console.dir(title.dataset.goods);
 
-// ClassList
-// title.classList.add("title-color");
-// title.classList.remove("title-color");
-// title.classList.toggle("title-color");
-// title.classList.toggle("title-color");
-// title.classList.toggle("title-color");
+//? classList
+// title.classList.add("title-color");     //?   метод 'add' - додає клас
+// title.classList.remove("title-color");  //?   метод 'remove' - видаляє клас
+// title.classList.toggle("title-color");  //?   метод 'toggle' - (типу перемикача додає якщо нема, або видаляє якщо нема)
 // title.classList.toggle("title-color");
 
+//! Інлайнливо можна добавити якийсь стиль, але так не роблять:
 // title.style.fontSize = "50px";
 // title.style.color = "green";
+
 // title.hidden = false;
 // title.hidden = true;
 // title.hidden = false;
