@@ -53,13 +53,13 @@
 // console.dir(title.getAttribute('hidden'));      //* повертається в консоль 'пустеньким' - така особливість 'hidden'
 // console.dir(title.getAttribute('data-goods'));  //* обовязково вказуємо приставку 'дата' (крім методу 'dataset')
 
-// title.removeAttribute('hidden')              //* видалення
-
 //? Встановлення атрибуту:
 //* можна додати як властивість:
 // title.hidden = false;      //? так спрацює
-//* можна додати за допомогою методу 'setAttribute' (його параметри - 'String'):
+//? можна додати за допомогою методу 'setAttribute' (його параметри - 'String'):
 // title.setAttribute('hidden', 'false')  //! але так hidden, disable не спрацює, краще видалити
+
+//? title.removeAttribute('hidden')              //* видалення
 
 //!------------------------------------------------------------------------------------------------
 //?  Списки
@@ -74,27 +74,41 @@ console.dir(list); //* виведений об'єкт містить різні 
 //* Працюємо зі спільним батьком - на 2 рівні вкладеності, а на 3-й вже буде важкий код
 
 //!================================ додаємо список елементів в DOM ========================================
-
+//? 1-й спосіб за доп. метода 'createElement' та 'append': (мінус - ненаглядно, багато писанини)
 // const li = document.createElement("li");
 // li.textContent = list.children.length + 1;
-
+//!----------------------------------------------------------------
+//* розширена форма:
 // li.classList.add("title-color");
 // li.dataset.id = "12234";
 // const div = document.createElement('div');
 // const h2 = document.createElement('h2')
 // h2.textContent='Hello'
-// li.append(div)
+// li.append(div)    // в 'li' додає 'div'  - працює за аналогією 'push'
 // div.append(h2)
+//!----------------------------------------------------------------
 // list.append(li)
 // console.log(li);
 
-// const li = `<li class="title-color" data-id='123'>${list.children.length + 1}
+//? 2-й спосіб: метод шаблонних рядків  (де в ${} - підставляємо значення змінної)
+
+// const li = `<li class="title-color" data-id='12234'>${list.children.length + 1}
 // <div>
 // <h2>Hello</h2>
 // </div>
 // </li>`;
-// list.insertAdjacentHTML("beforeend", li);
 
+// list.insertAdjacentHTML("beforeend", li); //* це щоб додати HTML-подібну розмітку в DOM
+
+//? .insertAdjacentHTML ("position" (положення), HTML-код)
+//* Є п'ять можливих значень для параметру position:
+//*      "beforebegin": Вставка перед елементом, який має бути модифікований.
+//*      "afterbegin": Вставка в початок внутрішнього HTML-вмісту елемента, який має бути модифікований.
+//*      "beforeend": Вставка в кінець внутрішнього HTML-вмісту елемента, який має бути модифікований.
+//*      "afterend": Вставка після елемента, який має бути модифікований.
+//*      "replace": Заміна елемента, який має бути модифікований, переданим HTML-кодом.
+
+//!----------------------------------------------------------------------------------------------
 // const listStatic = document.querySelectorAll('li');
 // const listDynamics = document.getElementsByTagName('li');
 // const list = document.querySelector(".js-list");
