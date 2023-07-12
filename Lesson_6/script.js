@@ -352,7 +352,7 @@ const markup = cars
     <p>Ціна - ${price}</p>
 </li>`
   )
-  .join("");
+  .join(""); //*       insertAdjacentHTML потребує String
 
 container.insertAdjacentHTML("beforeend", markup);
 console.dir(markup);
