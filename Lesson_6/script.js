@@ -58,8 +58,8 @@ console.dir(title.dataset.goods);
 //? Встановлення атрибуту:
 //* можна додати як властивість:
 // title.hidden = false;
-//* можна додати за жопомогою методу 'setAttribute':
-// title.setAttribute('hidden', 'false')
+//* можна додати за допомогою методу 'setAttribute':
+// title.setAttribute('hidden', 'false')  //! але так hidden, disable не спрацює, краще видалити
 
 //!------------------------------------------------------------------------------------------------
 // const li = document.createElement("li");
