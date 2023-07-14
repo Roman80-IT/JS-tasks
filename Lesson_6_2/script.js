@@ -59,50 +59,47 @@
 const title = document.querySelector(".js-title");
 
 //!  vvv Допомоміжний код vvv ---------------------------------------------------------------------
-//!------------------------------------------------------------------------------------------------
 // const str = title.textContent.slice(0, 13); //* залишаємо 13 символів
 // const remainder = title.textContent.slice(13); //* залишок
 //! ALTERNATIVE! Видаляємо додаткові пробіли ------------------------------------------------------
 // const trimmedText = title.textContent.replace(/\s+/g, " ").trim();
 // const str = trimmedText.slice(0, 13);
-
-//? replace(/\s+/g, ' ') для заміни всіх послідовностей одного або більше пробілів на один пробіл,
-//*  використовуючи регулярний вираз / \s + / g.
-//? Потім використовуємо trim(), щоб видалити пробіли з початку і кінця тексту.
-//* Після цього ми можемо безпечно застосувати slice(0, 13) до відформатованого тексту.
-//* Цей підхід дозволить вам вирізати підрядок ігноруючи додаткові пробіли, які можуть бути додані автоформатуванням у редакторі коду.
-
+//?   replace(/\s+/g, ' ') для заміни всіх послідовностей одного або більше пробілів на один пробіл,
+//*     використовуючи регулярний вираз / \s + / g.
+//?   Потім використовуємо trim(), щоб видалити пробіли з початку і кінця тексту.
+//*     Після цього ми можемо безпечно застосувати slice(0, 13) до відформатованого тексту.
+//*     Цей підхід дозволить вам вирізати підрядок ігноруючи додаткові пробіли, які можуть бути додані автоформатуванням у редакторі коду.
 //!------------------------------------------------------------------------------------------------
 // console.log(str);
 // console.log(remainder);
 //!------------------------------------------------------------------------------------------------
 //? Добавляємо ф-цію "клік-подія":
-title.addEventListener("click", onClick); //* ставимо на текст прослуховуючу подію
-function onClick(evt) {
-  console.log(evt); //* бачимо в консолі, що є 'currentTarget':
-  console.log(evt.currentTarget); //* бачимо, хто викликав подію (по чому спрацьовує) - по кліку на h1
-}
-//!------------------------------------------------------------------------------------------------
+// title.addEventListener("click", onClick); //* ставимо на текст прослуховуючу подію
+// function onClick(evt) {
+//   console.log(evt); //* бачимо в консолі, що є 'currentTarget':
+//   console.log(evt.currentTarget); //* бачимо, хто викликав подію (по чому спрацьовує) - по кліку на h1
+// }
 //!  ^^^ Допомоміжний код ^^^ ---------------------------------------------------------------------
-
+//!  vvv Допомоміжний код vvv ---------------------------------------------------------------------
 //* Якщо обробляємо елемент по якому клікнули, краще використовувати 'target' чи 'currentTarget',
 //* а не від зовнішніх змінних ( типу title.textContent.slice(0, 13) )
 //* це дасть можливість маштабувати рішення
 
-title.addEventListener("click", onClick);
+// title.addEventListener("click", onClick);
 
-function onClick(evt) {
-  const title = evt.currentTarget;
-  const str = title.textContent.slice(0, 13);
-  const remainder = title.textContent.slice(13); //* залишок
-  //* переносимо залишок в data-атрибут title:
-  title.setAttribute("data-title", remainder); //? setAttribute() встановлеює значення атрибута 'data-title' елементу 'title' на значення змінної 'remainder'
-  //* обрізаємо рядочок:
-  title.textContent = str + "...";
+// function onClick(evt) {
+//   const title = evt.currentTarget;
+//   const str = title.textContent.slice(0, 13);
+//   const remainder = title.textContent.slice(13); //* залишок
+//* переносимо залишок в data-атрибут title:
+//   title.setAttribute("data-title", remainder); //? setAttribute() встановлеює значення атрибута 'data-title' елементу 'title' на значення змінної 'remainder'
+//* обрізаємо рядочок:
+//   title.textContent = str + "...";
 
-  // console.log(remainder); //* просто перевірка на початку написання коду
-}
-
+// console.log(remainder); //* просто перевірка на початку написання коду
+// }
+//!  ^^^ Допомоміжний код ^^^ ---------------------------------------------------------------------
+//!------------------------------------------------------------------------------------------------
 // const arr = [
 //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non necessitatibus odit mollitia debitis tenetur, ratione, voluptatem facilis fugiat vero dicta illo assumenda et ",
 //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non necessitatibus odit mollitia debitis tenetur, ratione, voluptatem facilis fugiat vero",
@@ -113,28 +110,30 @@ function onClick(evt) {
 // title.addEventListener("click", onClick);
 // title1.addEventListener("click", onClick);
 // title2.addEventListener("click", onClick);
+//!------------------------------------------------------------------------------------------------
+//* Додаємо змінні довжини рядка:
+const maxLength = 13;
+const totalLength = maxLength + 3; //* враховуючи '...'
+title.addEventListener("click", onClick);
 
-// const maxLength = 13;
-// const totalLength = maxLength + 3;
-
-// function onClick(evt) {
-//   const title = evt.currentTarget;
-//   const str = title.textContent.slice(0, maxLength);
-
-//   if (title.textContent.length > totalLength) {
-//     const remainder = title.textContent.slice(maxLength);
-//     title.setAttribute("data-title", remainder);
-//     title.textContent = str + "...";
-//   } else {
-//     const remainder = title.dataset['title'];
-//     console.log(title.dataset['title']);
-//     console.log(title.dataset.title);
-//     if (remainder) {
-//       title.textContent = str + remainder;
-//     }
-//     // getAttribute
-//   }
-// }
+function onClick(evt) {
+  const title = evt.currentTarget; //*  присвоємо 'title' посилання на елемент, на якому відбулась подія, і використоємо далі в коді для звернення до цього елемента.
+  const str = title.textContent.slice(0, maxLength); //? коли дія ідентична для 'if' та 'else' - то виносимо вище умов
+  //* Додаємо умову - в залежності від довжини рядка:
+  if (title.textContent.length > totalLength) {
+    const remainder = title.textContent.slice(maxLength);
+    title.setAttribute("data-title", remainder);
+    title.textContent = str + "...";
+  } else {
+    const remainder = title.dataset["title"];
+    //? getAttribute  - альтернативний метод звернення до data-атрибуту
+    console.log(title.dataset["title"]);
+    console.log(title.dataset.title);
+    if (remainder) {
+      title.textContent = str + remainder; //* до обрізаного 'str' додаємо data-атрибут
+    }
+  }
+}
 
 // const userName = document.querySelector('.js-input');
 
