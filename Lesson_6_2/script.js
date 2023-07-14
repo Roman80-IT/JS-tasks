@@ -1,16 +1,112 @@
-// const button = document.querySelector(".js-click");
-// const container = document.querySelector(".js-container");
-// container.addEventListener("click", onClick);
+//*Отримаємо кнопку з HTML:
 
+// const button = document.querySelector(".js-click");
+// console.log(button); //*        контроль - є
+//!------------------------------------------------------------------------------------------------
+//?   addEventListener
+//?   2 обов'язкові параметри:
+//*      - *тип евенту, який ми збираємося слухати
+//*      - *колбек функція - але не інлайн-колбек (()=>{}), щоб потім можна було зняти прослуховування
+//*          Найпоширеніші типи подій:
+//! Події клавіатури:
+//*    keydown: спрацьовує, коли користувач натискає клавішу.
+//*    keyup: спрацьовує, коли користувач відпускає клавішу.
+//*    keypress: спрацьовує, коли користувач натискає клавішу, яка відповідає символу.
+//! Події миші:
+//*    click: спрацьовує, коли користувач клікає на елемент.
+//*    mouseover: спрацьовує, коли курсор миші наводиться на елемент.
+//*    mouseout: спрацьовує, коли курсор миші покидає елемент.
+//*    mousedown: спрацьовує, коли користувач натискає кнопку миші на елементі.
+//*    mouseup: спрацьовує, коли користувач відпускає кнопку миші після натискання на елементі.
+//! Події форм:
+//*    submit: спрацьовує, коли користувач надсилає форму.
+//*    change: спрацьовує, коли значення поля форми змінюється.
+//*    input: спрацьовує, коли користувач вводить дані в поле форми.
+//*    focus: спрацьовує, коли поле форми отримує фокус.
+//*    blur: спрацьовує, коли поле форми втрачає фокус.
+//! Інші події:
+//*    load: спрацьовує, коли сторінка або медіафайл завантажуються повністю.
+//*    scroll: спрацьовує, коли користувач прокручує сторінку.
+//*    resize: спрацьовує, коли розмір вікна браузера змінюється.
+//*    error: спрацьовує, коли виникає помилка завантаження ресурсу.
+//! Є багато інших подій, і ви також можете визначати власні події за допомогою API подій.
+//!------------------------------------------------------------------------------------------------
+
+// const container = document.querySelector(".js-container"); //* додаємо div-елемент з HTML
+// container.addEventListener("click", onClick); //* додаємо обробника подій, ставимо на HTML-елемент, який потрібно відслідковувати: (хоч на window чи body)
+// console.log(container);
 // let step = 0;
 
 // function onClick(evt) {
-//   step += 5;
-//   container.style.marginLeft = `${step}px`;
-//   container.style.marginTop = `${step}px`;
-// //   console.log(evt.currentTarget);
+//   //*   створюємо колбек. Завжди буде приходити параметр event (evt) від EventListener
+//   //*   event - місце зберігання та що саме відловило подію. Його можна і не оголошувати
+//   //? Властивості event - основні:
+//   //*   currentTarget(по замовчуванні - 'null') - це той елемент, на який додали прослуховувач (тут - контейнер або кнопка)
+//   //*   target
+//   step += 5; //* вводимо змінну, тому що:
+//   container.style.marginLeft += `5px`; //! проходить конкантинація
+//   container.style.marginLeft = `${step}px`; //? це вірний спосіб
+//   container.style.marginTop = `${step}px`; //* добавим, щоб елемент зміщувався по діагоналі (по 2-х осях)
+//   console.log(evt.currentTarget); //* - з'явиться в консолі HTML-елемент, при кожному кліку по ньому (на який ми його повісили)
 // }
-// const arr = ['Lorem ipsum dolor sit amet consectetur adipisicing elit. Non necessitatibus odit mollitia debitis tenetur, ratione, voluptatem facilis fugiat vero dicta illo assumenda et ', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non necessitatibus odit mollitia debitis tenetur, ratione, voluptatem facilis fugiat vero']
+
+//!------------------------------------------------------------------------------------------------
+//   *Текст, який відображається по кліку:
+//          *(розкриваються ...)
+//?     slice()
+//!------------------------------------------------------------------------------------------------
+
+const title = document.querySelector(".js-title");
+
+//!  vvv Допомоміжний код vvv ---------------------------------------------------------------------
+//!------------------------------------------------------------------------------------------------
+// const str = title.textContent.slice(0, 13); //* залишаємо 13 символів
+// const remainder = title.textContent.slice(13); //* залишок
+//! ALTERNATIVE! Видаляємо додаткові пробіли ------------------------------------------------------
+// const trimmedText = title.textContent.replace(/\s+/g, " ").trim();
+// const str = trimmedText.slice(0, 13);
+
+//? replace(/\s+/g, ' ') для заміни всіх послідовностей одного або більше пробілів на один пробіл,
+//*  використовуючи регулярний вираз / \s + / g.
+//? Потім використовуємо trim(), щоб видалити пробіли з початку і кінця тексту.
+//* Після цього ми можемо безпечно застосувати slice(0, 13) до відформатованого тексту.
+//* Цей підхід дозволить вам вирізати підрядок ігноруючи додаткові пробіли, які можуть бути додані автоформатуванням у редакторі коду.
+
+//!------------------------------------------------------------------------------------------------
+// console.log(str);
+// console.log(remainder);
+//!------------------------------------------------------------------------------------------------
+//? Добавляємо ф-цію "клік-подія":
+title.addEventListener("click", onClick); //* ставимо на текст прослуховуючу подію
+function onClick(evt) {
+  console.log(evt); //* бачимо в консолі, що є 'currentTarget':
+  console.log(evt.currentTarget); //* бачимо, хто викликав подію (по чому спрацьовує) - по кліку на h1
+}
+//!------------------------------------------------------------------------------------------------
+//!  ^^^ Допомоміжний код ^^^ ---------------------------------------------------------------------
+
+//* Якщо обробляємо елемент по якому клікнули, краще використовувати 'target' чи 'currentTarget',
+//* а не від зовнішніх змінних ( типу title.textContent.slice(0, 13) )
+//* це дасть можливість маштабувати рішення
+
+title.addEventListener("click", onClick);
+
+function onClick(evt) {
+  const title = evt.currentTarget;
+  const str = title.textContent.slice(0, 13);
+  const remainder = title.textContent.slice(13); //* залишок
+  //* переносимо залишок в data-атрибут title:
+  title.setAttribute("data-title", remainder); //? setAttribute() встановлеює значення атрибута 'data-title' елементу 'title' на значення змінної 'remainder'
+  //* обрізаємо рядочок:
+  title.textContent = str + "...";
+
+  // console.log(remainder); //* просто перевірка на початку написання коду
+}
+
+// const arr = [
+//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non necessitatibus odit mollitia debitis tenetur, ratione, voluptatem facilis fugiat vero dicta illo assumenda et ",
+//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non necessitatibus odit mollitia debitis tenetur, ratione, voluptatem facilis fugiat vero",
+// ];
 // const title = document.querySelector(".js-title");
 // const title1 = document.querySelector(".js-title1");
 // const title2 = document.querySelector(".js-title2");
