@@ -1,4 +1,4 @@
-// node Lesson_1/script - запуск через термінал
+//             node Lesson_1/script         - запуск через термінал
 //
 // "JavaScript is awesome".length;
 
@@ -977,3 +977,25 @@
 //   // Change code above this line
 // }
 // console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+
+//! =============================================
+// Examples
+//! =============================================
+
+// const a = [2, 3, 4];
+// a[10] = 11;
+// console.log(a);
+
+// const a = [1, 2, 3];
+// [a[0], a[1], a[2]] = [10, 20, 30];
+// console.log(a);
+
+// const a = [1, 2, 3];
+// a = [4, 5, 6];
+
+const a = [2, 3, 4];
+const b = a;
+a[10] = 11;
+console.log(a === b); // true
+console.log(b);
+// const a: number[] = [2, 3, 4];
