@@ -121,8 +121,8 @@
 //*     - коли доскролюєш до останньої лі - шки - кидається httpt - запит і підїзжає ще порція картинок - в цей час останній HTML-елемент вже змінився)
 //!------------------------------------------------------------------------------------------------
 
-// const listStatic = document.querySelectorAll("li"); //*  доступний метод 'forEach'
-// const listDynamics = document.getElementsByTagName("li"); //* доступна HTML-колекція, щоб перебрати потрібно застосувати спред ('spread оператор '[...]')
+// const listStatic = document.querySelectorAll("li"); //?  доступний метод 'forEach'
+// const listDynamics = document.getElementsByTagName("li"); //? доступна HTML-колекція, щоб перебрати потрібно застосувати спред ('spread оператор '[...]')
 
 // const list = document.querySelector(".js-list");
 
