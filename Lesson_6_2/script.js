@@ -99,39 +99,9 @@ const title = document.querySelector(".js-title");
 // console.log(remainder); //* просто перевірка на початку написання коду
 // }
 //!  ^^^ Допомоміжний код ^^^ ---------------------------------------------------------------------
-//!-Рисіч (30:30)--Декілька текстів різної довжини --------------------------------------------------------------------------------
+//!- Текст, який відображається по кліку (розкриваються ...) --------------------------------------
 
 //* Додаємо змінні довжини рядка:
-const maxLength = 13;
-const totalLength = maxLength + 3; //* враховуючи '...'
-title.addEventListener("click", onClick);
-
-function onClick(evt) {
-  const title = evt.currentTarget; //*  присвоємо 'title' посилання на елемент, на якому відбулась подія, і використоємо далі в коді для звернення до цього елемента.
-  const str = title.textContent.slice(0, maxLength); //? коли дія ідентична для 'if' та 'else' - то виносимо вище умов
-  //* Додаємо умову - в залежності від довжини рядка:
-  if (title.textContent.length > totalLength) {
-    const remainder = title.textContent.slice(maxLength);
-    title.setAttribute("data-title", remainder);
-    title.textContent = str + "...";
-  } else {
-    const remainder = title.dataset["title"]; //? getAttribute  - альтернативний метод звернення до data-атрибуту
-    title.textContent = str + remainder; //* до обрізаного 'str' додаємо data-атрибут
-    console.log(remainder);
-  }
-}
-//!------------------------------------------------------------------------------------------------
-// const arr = [
-//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non necessitatibus odit mollitia debitis tenetur, ratione, voluptatem facilis fugiat vero dicta illo assumenda et ",
-//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non necessitatibus odit mollitia debitis tenetur, ratione, voluptatem facilis fugiat vero",
-// ];
-// const title = document.querySelector(".js-title");
-// const title1 = document.querySelector(".js-title1");
-// const title2 = document.querySelector(".js-title2");
-// title.addEventListener("click", onClick);
-// title1.addEventListener("click", onClick);
-// title2.addEventListener("click", onClick);
-
 // const maxLength = 13;
 // const totalLength = maxLength + 3; //* враховуючи '...'
 // title.addEventListener("click", onClick);
@@ -145,16 +115,51 @@ function onClick(evt) {
 //     title.setAttribute("data-title", remainder);
 //     title.textContent = str + "...";
 //   } else {
-//     const remainder = title.dataset["title"];
-//     //? getAttribute  - альтернативний метод звернення до data-атрибуту
-//     console.log(title.dataset["title"]);
-//     console.log(title.dataset.title);
-//     //* перевіряємо, чи існує значення remainder у властивості data-title елемента title:
-//     if (remainder) {
-//       title.textContent = str + remainder; //* до обрізаного 'str' додаємо data-атрибут
-//     }
+//     const remainder = title.dataset["title"]; //? getAttribute  - альтернативний метод звернення до data-атрибуту
+//     title.textContent = str + remainder; //* до обрізаного 'str' додаємо data-атрибут
+//     console.log(remainder);
 //   }
 // }
+
+//!-Рисіч (30:30)--Декілька текстів різної довжини-----------------------------------------------------------------------------------------------
+// const arr = [
+//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non necessitatibus odit mollitia debitis tenetur, ratione, voluptatem facilis fugiat vero dicta illo assumenda et ",
+//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non necessitatibus odit mollitia debitis tenetur, ratione, voluptatem facilis fugiat vero",
+// ];
+const title = document.querySelector(".js-title");
+const title1 = document.querySelector(".js-title1");
+const title2 = document.querySelector(".js-title2");
+//* віловлюємо клік по одному з елементів:
+напряму взятий html-елемент і на нього ставимо 
+title.addEventListener("click", onClick);
+title1.addEventListener("click", onClick);
+title2.addEventListener("click", onClick);
+
+const maxLength = 13;
+const totalLength = maxLength + 3; //* враховуючи '...'
+
+function onClick(evt) {
+  const title = evt.currentTarget; //*  присвоємо 'title' посилання на елемент, на якому відбулась подія, і використоємо далі в коді для звернення до цього елемента.
+  //* таким чином добре маштабувати, немає привязки до якогось конкретного елемента, до якоїсь зовнішньої змінної
+  //* працюємо з тим, на що було додано прослуховувача подій
+  const str = title.textContent.slice(0, maxLength); //? коли дія ідентична для 'if' та 'else' - то виносимо вище умов
+  //* Додаємо умову - в залежності від довжини рядка:
+  if (title.textContent.length > totalLength) {
+    const remainder = title.textContent.slice(maxLength);
+    title.setAttribute("data-title", remainder);
+    title.textContent = str + "...";
+  } else {
+    const remainder = title.dataset["title"];
+    title.textContent = str + remainder;
+    //? getAttribute  - альтернативний метод звернення до data-атрибуту
+    // console.log(title.dataset["title"]);
+    // console.log(title.dataset.title);
+    //* перевіряємо, чи існує значення remainder у властивості data-title елемента title:
+    // if (remainder) {
+    //   title.textContent = str + remainder; //* до обрізаного 'str' додаємо data-атрибут
+    // }
+  }
+}
 //!------------------------------------------------------------------------------------------------
 
 // const userName = document.querySelector('.js-input');
