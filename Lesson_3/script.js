@@ -1,6 +1,26 @@
 //         node Lesson_3/script           -  запуск через термінал ≡
 //         console.trace();
 
+//! ============================================================================
+//* Kahoot!
+//! ============================================================================
+
+const user = {
+  email: "mango@mail.com",
+  age: 20,
+  location: { lat: 10, lon: 20 },
+};
+
+const {
+  location: { lat, lon },
+} = user;
+console.log(lat, lon); // 10 20
+console.log(location); //! ReferenceError: location is not defined
+// console.log(user.location); // { lat: 10, lon: 20 }
+
+const { location } = user;
+console.log(location); // { lat: 10, lon: 20 }
+
 //! =============================================
 //? Ф-ції
 //! =============================================

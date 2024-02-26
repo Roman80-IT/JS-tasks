@@ -1,3 +1,5 @@
+//         node Lesson_4/lessons           -  запуск через термінал ≡
+
 //! ============================================================================
 //* Kahoot!
 //! ============================================================================
@@ -17,6 +19,16 @@
 // }
 // foo(logger(10)); //! викликаємо результат, а не саму ф-цію
 //! console.log(foo(logger(7)));
+
+function foo(callback) {
+  var result = callback(10);
+  console.log(result);
+}
+function logger(value) {
+  console.log(value);
+}
+// Виправлений виклик: передача самої функції logger як зворотного виклику
+foo(logger);
 
 //? Стрілочна ф-ції створюються як функціональний вираз   (і якщо функція - не анонімна, її необхідно присвоювати змінній)   -   без function
 //*     ресурсно легша версія ф-ції
@@ -70,7 +82,7 @@
 //? const foo = () => "Mango";
 
 //! ============================================================================
-//* lesson-07
+//* lesson-04 -2 (07)
 //! ============================================================================
 
 // function foo(callback, someFn) {       //         це ф-ція вищого порядку
@@ -231,44 +243,44 @@
 //
 //
 
-function splitString(str) {
-  const result = [];
+// function splitString(str) {
+//   const result = [];
 
-  for (let i = 0; i < str.length; i += 2) {
-    if (str.length % 2 !== 0) {
-      result.push(str[i] + "_");
-    } else {
-      result.push(str.slice(i, i + 2));
-    }
-  }
+//   for (let i = 0; i < str.length; i += 2) {
+//     if (str.length % 2 !== 0) {
+//       result.push(str[i] + "_");
+//     } else {
+//       result.push(str.slice(i, i + 2));
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-const inputString = "авбрвапар";
-const outputArray = splitString(inputString);
-console.log(outputArray);
-console.log(splitString("авбрвапар"));
+// const inputString = "авбрвапар";
+// const outputArray = splitString(inputString);
+// console.log(outputArray);
+// console.log(splitString("авбрвапар"));
 
-//
-//
-//
+// //
+// //
+// //
 
-function splitString(str) {
-  const result = [];
+// function splitString(str) {
+//   const result = [];
 
-  for (let i = 0; i < str.length; i += 2) {
-    if (str.length % 2 !== 0) {
-      result.push(str[i] + "_");
-    } else {
-      result.push(str.slice(i, i + 2));
-    }
-  }
+//   for (let i = 0; i < str.length; i += 2) {
+//     if (str.length % 2 !== 0) {
+//       result.push(str[i] + "_");
+//     } else {
+//       result.push(str.slice(i, i + 2));
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-const inputString = "авбрвапар";
-const outputArray = splitString(inputString);
-console.log(outputArray);
-console.log(splitString("авбрвапар"));
+// const inputString = "авбрвапар";
+// const outputArray = splitString(inputString);
+// console.log(outputArray);
+// console.log(splitString("авбрвапар"));
